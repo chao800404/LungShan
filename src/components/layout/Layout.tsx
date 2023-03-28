@@ -2,11 +2,15 @@ import React from 'react'
 import { Navbar } from '../navbar'
 import { Footer } from '../footer'
 
-export const Layout = ({ children }) => {
+type LayoutProps = {
+  children: JSX.Element[] | JSX.Element
+}
+
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
       <Navbar />
-      <section>{children}</section>
+      <div className="min-h-screen">{children}</div>
       <Footer />
     </div>
   )

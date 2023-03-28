@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import React, { useState, useCallback } from 'react'
 import { NavbarProps } from './type'
 import { Popup } from '../popup'
+import { PopupItemProps, WrapperAnimateNavbarItemProps } from '../popup/type'
 
 const LabelVaraints = {
   hover: {
@@ -12,7 +13,16 @@ const LabelVaraints = {
   },
 }
 
-export const WrapperAnimateNavbarItem = ({ isVisible, list }) => (
+const spring = {
+  type: 'spring',
+  stiffness: 700,
+  damping: 30,
+}
+
+export const WrapperAnimateNavbarItem = ({
+  isVisible,
+  list,
+}: WrapperAnimateNavbarItemProps<PopupItemProps>) => (
   <AnimatePresence>
     {isVisible && (
       <motion.div
@@ -28,7 +38,7 @@ export const WrapperAnimateNavbarItem = ({ isVisible, list }) => (
   </AnimatePresence>
 )
 
-export const NavbarItem = ({ title, content, active = true }: NavbarProps) => {
+export const NavbarItem = ({ title, content }: NavbarProps) => {
   const [hover, setHover] = useState(false)
 
   const setHide = useCallback(() => setHover(false), [])
@@ -37,9 +47,7 @@ export const NavbarItem = ({ title, content, active = true }: NavbarProps) => {
   return (
     <motion.li
       whileHover="hover"
-      className={`cursor-pointer relative  ${
-        active ? 'text-primaryBlack' : 'text-primaryGray'
-      }`}
+      className={`cursor-pointer relative`}
       onMouseEnter={toggleShow}
       onMouseLeave={toggleShow}
     >
@@ -52,6 +60,24 @@ export const NavbarItem = ({ title, content, active = true }: NavbarProps) => {
       />
       {content && content.length > 0 && (
         <WrapperAnimateNavbarItem isVisible={hover} list={content} />
+      )}
+    </motion.li>
+  )
+}
+
+export const NavbarBaseItem = ({ title, isActive }: NavbarProps) => {
+  return (
+    <motion.li className={`cursor-pointer relative`}>
+      <motion.div className="p-2">
+        <p>{title}</p>
+      </motion.div>
+      {isActive && (
+        <motion.span
+          variants={LabelVaraints}
+          className="absolute w-full h-[1.5px] rounded-lg bg-black bottom-0 z-10 will-change-transform"
+          layoutId="underline"
+          transition={spring}
+        />
       )}
     </motion.li>
   )

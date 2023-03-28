@@ -1,0 +1,29 @@
+{
+  "title": "信用貸款流程",
+  "contents": [
+    {
+      "title": "聯絡",
+      "description": "與我們專人聯繫"
+    },
+    {
+      "title": "分析判斷",
+      "description": "3小時內快速判斷方案"
+    },
+    {
+      "title": "準備資料",
+      "description": "專人輔導協助提供所需資料"
+    },
+    {
+      "title": "媒合銀行",
+      "description": "多家銀行合作，依客戶需求選取"
+    },
+    {
+      "title": "對保簽名",
+      "description": "專人協助諮詢，確認後對保簽名認證"
+    },
+    {
+      "title": "銀行撥款",
+      "description": "完成流程手續，快速撥款"
+    }
+  ]
+}

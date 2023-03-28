@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { PopupItemProps } from './type'
 
 const PopupItemVariants = {
   isHover: {
@@ -29,7 +30,7 @@ const ArrowVariants = {
 
 const MotionLink = motion(Link)
 
-export const PopupItem = ({ title, description, url }) => {
+export const PopupItem = ({ title, description, url }: PopupItemProps) => {
   return (
     <motion.li
       whileHover="isHover"

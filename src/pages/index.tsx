@@ -1,7 +1,20 @@
 import Head from 'next/head'
 import { Layout } from '@/components/layout'
+import { HomePageCover } from '@/components/cover'
+import React, { useLayoutEffect } from 'react'
+
+import {
+  MediaSection,
+  HomePageSectionBody,
+  TagLineSection,
+  HomeAnimateProcessSection,
+  HomeServicesSection,
+} from '@/components/sectionBody'
 
 export default function Home() {
+  useLayoutEffect(() => {
+    window.history.scrollRestoration = 'manual'
+  }, [])
   return (
     <>
       <Head>
@@ -12,30 +25,16 @@ export default function Home() {
       </Head>
       <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
         <Layout>
-          <div className="min-h-screen">
-            <section className="bg-primaryBlack text-primary text-sm p-2 flex">
-              <span
-                className="
-                          cursor-pointer
-                          m-auto 
-                          relative 
-                          after:content-['→']  
-                          after:block 
-                          after:absolute 
-                          after:right-[-1.5rem]
-                          after:w-5 
-                          after:h-5 
-                          after:top-0  
-                          after:text-white
-                          after:-translate-y-2
-                          after:text-center
-                          after:text-lg
-                          "
-              >
-                了解更多最近快速成功借貸實例
-              </span>
-            </section>
+          <TagLineSection description="了解更多最近快速成功借貸實例" />
+          <HomePageCover />
+          <div>
+            <div className="sticky top-[4rem]">
+              <MediaSection />
+            </div>
+            <HomePageSectionBody />
           </div>
+          <HomeAnimateProcessSection />
+          <HomeServicesSection />
         </Layout>
       </main>
     </>
