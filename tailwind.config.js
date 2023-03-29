@@ -26,6 +26,8 @@ module.exports = {
         primary: '#FAFFFF',
         primaryBlack: '#1c1c1c',
         primaryGray: '#C0C0C0',
+        primaryOrange: '#D18966',
+        primaryBrown: '#593333',
       },
       backgroundColor: {
         primaryBlue: '#05c',

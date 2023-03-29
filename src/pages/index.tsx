@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Layout } from '@/components/layout'
 import { HomePageCover } from '@/components/cover'
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useEffect } from 'react'
 
 import {
   MediaSection,
@@ -9,10 +9,11 @@ import {
   TagLineSection,
   HomeAnimateProcessSection,
   HomeServicesSection,
+  HomeProducts,
 } from '@/components/sectionBody'
 
 export default function Home() {
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.history.scrollRestoration = 'manual'
   }, [])
   return (
@@ -27,14 +28,15 @@ export default function Home() {
         <Layout>
           <TagLineSection description="了解更多最近快速成功借貸實例" />
           <HomePageCover />
-          <div>
+          <section>
             <div className="sticky top-[4rem]">
               <MediaSection />
             </div>
             <HomePageSectionBody />
-          </div>
+          </section>
           <HomeAnimateProcessSection />
           <HomeServicesSection />
+          <HomeProducts />
         </Layout>
       </main>
     </>

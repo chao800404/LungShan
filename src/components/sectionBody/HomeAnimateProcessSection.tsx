@@ -3,7 +3,7 @@ import Lottie from 'react-lottie-player'
 import * as LONA_PHONE_AN_2 from '../../../public/lottieJson/lona_phone_an_2.json'
 import * as LONA_PHONE_AN_1 from '../../../public/lottieJson/lona_phone_an_1.json'
 import * as LONA_PHONE_AN_3 from '../../../public/lottieJson/lona_phone_an_3.json'
-import { motion, useInView, useScroll, AnimatePresence } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
 type Data = {
@@ -219,15 +219,13 @@ const BackgroundScreen = ({
 
 export const HomeAnimateProcessSection = () => {
   const [curScreenIndex, setCurScreenIndex] = useState(0)
-  const [inVeiw, setInVeiw] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
 
   const updateCurScreenIndex = useCallback((index: number) => {
     setCurScreenIndex(index)
   }, [])
 
   return (
-    <section className="h-auto" ref={ref}>
+    <section className="h-auto">
       <div className={`sticky top-0 h-screen snap-center`}>
         <div className="absolute top-0 w-full h-full">
           {data.map((item, i) => (

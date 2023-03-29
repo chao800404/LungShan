@@ -121,7 +121,7 @@ const BankLogoContent = ({ list }: { list: ImageContent[] }) => {
 }
 
 export const HomePageSectionBody = () => {
-  const ref = useRef<HTMLSelectElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
   const firstBlockRef = useRef<HTMLDivElement>(null)
   const secondBlockRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { margin: '-30%' })
@@ -129,7 +129,7 @@ export const HomePageSectionBody = () => {
   const secondBlockIsInView = useInView(secondBlockRef)
 
   return (
-    <motion.section ref={ref} className="text-primary relative z-20">
+    <motion.div ref={ref} className="text-primary relative z-20">
       <motion.div className="top-[5rem] grid gird grid-cols-[minmax(1rem,_10rem)_1fr_1fr_minmax(1rem,_10rem)] grid-rows-[5rem_12rem_repeat(2,_1.2fr)_1fr_5rem] bg-[rgba(31,31,31,0.98)] rounded-lg">
         <motion.div className="col-start-1 col-span-5 row-start-2 row-span-1 justify-self-center">
           <motion.h2
@@ -220,6 +220,6 @@ export const HomePageSectionBody = () => {
           <BankLogoContent list={LUNGSHAN_BANK_LOGO} />
         </div>
       </motion.div>
-    </motion.section>
+    </motion.div>
   )
 }
