@@ -25,6 +25,11 @@
   ::-webkit-scrollbar-corner {
     background: var(--background);
   }
+
+  .hide_scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   .bank_cover-image > img {
     @apply grayscale;
   }

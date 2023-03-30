@@ -5,6 +5,7 @@ import { Swipper } from '@/components/swipper'
 import Lottie from 'react-lottie-player'
 import Link from 'next/link'
 import * as jsonFile from '../../../public/lottieJson/lona_phone_an_4.json'
+import { Button } from '../button'
 
 const data = [
   {
@@ -23,8 +24,6 @@ const data = [
     image: "/images/lungshan_lona_6.jpg'",
   },
 ]
-
-const AnLink = motion(Link)
 
 export const HomeServicesSection = () => {
   const ref = useRef(null)
@@ -67,11 +66,8 @@ export const HomeServicesSection = () => {
             我們的理財顧問們將站在顧客的立場,深入了解客戶的需求開發更專業的服務內容。
           </motion.p>
 
-          <motion.button
-            whileTap={{
-              scale: 0.98,
-              y: 1,
-            }}
+          <motion.div
+            className="will-change-opacity"
             animate={{
               opacity: isInView ? 1 : 0,
               transition: {
@@ -79,10 +75,13 @@ export const HomeServicesSection = () => {
                 delay: 0.5,
               },
             }}
-            className="pt-2 pb-2 pr-5 pl-5 text-primary bg-black rounded-md shadow-sm shadow-black border-[1px] border-gray-500 font-bold text-sm"
           >
-            <Link href="#">查看更多詳情</Link>
-          </motion.button>
+            <Button>
+              <Link className="pr-4 pl-4 pt-2 pb-2 block" href="#">
+                查看更多詳情
+              </Link>
+            </Button>
+          </motion.div>
         </div>
         <div className="relative justify-self-end w-full flex items-center justify-end">
           <div className="relative max-w-4xl h-3/4 w-full">

@@ -15,6 +15,7 @@ const ImageContent = ({ url }: { url: string }) => {
         sizes="auto"
         alt="隴山特色"
         src={url}
+        priority
       />
     </div>
   )
@@ -87,6 +88,7 @@ const LogoAnWrapper = ({ list }: { list: ImageContent[]; index?: number }) => {
               className="object-cover"
               alt={c.title}
               sizes="auto"
+              priority
             />
           </motion.div>
         )

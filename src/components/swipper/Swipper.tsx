@@ -88,6 +88,7 @@ export const Swipper = ({ images }: { images: string[] }) => {
           sizes="auto"
           alt="image"
           onDragEnd={handleOnDrag as HandleOnDrag}
+          priority
           // onDragEnd={handleOnDrag}
         />
       </AnimatePresence>

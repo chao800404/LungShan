@@ -60,12 +60,20 @@ const BaseContainer = {
   },
 }
 
-export const ScaleAndCoverImageBlock = () => {
+type ScaleAndCoverImageBlockProps = {
+  imageUrl: string
+  title: string
+  description: string
+}
+
+export const ScaleAndCoverImageBlock: React.FC<
+  ScaleAndCoverImageBlockProps
+> = ({ imageUrl, title, description }) => {
   return (
     <motion.div
       initial="hidden"
       whileHover="show"
-      className="w-[17rem] h-full rounded-lg border shadow-sm shadow-primaryBlack overflow-hidden relative"
+      className="w-[17rem] h-full rounded-lg border shadow-sm shadow-primaryBlack overflow-hidden relative snap-center"
     >
       <motion.div
         variants={container}
@@ -75,7 +83,7 @@ export const ScaleAndCoverImageBlock = () => {
           variants={H3Container}
           className="text-gray-200 font-black text-3xl mb-5"
         >
-          無財力證明皆可辦理
+          {title}
         </motion.h3>
         <motion.div
           variants={BaseContainer}
@@ -84,7 +92,7 @@ export const ScaleAndCoverImageBlock = () => {
           <HiOutlineExternalLink />
         </motion.div>
         <motion.p variants={BaseContainer} className="text-primary font-black ">
-          協助規劃高額度、優惠利率，房屋坪數、屋齡皆不限
+          {description}
         </motion.p>
       </motion.div>
       <motion.div
@@ -92,11 +100,12 @@ export const ScaleAndCoverImageBlock = () => {
         className="absolute top-0 left-0 w-full h-full z-10"
       >
         <Image
-          src="/images/lungshan_lona_9.jpg"
+          src={imageUrl}
           fill
           sizes="auto"
           className="object-cover"
           alt="image"
+          priority
         />
       </motion.div>
     </motion.div>

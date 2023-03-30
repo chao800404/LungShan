@@ -11,7 +11,7 @@ export const MediaAndImageBlock: React.FC<MediaAndImageBlockProps> = ({
   imageUrl,
 }) => {
   return (
-    <div className="w-[17rem] flex flex-wrap justify-center items-center gap-2 -translate-y-[7.5%]">
+    <div className="w-[17rem] flex flex-wrap justify-center items-center gap-2 -translate-y-[7.5%] snap-center">
       <div className="w-full h-[17rem] bg-slate-200 rounded-md  border shadow-sm shadow-primaryBlack relative overflow-hidden">
         <Image
           fill
@@ -19,6 +19,7 @@ export const MediaAndImageBlock: React.FC<MediaAndImageBlockProps> = ({
           src={imageUrl}
           alt="image"
           sizes="auto"
+          priority
         />
       </div>
       <div className="w-full h-[17rem] bg-slate-200 rounded-md  overflow-hidden border shadow-sm shadow-primaryBlack relative">

@@ -4,14 +4,19 @@ type SwipperTextBlockProps = Record<
   'title' | 'description' | 'subTitle',
   string
 > & {
-  base?: boolean
+
+  backgroundColor?: string
+  titleColor?: string
+  descriptionColor?: string
 }
 
 export const SwipperTextBlock: React.FC<SwipperTextBlockProps> = ({
   title,
   description,
   subTitle,
-  base = true,
+  titleColor = 'text-yellow-100',
+  backgroundColor = 'bg-primaryOrange',
+  descriptionColor = 'text-primary',
 }) => {
   const splitText = (text: string) => {
     const hasBold = text?.includes(':')
@@ -29,16 +34,15 @@ export const SwipperTextBlock: React.FC<SwipperTextBlockProps> = ({
     }
   }
 
-  const bgColor = base ? 'bg-primaryOrange' : 'bg-primaryBrown'
-  const titleColor = base ? 'text-yellow-100 ' : 'text-primaryBlack'
-
   return (
     <div
-      className={`relative w-[17rem] border-l  rounded-lg border shadow-sm shadow-primaryBlack pl-5 pr-5 pt-14 pb-14 ${bgColor}`}
+      className={`relative w-[17rem] border-l  rounded-lg border snap-center shadow-sm shadow-primaryBlack pl-5 pr-5 pt-14 pb-14 ${backgroundColor}`}
     >
       <h3 className={` font-black text-3xl mb-5 ${titleColor}`}>{title}</h3>
       <div className="h-4/6">
-        <p className="text-primary font-black text-2xl">{description}</p>
+        <p className={`${descriptionColor} font-black text-2xl`}>
+          {description}
+        </p>
       </div>
       <p className={`font-black text-[1.2rem] ${titleColor}`}>
         {splitText(subTitle)}
