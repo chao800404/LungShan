@@ -30,7 +30,7 @@ const ArrowVariants = {
 
 const MotionLink = motion(Link)
 
-export const PopupItem = ({ title, description, url }: PopupItemProps) => {
+export const PopupItem = ({ title, description, slug }: PopupItemProps) => {
   return (
     <motion.li
       whileHover="isHover"
