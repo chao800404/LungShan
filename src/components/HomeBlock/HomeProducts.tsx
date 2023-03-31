@@ -243,11 +243,11 @@ export const HomeProducts = () => {
           {data_2.map((item, i) => (
             <li key={item.id}>
               <Button
-                className={`${
+                className={`shadow-none shadow-gray-50 border  ${
                   i * 2 !== Math.abs(blockIndex) &&
                   i * 2 + 1 !== Math.abs(blockIndex) &&
-                  'bg-white text-primaryBlack hover:bg-gray-200 font-black border border-gray-100 ease-out duration-300'
-                } shadow-none`}
+                  'bg-white text-primaryBlack hover:bg-gray-100 border-slate-200 hover:border-slate-400  font-black ease-out duration-300'
+                } `}
               >
                 <span
                   onClick={() => setBlockIndex(-(i * 2))}

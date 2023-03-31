@@ -10,7 +10,7 @@ import {
   HomeAnimateProcessSection,
   HomeServicesSection,
   HomeProducts,
-} from '@/components/sectionBody'
+} from '@/components/HomeBlock'
 
 export default function Home() {
   useEffect(() => {

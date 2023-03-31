@@ -1,10 +1,10 @@
-import React, { useCallback, useRef } from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
 import LUNGSHAN_FEATURES from '@/data/lungshan_features.json'
 import LUNGSHAN_PROCESO from '@/data/lungshan_proceso.json'
 import LUNGSHAN_BANK_LOGO from '@/data/bank_logo_content.json'
 import { TableProps, ImageContent } from './type'
-import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 
 const ImageContent = ({ url }: { url: string }) => {
   return (
@@ -39,12 +39,12 @@ const ImageTableContent: React.FC<TableProps> = ({ title, contents }) => {
         {contents.map((item, i) => (
           <div className={`flex items-center`} key={i}>
             <div
-              className={`p-2 w-[10rem] border-r-[1px] font-bold flex items-center bg-primary text-primaryBlack ${
+              className={`pt-2 pb-2 pr-4 pl-4 w-fit whitespace-nowrap border-r-[1px] font-bold flex items-center bg-primary text-primaryBlack ${
                 i < contents.length - 1 &&
                 'border-b-[1px] border-b-primaryBlack'
               }`}
             >
-              <span> {item.title}</span>
+              <p> {item.title}</p>
             </div>
             <div
               className={`pt-2 w-full pb-2 pr-5 pl-5 ${

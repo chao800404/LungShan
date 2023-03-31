@@ -3,6 +3,7 @@ import React, { useState, useCallback } from 'react'
 import { NavbarProps } from './type'
 import { Popup } from '../popup'
 import { PopupItemProps, WrapperAnimateNavbarItemProps } from '../popup/type'
+import Link from 'next/link'
 
 const LabelVaraints = {
   hover: {
@@ -14,7 +15,7 @@ const LabelVaraints = {
 }
 
 const spring = {
-  type: 'spring',
+  type: 'just',
   stiffness: 700,
   damping: 30,
 }
@@ -38,7 +39,7 @@ export const WrapperAnimateNavbarItem = ({
   </AnimatePresence>
 )
 
-export const NavbarItem = ({ title, content }: NavbarProps) => {
+export const NavbarItem = ({ title, content, slug }: NavbarProps) => {
   const [hover, setHover] = useState(false)
 
   const setHide = useCallback(() => setHover(false), [])
@@ -47,12 +48,12 @@ export const NavbarItem = ({ title, content }: NavbarProps) => {
   return (
     <motion.li
       whileHover="hover"
-      className={`cursor-pointer relative`}
+      className={`cursor-pointer relative z-30`}
       onMouseEnter={toggleShow}
       onMouseLeave={toggleShow}
     >
       <motion.div className="p-2">
-        <p>{title}</p>
+        <Link href={`${slug}`}>{title}</Link>
       </motion.div>
       <motion.span
         variants={LabelVaraints}
@@ -65,18 +66,37 @@ export const NavbarItem = ({ title, content }: NavbarProps) => {
   )
 }
 
-export const NavbarBaseItem = ({ title, isActive }: NavbarProps) => {
+export const NavbarBaseItem = ({
+  title,
+  isActive,
+  slug,
+  setRoute,
+  transferRoute,
+}: NavbarProps) => {
+  const handleOnClick = () => {
+    if (typeof setRoute === 'function') {
+      setRoute(slug)
+    }
+  }
+  const handleTransferRoute = () => {
+    if (typeof transferRoute === 'function') {
+      transferRoute(slug)
+    }
+  }
+
   return (
-    <motion.li className={`cursor-pointer relative`}>
+    <motion.li onClick={handleOnClick} className={`cursor-pointer relative`}>
       <motion.div className="p-2">
-        <p>{title}</p>
+        <motion.span>{title}</motion.span>
       </motion.div>
       {isActive && (
         <motion.span
           variants={LabelVaraints}
-          className="absolute w-full h-[1.5px] rounded-lg bg-black bottom-0 z-10 will-change-transform"
+          className="absolute w-full h-[1.5px] rounded-lg bg-black bottom-0 z-40 will-change-transform"
           layoutId="underline"
+          animate={{ x: 0 }}
           transition={spring}
+          onAnimationComplete={handleTransferRoute}
         />
       )}
     </motion.li>

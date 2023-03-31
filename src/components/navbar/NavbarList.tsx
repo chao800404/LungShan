@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import { NavbarBaseItem, NavbarItem } from './NavbarItem'
 import { NavbarListProps } from './type'
+import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
 
 export const NavbarList = ({ list }: NavbarListProps) => {
   return (
@@ -12,12 +14,23 @@ export const NavbarList = ({ list }: NavbarListProps) => {
   )
 }
 
-export const NavbarBaseList = ({ list }: NavbarListProps) => {
+export const NavbarBaseList = ({
+  list,
+  route,
+  transferRoute,
+  setRoute,
+}: NavbarListProps) => {
   return (
-    <ul className="flex gap-5  ">
+    <motion.ul className="flex gap-5" layoutRoot>
       {list.map((label, i) => (
-        <NavbarBaseItem key={`${label.id}`} isActive={i === 0} {...label} />
+        <NavbarBaseItem
+          key={`${label.id}`}
+          setRoute={setRoute}
+          isActive={route === label.slug}
+          transferRoute={transferRoute}
+          {...label}
+        />
       ))}
-    </ul>
+    </motion.ul>
   )
 }

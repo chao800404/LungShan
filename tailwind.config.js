@@ -11,6 +11,10 @@ module.exports = {
     './src/pages/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    minWidth: {
+      40: '40rem',
+      '1/2': '50%',
+    },
     extend: {
       boxShadow: {
         body: '0 0 0 1px #d9d9d9',

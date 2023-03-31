@@ -1,7 +1,7 @@
 export type PopupItemProps = {
   title: string
   description: string
-  url: string
+  slug: string
   id: number
 }
 
