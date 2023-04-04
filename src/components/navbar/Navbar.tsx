@@ -45,7 +45,10 @@ export const Navbar = () => {
   return (
     <header className="font-bold text-sm text-primaryBlack">
       <nav className="pl-4 pr-4 flex items-center border-b-[1px] ">
-        <div className="pt-2 w-28 h-auto pb-2 pr-4 border-r border-gray-200 mr-5">
+        <Link
+          href="/"
+          className="pt-2 w-28 h-auto pb-2 pr-4 border-r border-gray-200 mr-5"
+        >
           <Image
             src="/images/logo-2.webp"
             alt="logo"
@@ -54,8 +57,9 @@ export const Navbar = () => {
             width={150}
             height={30}
             className="h-auto w-auto"
+            draggable={false}
           />
-        </div>
+        </Link>
         <NavbarList list={NAVBAR_DATA.first} />
       </nav>
       <nav className="pr-4 pl-4 pt-2 pb-2 flex justify-between items-center border-b-[1px]">

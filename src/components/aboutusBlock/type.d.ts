@@ -4,5 +4,6 @@ export type TimeLineBlockProps = {
   description: string
   isLast: boolean
   isActive: boolean
+  index: number
   onClick: () => void
 }

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, PanInfo } from 'framer-motion'
 import { wrap } from 'popmotion'
 import Image from 'next/image'
@@ -43,8 +43,18 @@ const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity
 }
 
-export const Swipper = ({ images }: { images: string[] }) => {
-  const [[page, direction], setPage] = useState([0, 0])
+export const Swipper = ({
+  images,
+  index = 0,
+  newPage,
+  updatePage,
+}: {
+  images: string[]
+  index?: number
+  newPage?: number
+  updatePage?: (index: number) => void
+}) => {
+  const [[page, direction], setPage] = useState([index, 0])
 
   const imageIndex = wrap(0, images.length, page)
 
@@ -55,12 +65,21 @@ export const Swipper = ({ images }: { images: string[] }) => {
   const handleOnDrag: SwipperHandleDrag = (e, { offset, velocity }) => {
     const swipe = swipePower(offset.x, velocity.x)
 
-    if (swipe < -swipeConfidenceThreshold) {
-      return paginate(1)
-    } else if (swipe > swipeConfidenceThreshold) {
-      return paginate(-1)
-    }
+    if (swipe < -swipeConfidenceThreshold) paginate(1)
+    else if (swipe > swipeConfidenceThreshold) paginate(-1)
   }
+
+  useEffect(() => {
+    if (typeof newPage === 'number' && newPage !== page) {
+      const direction = page > newPage ? -1 : 1
+      setPage([newPage, direction])
+    }
+  }, [newPage])
+
+  useEffect(() => {
+    if (typeof updatePage === 'function' && newPage !== page)
+      updatePage(imageIndex)
+  }, [page])
 
   return (
     <>
@@ -89,18 +108,17 @@ export const Swipper = ({ images }: { images: string[] }) => {
           alt="image"
           onDragEnd={handleOnDrag as HandleOnDrag}
           priority
-          // onDragEnd={handleOnDrag}
         />
       </AnimatePresence>
       <div
         className="next cursor-pointer rounded-md absolute top-[50%] left-0 -translate-y-1/2 -translate-x-1/2 z-20 text-3xl bg-white shadow-md  shadow-[rgba(0,0,0,0.3)]"
-        onClick={() => paginate(1)}
+        onClick={() => paginate(-1)}
       >
         <BsFillArrowLeftSquareFill />
       </div>
       <div
         className="prev cursor-pointer top-[50%] right-0 -translate-y-1/2 translate-x-1/2 z-20 text-3xl absolute bg-white rounded-md shadow-md shadow-[rgba(0,0,0,0.3)]"
-        onClick={() => paginate(-1)}
+        onClick={() => paginate(1)}
       >
         <BsFillArrowRightSquareFill />
       </div>

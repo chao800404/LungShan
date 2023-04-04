@@ -14,6 +14,7 @@ export const HomePageCover = () => {
             alt="cover"
             src="/images/cover.svg"
             priority
+            draggable={false}
           />
           <div className="absolute left-0 -bottom-8 w-full h-5 overflow-hidden flex justify-center">
             <motion.div

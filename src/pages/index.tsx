@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { Layout } from '@/components/layout'
-import { HomePageCover } from '@/components/cover'
 import React, { useLayoutEffect, useEffect } from 'react'
 
 import {
@@ -10,6 +9,7 @@ import {
   HomeAnimateProcessSection,
   HomeServicesSection,
   HomeProducts,
+  HomePageCover,
 } from '@/components/HomeBlock'
 
 export default function Home() {

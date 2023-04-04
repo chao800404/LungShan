@@ -20,6 +20,7 @@ export const MediaAndImageBlock: React.FC<MediaAndImageBlockProps> = ({
           alt="image"
           sizes="auto"
           priority
+          draggable={false}
         />
       </div>
       <div className="w-full h-[17rem] bg-slate-200 rounded-md  overflow-hidden border shadow-sm shadow-primaryBlack relative">

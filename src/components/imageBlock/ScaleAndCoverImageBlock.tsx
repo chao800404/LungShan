@@ -106,6 +106,7 @@ export const ScaleAndCoverImageBlock: React.FC<
           className="object-cover"
           alt="image"
           priority
+          draggable={false}
         />
       </motion.div>
     </motion.div>

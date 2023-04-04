@@ -83,6 +83,7 @@ const ImageComponent = ({
         className="object-cover"
         priority
         sizes="auto"
+        draggable={false}
       />
     </div>
   )
