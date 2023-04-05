@@ -65,7 +65,7 @@ const TimelineBlock = ({
       className="w-[9rem] flex items-center flex-col"
       onAnimationComplete={() => {
         setAnimateEnd(true)
-        coverOnLoad(true)
+        isLast && coverOnLoad(true)
       }}
     >
       <motion.h3 className="mb-3">{year}</motion.h3>

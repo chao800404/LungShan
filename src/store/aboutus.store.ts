@@ -7,5 +7,7 @@ type AboutusState = {
 
 export const useAboutusStore = create<AboutusState>((set) => ({
   coverOnLoad: false,
-  setCoverOnLoad: () => set(() => ({ coverOnLoad: true })),
+  setCoverOnLoad: (onLoad) => set(() => ({ coverOnLoad: onLoad })),
 }))
+
+useAboutusStore.subscribe(console.log)

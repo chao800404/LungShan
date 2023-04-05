@@ -43,8 +43,8 @@ export const Navbar = () => {
   }
 
   return (
-    <header className="font-bold text-sm text-primaryBlack">
-      <nav className="pl-4 pr-4 flex items-center border-b-[1px] ">
+    <header className="font-bold text-sm text-primaryBlack fixed top-0 w-full max-w-screen-2xl bg-white z-50">
+      <nav className="pl-4 pr-4 flex items-center border-b-[1px]">
         <Link
           href="/"
           className="pt-2 w-28 h-auto pb-2 pr-4 border-r border-gray-200 mr-5"

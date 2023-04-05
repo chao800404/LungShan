@@ -4,13 +4,13 @@ import { BaseImageBlock } from '../imageBlock'
 import { ImagePopup } from '../popup'
 
 const data = [
-  { image: '/images/lungshan_lona_17.jpg', id: 0 },
-  { image: '/images/lungshan_lona_18.jpg', id: 1 },
-  { image: '/images/lungshan_lona_19.jpg', id: 2 },
-  { image: '/images/lungshan_lona_20.jpg', id: 3 },
-  { image: '/images/lungshan_lona_21.jpg', id: 4 },
-  { image: '/images/lungshan_lona_22.jpg', id: 5 },
-  { image: '/images/lungshan_lona_23.jpg', id: 6 },
+  { image: '/images/lungshan_loan_17.jpg', id: 0 },
+  { image: '/images/lungshan_loan_18.jpg', id: 1 },
+  { image: '/images/lungshan_loan_19.jpg', id: 2 },
+  { image: '/images/lungshan_loan_20.jpg', id: 3 },
+  { image: '/images/lungshan_loan_21.jpg', id: 4 },
+  { image: '/images/lungshan_loan_22.jpg', id: 5 },
+  { image: '/images/lungshan_loan_23.jpg', id: 6 },
 ]
 
 export const AboutusBodySection = () => {

@@ -39,7 +39,7 @@ export const MediaSection = () => {
             <BsFillPlayCircleFill className="border-2 border-gray-900 rounded-full" />
           </motion.div>
           <video
-            src="/medias/lona_media.mp4"
+            src="/medias/loan_media.mp4"
             width="100%"
             muted={true}
             loop={true}

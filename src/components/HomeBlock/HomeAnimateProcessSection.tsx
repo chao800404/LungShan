@@ -1,8 +1,8 @@
 import React, { useCallback, useRef, useState, useEffect } from 'react'
 import Lottie from 'react-lottie-player'
-import * as LONA_PHONE_AN_2 from '../../../public/lottieJson/lona_phone_an_2.json'
-import * as LONA_PHONE_AN_1 from '../../../public/lottieJson/lona_phone_an_1.json'
-import * as LONA_PHONE_AN_3 from '../../../public/lottieJson/lona_phone_an_3.json'
+import * as LOAN_PHONE_AN_2 from '../../../public/lottieJson/loan_phone_an_2.json'
+import * as LOAN_PHONE_AN_1 from '../../../public/lottieJson/loan_phone_an_1.json'
+import * as LOAN_PHONE_AN_3 from '../../../public/lottieJson/loan_phone_an_3.json'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
@@ -16,24 +16,24 @@ type Data = {
 
 const data: Data[] = [
   {
-    jsonFile: LONA_PHONE_AN_1,
+    jsonFile: LOAN_PHONE_AN_1,
     title: '與我們聯絡快速協助及審核文件',
     subTitle: '絕不浪費您一絲時間',
-    image: '/images/lungshan_lona_3.jpg',
+    image: '/images/lungshan_loan_3.jpg',
     id: 0,
   },
   {
-    jsonFile: LONA_PHONE_AN_2,
+    jsonFile: LOAN_PHONE_AN_2,
     title: '銀行審核貸款核准並完成對保',
     subTitle: '專業評估維護您的權益',
-    image: '/images/lungshan_lona_4.jpg',
+    image: '/images/lungshan_loan_4.jpg',
     id: 1,
   },
   {
-    jsonFile: LONA_PHONE_AN_3,
+    jsonFile: LOAN_PHONE_AN_3,
     title: '審核通過撥款至您的銀行帳戶',
     subTitle: '接受任何方式快速撥款',
-    image: '/images/lungshan_lona_5.jpg',
+    image: '/images/lungshan_loan_5.jpg',
     id: 2,
   },
 ]

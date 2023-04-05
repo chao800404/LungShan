@@ -175,7 +175,7 @@ export const HomePageSectionBody = () => {
           }}
           className="col-start-2 col-span-1 row-start-3 row-span-1 relative"
         >
-          <ImageContent url="/images/lungshan_lona_1.jpeg" />
+          <ImageContent url="/images/lungshan_loan_1.jpeg" />
         </motion.div>
         <motion.div
           animate={{
@@ -218,7 +218,7 @@ export const HomePageSectionBody = () => {
           }}
           className="col-start-3 col-span-1 row-start-4 row-span-1"
         >
-          <ImageContent url="/images/lungshan_lona_2.jpg" />
+          <ImageContent url="/images/lungshan_loan_2.jpg" />
         </motion.div>
         <div className="col-start-1 col-span-4 row-start-5 row-span-1 text-primary self-center justify-self-center pl-40 pr-40 w-full">
           <BankLogoContent list={LUNGSHAN_BANK_LOGO} />

@@ -48,16 +48,19 @@ const MotionBlock: React.FC<MotionBlockProps> = ({ children, index }) => {
 }
 
 export const ProductBlock = ({ data }: ProductBlockProps) => {
-  const coverOnload = useAboutusStore((state) => state.coverOnLoad, shallow)
-  const [shouldShow, setShouldShow] = useState(false)
-
+  const { coverOnload, setCoverOnload } = useAboutusStore(
+    (state) => ({
+      coverOnload: state.coverOnLoad,
+      setCoverOnload: state.setCoverOnLoad,
+    }),
+    shallow
+  )
+  const [shouldShow, setShouldShow] = useState(true)
+  const [load, setLoad] = useState(false)
   const handleToggleShow = () => setShouldShow((toggle) => !toggle)
 
   useEffect(() => {
-    if (coverOnload) {
-      const timeout = setTimeout(() => setShouldShow(coverOnload), 500)
-      return () => clearTimeout(timeout)
-    }
+    if (coverOnload) setLoad(true)
   }, [coverOnload])
 
   return (
@@ -80,15 +83,16 @@ export const ProductBlock = ({ data }: ProductBlockProps) => {
         </motion.div>
       </div>
       <AnimatePresence>
-        {shouldShow && (
+        {load && (
           <motion.div
             initial="hide"
             whileInView="show"
-            className="flex gap-2 mt-10"
+            className={`flex gap-2 mt-10 ${!shouldShow && 'hidden'}`}
             viewport={{
               margin: '-30%',
               once: true,
             }}
+            onAnimationComplete={() => setCoverOnload(false)}
           >
             {data?.map((item, i) => (
               <MotionBlock key={`${item.id}_${item.title}`} index={i}>

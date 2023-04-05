@@ -41,7 +41,7 @@ const data_2 = [
       {
         title: '無財力證明皆可辦理',
         description: '協助規劃高額度、優惠利率，房屋坪數、屋齡皆不限',
-        imageUrl: '/images/lungshan_lona_9.jpg',
+        imageUrl: '/images/lungshan_loan_9.jpg',
       },
       {
         title: '房屋借款',
@@ -57,8 +57,8 @@ const data_2 = [
     name: '汽車機車貸款',
     contents: [
       {
-        imageUrl: '/images/lungshan_lona_10.jpg',
-        mediaUrl: '/medias/lona_media_1.mp4',
+        imageUrl: '/images/lungshan_loan_10.jpg',
+        mediaUrl: '/medias/loan_media_1.mp4',
       },
       {
         title: '汽車機車貸款',
@@ -80,7 +80,7 @@ const data_2 = [
         title: '桃園建地全區收購',
         description:
           '桃園青埔房屋、青埔建地、青埔持分土地收購資金快速到位最快只要三天。',
-        imageUrl: '/images/lungshan_lona_12.jpg',
+        imageUrl: '/images/lungshan_loan_12.jpg',
       },
       {
         title: '土地借款',
@@ -95,8 +95,8 @@ const data_2 = [
     name: '手機或精品貸款',
     contents: [
       {
-        imageUrl: '/images/lungshan_lona_13.jpg',
-        mediaUrl: '/medias/lona_media_2.mp4',
+        imageUrl: '/images/lungshan_loan_13.jpg',
+        mediaUrl: '/medias/loan_media_2.mp4',
       },
       {
         title: '手機或精品貸款',
@@ -116,7 +116,7 @@ const data_2 = [
       {
         title: '工作滿三個月即可',
         description: '薪資轉帳滿三個月，20至80歲之自然人，最高300萬。',
-        imageUrl: '/images/lungshan_lona_14.jpg',
+        imageUrl: '/images/lungshan_loan_14.jpg',
       },
       {
         title: '銀行信用貸款',
@@ -136,7 +136,7 @@ const data_2 = [
       {
         title: '一個月薪轉紀錄就可借',
         description: '貸款利率12%~30%不等，需視客戶條件而定。',
-        imageUrl: '/images/lungshan_lona_15.jpg',
+        imageUrl: '/images/lungshan_loan_15.jpg',
       },
       {
         title: '民間代書借款',
@@ -292,89 +292,4 @@ export const HomeProducts = () => {
       </section>
     </motion.div>
   )
-}
-
-{
-  /* <div className="flex gap-2">
-                <ScaleAndCoverImageBlock
-                  title="無財力證明皆可辦理"
-                  description="協助規劃高額度、優惠利率，房屋坪數、屋齡皆不限"
-                  imageUrl="/images/lungshan_lona_9.jpg"
-                />
-                <SwipperTextBlock
-                  title="房屋借款"
-                  description="不完整產權，未保存登記，無須冗長審核，快速方便，不看聯徵，不照會。"
-                  subTitle="攏山代書給您超低利率：利率0.45％起，每萬元478元起"
-                />
-              </div>
-              <div className="flex gap-2">
-                <MediaAndImageBlock
-                  imageUrl="/images/lungshan_lona_10.jpg"
-                  mediaUrl="/medias/lona_media_1.mp4"
-                />
-                <SwipperTextBlock
-                  title="汽車機車貸款"
-                  description="依本息平均攤還，輕鬆還款無負擔。最高可貸車價220%，滿足您的資金需求。"
-                  subTitle="有汽機車即可辦理，分期也可增貸"
-                  titleColor="text-orange-200"
-                  descriptionColor="text-orange-100"
-                  backgroundColor="bg-primaryBrown"
-                />
-              </div>
-              <div className="flex gap-2">
-                <ScaleAndCoverImageBlock
-                  title="桃園建地全區收購"
-                  description="桃園青埔房屋、青埔建地、青埔持分土地收購資金快速到位最快只要三天"
-                  imageUrl="/images/lungshan_lona_12.jpg"
-                />
-                <SwipperTextBlock
-                  title="土地借款"
-                  description="借1億也可以，殯葬用地、原住民保護地、公共共有都能承做。"
-                  subTitle="急件可當天撥款一小時內審核，無權狀可"
-                />
-              </div>
-              <div className="flex gap-2">
-                <MediaAndImageBlock
-                  imageUrl="/images/lungshan_lona_13.jpg"
-                  mediaUrl="/medias/lona_media_2.mp4"
-                />
-                <SwipperTextBlock
-                  title="手機或精品貸款"
-                  description="適合目前無擔保品的您，單筆最高15萬元，萬物皆可貸。"
-                  subTitle="不論負債比過高、貸款遲繳、銀行協商等問題，都可以輕鬆貸款"
-                  titleColor="text-gray-800"
-                  descriptionColor="text-gray-500"
-                  backgroundColor="bg-gray-100"
-                />
-              </div>
-              <div className="flex gap-2">
-                <ScaleAndCoverImageBlock
-                  title="工作滿三個月即可"
-                  description="薪資轉帳滿三個月，20至80歲之自然人，最高300萬"
-                  imageUrl="/images/lungshan_lona_14.jpg"
-                />
-                <SwipperTextBlock
-                  title="銀行信用貸款"
-                  description="薪轉滿三個月即可辦理，最高月收入22倍。"
-                  subTitle="精準媒合30家銀行，12年經驗不浪費聯徵，僅此次貸款使用。"
-                  titleColor="text-blue-200"
-                  descriptionColor="text-gray-100"
-                  backgroundColor="bg-gray-800"
-                />
-              </div>
-              <div className="flex gap-2">
-                <ScaleAndCoverImageBlock
-                  title="一個月薪轉紀錄就可借"
-                  description="貸款利率12%~30%不等，需視客戶條件而定"
-                  imageUrl="/images/lungshan_lona_15.jpg"
-                />
-                <SwipperTextBlock
-                  title="民間代書借款"
-                  description="警示戶也可以做，本利攤還可代償降息，當天對保當天撥款。"
-                  subTitle="依資金需求，單筆貸款最高30萬"
-                  titleColor="text-zinc-300"
-                  descriptionColor="text-zinc-100"
-                  backgroundColor="bg-zinc-700"
-                />
-              </div> */
 }

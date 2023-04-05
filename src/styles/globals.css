@@ -33,4 +33,32 @@
   .bank_cover-image > img {
     @apply grayscale;
   }
+
+  details > summary#question_and_answer {
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+  }
+
+  details > summary#question_and_answer::before {
+    content: '';
+    border-width: 0.4rem;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+
+    transform: rotate(0);
+    transform-origin: 0.2rem 50%;
+    transition: 0.25s transform ease;
+  }
+
+  details[open] > summary#question_and_answer:before {
+    transform: rotate(90deg);
+  }
+
+  details > summary#question_and_answer {
+    list-style-type: none;
+  }
 }

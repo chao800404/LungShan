@@ -64,7 +64,7 @@
     {
       "title": "相關案例",
       "id": 4,
-      "slug": "/products_sevices",
+      "slug": "/loancases",
       "content": []
     }
   ],
@@ -87,7 +87,7 @@
       "title": "借貸須知",
       "description": "1/20也可以！只要您開口，我們就幫您",
       "id": 3,
-      "slug": "/products_sevices",
+      "slug": "/questionAndAnswer",
       "content": []
     },
     {

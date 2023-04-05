@@ -4,24 +4,24 @@ import Image from 'next/image'
 import { Swipper } from '@/components/swipper'
 import Lottie from 'react-lottie-player'
 import Link from 'next/link'
-import * as jsonFile from '../../../public/lottieJson/lona_phone_an_4.json'
+import * as jsonFile from '../../../public/lottieJson/loan_phone_an_4.json'
 import { Button } from '../button'
 
 const data = [
   {
     id: 0,
     title: 'HomeServicesSection1',
-    image: "/images/lungshan_lona_6.jpg'",
+    image: "/images/lungshan_loan_6.jpg'",
   },
   {
     id: 1,
     title: 'HomeServicesSection2',
-    image: "/images/lungshan_lona_6.jpg'",
+    image: "/images/lungshan_loan_6.jpg'",
   },
   {
     id: 2,
     title: 'HomeServicesSection3',
-    image: "/images/lungshan_lona_6.jpg'",
+    image: "/images/lungshan_loan_6.jpg'",
   },
 ]
 
@@ -96,9 +96,9 @@ export const HomeServicesSection = () => {
             </div>
             <Swipper
               images={[
-                '/images/lungshan_lona_6.jpg',
-                '/images/lungshan_lona_7.jpg',
-                '/images/lungshan_lona_8.jpg',
+                '/images/lungshan_loan_6.jpg',
+                '/images/lungshan_loan_7.jpg',
+                '/images/lungshan_loan_8.jpg',
               ]}
             />
           </div>
