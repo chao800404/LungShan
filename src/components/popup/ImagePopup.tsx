@@ -30,7 +30,7 @@ export const ImagePopup = React.memo(
             </div>
           </div>
           <div className="w-[50rem] h-[25rem] overflow-hidden p-10">
-            <div className="relative h-full">
+            <div className="relative h-full border-primaryBlack border-2 overflow-hidden">
               <Swipper
                 images={data.map((item) => item.image)}
                 index={index}

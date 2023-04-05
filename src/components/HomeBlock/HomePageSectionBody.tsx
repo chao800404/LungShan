@@ -71,7 +71,7 @@ const LogoAnWrapper = ({ list }: { list: ImageContent[]; index?: number }) => {
           <motion.div
             key={c.id}
             layout
-            className={`bank_cover-image relative  col-span-1 col-start-${
+            className={`bank_cover-image relative col-span-1 col-start-${
               index + 1
             } h-[3rem] will-change-transform`}
             animate={{

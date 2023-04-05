@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import Lottie from 'react-lottie-player'
 
 type ProductCardProps = {
-  json: object
+  path: string
   title: string
 }
 
-export const ProductCard = ({ json, title }: ProductCardProps) => {
+export const ProductCard = ({ path, title }: ProductCardProps) => {
   const [onEnter, setOnEnter] = useState(false)
 
   return (
@@ -18,7 +18,8 @@ export const ProductCard = ({ json, title }: ProductCardProps) => {
       <h3 className="font-bold text-base text-center">{title}</h3>
       <div className="w-full h-44">
         <Lottie
-          animationData={json}
+          // animationData={json}
+          path={path}
           loop={true}
           play={onEnter}
           goTo={onEnter ? 1 : 90}

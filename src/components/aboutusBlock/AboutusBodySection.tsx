@@ -122,13 +122,6 @@ export const AboutusBodySection = () => {
             ))}
           </motion.div>
         </motion.div>
-
-        {/* <div className="col-start-2 col-span-2 row-start-3 row-span-2 h-[20rem] border p-2 rounded-md shadow-md">
-                <BaseImageBlock
-                  imgUrl="/images/lungshan_lona_2.jpg"
-                  className="h-full w-full"
-                />
-              </div> */}
       </div>
     </section>
   )

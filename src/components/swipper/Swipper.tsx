@@ -7,6 +7,7 @@ import {
   BsFillArrowLeftSquareFill,
   BsFillArrowRightSquareFill,
 } from 'react-icons/bs'
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 
 type SwipperHandleDrag = (
   event: MouseEvent | TouchEvent | PointerEvent,
@@ -100,7 +101,7 @@ export const Swipper = ({
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={1}
           fill
-          className="object-cover cursor-grab active:cursor-grabbing rounded-md border border-primaryGray shadow-sm shadow-primaryBlack"
+          className="object-cover cursor-grab active:cursor-grabbing shadow-md rounded-sm overflow-hidden"
           whileDrag={{
             cursor: 'grabbing',
           }}
@@ -110,17 +111,16 @@ export const Swipper = ({
           priority
         />
       </AnimatePresence>
-      <div
-        className="next cursor-pointer rounded-md absolute top-[50%] left-0 -translate-y-1/2 -translate-x-1/2 z-20 text-3xl bg-white shadow-md  shadow-[rgba(0,0,0,0.3)]"
-        onClick={() => paginate(-1)}
-      >
-        <BsFillArrowLeftSquareFill />
-      </div>
-      <div
-        className="prev cursor-pointer top-[50%] right-0 -translate-y-1/2 translate-x-1/2 z-20 text-3xl absolute bg-white rounded-md shadow-md shadow-[rgba(0,0,0,0.3)]"
-        onClick={() => paginate(1)}
-      >
-        <BsFillArrowRightSquareFill />
+      <div className="absolute right-0 bottom-0 z-20 flex bg-primaryBlack text-primary cursor-pointer">
+        <div
+          className="next text-[2.2rem] border-r border-gray-700"
+          onClick={() => paginate(-1)}
+        >
+          <MdKeyboardArrowLeft />
+        </div>
+        <div className="prev text-[2.2rem]" onClick={() => paginate(1)}>
+          <MdKeyboardArrowRight />
+        </div>
       </div>
     </>
   )

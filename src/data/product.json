@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "title": "房屋借貸",
+    "path": "/lottieJson/lona_home_an.json"
+  },
+  {
+    "id": 0,
+    "title": "土地借貸",
+    "path": "/lottieJson/lona_land_an.json"
+  },
+  {
+    "id": 0,
+    "title": "汽機車貸款",
+    "path": "/lottieJson/lona_car_an.json"
+  },
+  {
+    "id": 0,
+    "title": "手機貸款商品業務",
+    "path": "/lottieJson/lona_phone_an.json"
+  },
+  {
+    "id": 0,
+    "title": "民間代書借款",
+    "path": "/lottieJson/lona_contracts_an.json"
+  },
+  {
+    "id": 0,
+    "title": "銀行信用貸款",
+    "path": "/lottieJson/lona_credit_an.json"
+  }
+]

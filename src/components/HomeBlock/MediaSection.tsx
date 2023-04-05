@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { BsFillPlayCircleFill } from 'react-icons/bs'
-import { motion, useScroll, useVelocity, useSpring } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export const MediaSection = () => {
   const ref = useRef<HTMLDivElement>(null)
@@ -9,18 +9,18 @@ export const MediaSection = () => {
   useEffect(() => {
     if (ref && ref.current) {
       const elem = ref.current
+      const { bottom } = elem.getBoundingClientRect()
+      const bodyHeight = document.body.getBoundingClientRect().height
+      const scrollY = window.scrollY
       const handleOnScroll = () => {
-        const { bottom } = elem.getBoundingClientRect()
-        const bodyHeight = document.body.getBoundingClientRect().height
-        const scrollY = window.scrollY
         if (scrollY > bottom && sc < 0.3) {
           const move = (scrollY - bottom) / bodyHeight
           setSc(move)
         }
       }
 
-      document.addEventListener('scroll', handleOnScroll)
-      return () => document.addEventListener('scroll', handleOnScroll)
+      window.addEventListener('scroll', handleOnScroll)
+      return () => window.removeEventListener('scroll', handleOnScroll)
     }
   }, [])
 
@@ -45,6 +45,7 @@ export const MediaSection = () => {
             loop={true}
             height="auto"
             autoPlay
+            preload="auto"
           />
         </div>
       </motion.div>

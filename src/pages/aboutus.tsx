@@ -1,26 +1,9 @@
 import { Layout } from '@/components/layout'
 import Head from 'next/head'
-import React, { useState, useRef, useEffect } from 'react'
-import Image from 'next/image'
-import {
-  motion,
-  useAnimationControls,
-  useMotionValue,
-  useTransform,
-  animate,
-} from 'framer-motion'
+import React from 'react'
 import { AboutusBodySection, AboutusCover } from '@/components/aboutusBlock'
-import { Button } from '@/components/button'
-import { BaseImageBlock } from '@/components/imageBlock'
-import Lottie from 'react-lottie-player'
-import HomeJson from '../../public/lottieJson/lona_home_an.json'
-import CarJson from '../../public/lottieJson/lona_car_an.json'
-import LandJson from '../../public/lottieJson/lona_land_an.json'
-import ContractsJson from '../../public/lottieJson/lona_contracts_an.json'
-import PhoneJson from '../../public/lottieJson/lona_phone_an.json'
-import CreditJson from '../../public/lottieJson/lona_credit_an.json'
-
-import { ProductCard } from '@/components/card'
+import { ProductBlock } from '@/components/productBlock'
+import ProductData from '@/data/product.json'
 
 export default function Aboutus() {
   return (
@@ -35,17 +18,7 @@ export default function Aboutus() {
         <Layout>
           <AboutusCover />
           <AboutusBodySection />
-          <section className="pr-40 pl-40 pt-2 pb-20">
-            <h3 className="text-4xl font-bold">產品服務</h3>
-            <div className="flex gap-2 mt-10">
-              <ProductCard title="房屋借貸" json={HomeJson} />
-              <ProductCard title="土地借貸" json={LandJson} />
-              <ProductCard title="汽機車貸款" json={CarJson} />
-              <ProductCard title="手機貸款商品業務" json={PhoneJson} />
-              <ProductCard title="民間代書借款" json={ContractsJson} />
-              <ProductCard title="銀行信用貸款" json={CreditJson} />
-            </div>
-          </section>
+          <ProductBlock data={ProductData} />
         </Layout>
       </main>
     </>
