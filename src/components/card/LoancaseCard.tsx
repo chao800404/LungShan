@@ -4,6 +4,8 @@ import { motion } from 'framer-motion'
 import { LoancaseCardProps } from './type'
 import { useMouseStore } from '@/store'
 import { shallow } from 'zustand/shallow'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const variants = {
   show: (index: number) => {
@@ -28,6 +30,7 @@ export const LoancaseCard = ({
   cases,
   id,
   index,
+  slug,
 }: LoancaseCardProps) => {
   const { setContent, setPointerEvent } = useMouseStore(
     (state) => ({
@@ -36,6 +39,8 @@ export const LoancaseCard = ({
     }),
     shallow
   )
+
+  const route = useRouter()
 
   const update = () => {
     setContent(title)
@@ -58,7 +63,11 @@ export const LoancaseCard = ({
       onMouseEnter={update}
       onMouseLeave={clear}
       initial="init"
-      className="rounded-lg relative w-80 h-80 overflow-hidden border drop-shadow-2xl mx-4 will-change-transform"
+      onClick={() => {
+        route.push(slug || '')
+        clear()
+      }}
+      className="rounded-lg cursor-pointer relative w-80 h-80 overflow-hidden border drop-shadow-2xl mx-4 will-change-transform"
     >
       <Image
         sizes="auto"

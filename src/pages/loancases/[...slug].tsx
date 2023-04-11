@@ -1,12 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { Layout } from '@/components/layout'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { LoanCasesBody, LoanCasesCover } from '@/components/loancasesBlock'
 import LOAN_CASES_DATA from '@/data/loan_cases.json'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 const CasesDynamicPage = () => {
+  const router = useRouter()
+  const { slug } = router.query
+  const [anEnd, setAnEnd] = useState(false)
+  const data = LOAN_CASES_DATA.filter((item) => {
+    const splitSlug = item.slug.split('/')
+    return splitSlug[splitSlug.length - 1] === slug?.[0]
+  })
+
+  if (!data) return null
+
   return (
     <>
       <Head>
@@ -17,8 +29,35 @@ const CasesDynamicPage = () => {
       </Head>
       <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
         <Layout>
-          <motion.section className="overflow-hidden text-primary mb-20"></motion.section>
-          <section></section>
+          <section>
+            <div className="flex">
+              <motion.div
+                animate={{ width: '43.5vw' }}
+                initial={{ width: '100vw' }}
+                transition={{ delay: 1.2, type: 'tween' }}
+                className="relative overflow-hidden  h-screen z-20"
+                onAnimationComplete={() => setAnEnd(true)}
+              >
+                {data[0] && data[0].imgUrl && (
+                  <Image
+                    src={data[0].imgUrl}
+                    fill
+                    className="object-cover"
+                    sizes="auto"
+                    alt={data[0].title}
+                  />
+                )}
+              </motion.div>
+              {anEnd && (
+                <motion.div
+                  style={{ width: '43.5vw' }}
+                  className="flex items-center justify-center mt-10"
+                >
+                  {/* <LoanCasesBody list={data} /> */}
+                </motion.div>
+              )}
+            </div>
+          </section>
         </Layout>
       </main>
     </>

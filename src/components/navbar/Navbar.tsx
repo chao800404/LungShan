@@ -47,7 +47,7 @@ export const Navbar = () => {
       <nav className="pl-4 pr-4 flex items-center border-b-[1px]">
         <Link
           href="/"
-          className="pt-2 w-28 h-auto pb-2 pr-4 border-r border-gray-200 mr-5 cursor-none"
+          className="pt-2 w-28 h-auto pb-2 pr-4 border-r border-gray-200 mr-5"
         >
           <Image
             src="/images/logo-2.webp"

@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="relative cursor-none">
+      <body className="relative">
         <Main />
         <NextScript />
       </body>

@@ -8,8 +8,12 @@
 }
 
 @layer base {
-  /* html {
-    scroll-snap-type: y mandatory;
+  /* a {
+    pointer-events: none;
+  }
+
+  body {
+    pointer-events: none;
   } */
 
   ::-webkit-scrollbar {
