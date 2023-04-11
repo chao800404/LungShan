@@ -5,6 +5,7 @@ specifiers:
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   '@types/react-lottie': ^1.2.6
+  '@types/uuid': ^9.0.1
   autoprefixer: ^10.4.14
   eslint: 8.36.0
   eslint-config-next: 13.2.4
@@ -21,6 +22,8 @@ specifiers:
   react-player: ^2.12.0
   tailwindcss: ^3.2.7
   typescript: 5.0.2
+  use-debounce: ^9.0.4
+  uuid: ^9.0.0
   zustand: ^4.3.6
 
 dependencies:
@@ -28,6 +31,7 @@ dependencies:
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   '@types/react-lottie': 1.2.6
+  '@types/uuid': 9.0.1
   eslint: 8.36.0
   eslint-config-next: 13.2.4_j4766f7ecgqbon3u7zlxn5zszu
   framer-motion: 10.8.4_biqbaboplfbrettd7655fr4n2y
@@ -41,6 +45,8 @@ dependencies:
   react-lottie-player: 1.5.4_react@18.2.0
   react-player: 2.12.0_react@18.2.0
   typescript: 5.0.2
+  use-debounce: 9.0.4_react@18.2.0
+  uuid: 9.0.0
   zustand: 4.3.6_react@18.2.0
 
 devDependencies:
@@ -328,6 +334,10 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
+    dev: false
+
+  /@types/uuid/9.0.1:
+    resolution: {integrity: sha512-rFT3ak0/2trgvp4yYZo5iKFEPsET7vKydKF+VRCxlQ9bpheehyAJH89dAkaLEq/j/RZXJIqcgsmPJKUP1Z28HA==}
     dev: false
 
   /@typescript-eslint/parser/5.56.0_j4766f7ecgqbon3u7zlxn5zszu:
@@ -2577,6 +2587,15 @@ packages:
       punycode: 2.3.0
     dev: false
 
+  /use-debounce/9.0.4_react@18.2.0:
+    resolution: {integrity: sha512-6X8H/mikbrt0XE8e+JXRtZ8yYVvKkdYRfmIhWZYsP8rcNs9hk3APV8Ua2mFkKRLcJKVdnX2/Vwrmg2GWKUQEaQ==}
+    engines: {node: '>= 10.0.0'}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /use-sync-external-store/1.2.0_react@18.2.0:
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
     peerDependencies:
@@ -2588,6 +2607,11 @@ packages:
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
+
+  /uuid/9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
+    dev: false
 
   /which-boxed-primitive/1.0.2:
     resolution: {integrity: sha512-bwZdv0AKLpplFY2KZRX6TvyuN7ojjr7lwkg6ml0roIy9YeuSr7JS372qlNW18UQYzgYK9ziGcerWqZOmEn9VNg==}

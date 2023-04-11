@@ -272,12 +272,7 @@ export const HomeProducts = () => {
 
               setBlockIndex((prev) => {
                 const newIndex = prev + index
-
-                if (newIndex > 0) {
-                  return 0
-                } else {
-                  return newIndex
-                }
+                return newIndex > 0 ? 0 : newIndex
               })
             }}
           >

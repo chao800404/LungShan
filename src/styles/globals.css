@@ -44,9 +44,9 @@
     content: '';
     border-width: 0.4rem;
     border-style: solid;
-    border-color: transparent transparent transparent #fff;
+    border-color: transparent transparent transparent #1c1c1c;
     position: absolute;
-    top: 1.2rem;
+    top: 0.55rem;
     left: 1rem;
 
     transform: rotate(0);

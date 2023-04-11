@@ -48,12 +48,14 @@ export const NavbarItem = ({ title, content, slug }: NavbarProps) => {
   return (
     <motion.li
       whileHover="hover"
-      className={`cursor-pointer relative z-30`}
+      className="relative z-30"
       onMouseEnter={toggleShow}
       onMouseLeave={toggleShow}
     >
-      <motion.div className="p-2">
-        <Link href={`${slug}`}>{title}</Link>
+      <motion.div className="p-2 ">
+        <Link className="cursor-none" href={`${slug}`}>
+          {title}
+        </Link>
       </motion.div>
       <motion.span
         variants={LabelVaraints}
@@ -72,6 +74,8 @@ export const NavbarBaseItem = ({
   slug,
   setRoute,
   transferRoute,
+  onMouseEnter = undefined,
+  onMouseLeave = undefined,
 }: NavbarProps) => {
   const handleOnClick = () => {
     if (typeof setRoute === 'function') {
@@ -85,8 +89,13 @@ export const NavbarBaseItem = ({
   }
 
   return (
-    <motion.li onClick={handleOnClick} className={`cursor-pointer relative`}>
-      <motion.div className="p-2">
+    <motion.li
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onClick={handleOnClick}
+      className="relative"
+    >
+      <motion.div className="p-2 cursor-none">
         <motion.span>{title}</motion.span>
       </motion.div>
       {isActive && (

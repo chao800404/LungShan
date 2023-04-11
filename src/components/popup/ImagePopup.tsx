@@ -24,7 +24,7 @@ export const ImagePopup = React.memo(
             <h3 className="font-bold text-gray-300">公司環境照片</h3>
             <div
               onClick={onClose}
-              className="text-2xl text-gray-300 hover:text-gray-800 cursor-pointer duration-150"
+              className="text-2xl text-gray-300 hover:text-gray-800 duration-150"
             >
               <AiOutlineCloseSquare />
             </div>
@@ -43,7 +43,7 @@ export const ImagePopup = React.memo(
             <div className="flex gap-2 w-fit">
               {data.map((item, i) => (
                 <div
-                  className={`w-[10rem] h-[5rem] cursor-pointer relative`}
+                  className="w-[10rem] h-[5rem] relative"
                   onClick={() => setFocusIndex(i)}
                   key={item.id}
                 >

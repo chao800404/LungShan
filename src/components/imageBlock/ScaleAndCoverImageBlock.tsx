@@ -77,7 +77,7 @@ export const ScaleAndCoverImageBlock: React.FC<
     >
       <motion.div
         variants={container}
-        className="absolute top-0 left-0 select-none	w-full h-full z-20 bg-[rgba(0,0,0,0.8)] cursor-pointer pt-14 pb-14 pr-5 pl-5 flex flex-col items-center gap-10"
+        className="absolute top-0 left-0 select-none	w-full h-full z-20 bg-[rgba(0,0,0,0.8)]  pt-14 pb-14 pr-5 pl-5 flex flex-col items-center gap-10"
       >
         <motion.h3
           variants={H3Container}

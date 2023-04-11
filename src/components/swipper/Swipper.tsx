@@ -111,7 +111,7 @@ export const Swipper = ({
           priority
         />
       </AnimatePresence>
-      <div className="absolute right-0 bottom-0 z-20 flex bg-primaryBlack text-primary cursor-pointer">
+      <div className="absolute right-0 bottom-0 z-20 flex bg-primaryBlack text-primary ">
         <div
           className="next text-[2.2rem] border-r border-gray-700"
           onClick={() => paginate(-1)}

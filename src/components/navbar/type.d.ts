@@ -23,4 +23,6 @@ export type NavbarProps = NavbarItem<LabelContent> & {
   isActive?: boolean
   setRoute?: (slug: sring) => void
   transferRoute?: (slug: string) => void
+  onMouseEnter?: React.MouseEventHandler<HTMLLIElement>
+  onMouseLeave?: React.MouseEventHandler<HTMLLIElement>
 }

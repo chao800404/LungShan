@@ -3,7 +3,7 @@ import Head from 'next/head'
 import React from 'react'
 import { AboutusBodySection, AboutusCover } from '@/components/aboutusBlock'
 import { ProductBlock } from '@/components/productBlock'
-import ProductData from '@/data/product.json'
+import PRODUCT_DATA from '@/data/product.json'
 
 export default function AboutusPage() {
   return (
@@ -18,7 +18,7 @@ export default function AboutusPage() {
         <Layout>
           <AboutusCover />
           <AboutusBodySection />
-          <ProductBlock data={ProductData} />
+          <ProductBlock data={PRODUCT_DATA} />
         </Layout>
       </main>
     </>

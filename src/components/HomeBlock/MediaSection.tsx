@@ -34,7 +34,7 @@ export const MediaSection = () => {
         <div className="rounded-3xl overflow-hidden flex items-center justify-center relative">
           <motion.div
             whileHover={{ color: '#6190EB' }}
-            className="text-primaryBlue z-10 absolute text-[5rem] cursor-pointer"
+            className="text-primaryBlue z-10 absolute text-[5rem]"
           >
             <BsFillPlayCircleFill className="border-2 border-gray-900 rounded-full" />
           </motion.div>

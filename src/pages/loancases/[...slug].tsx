@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Layout } from '@/components/layout'
 import Head from 'next/head'
+import { motion } from 'framer-motion'
+import { LoanCasesBody, LoanCasesCover } from '@/components/loancasesBlock'
+import LOAN_CASES_DATA from '@/data/loan_cases.json'
+import Link from 'next/link'
 
-export default function LoancasesPage() {
+const CasesDynamicPage = () => {
   return (
     <>
       <Head>
@@ -13,13 +17,12 @@ export default function LoancasesPage() {
       </Head>
       <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
         <Layout>
-          <section>
-            <div className="pl-40 pr-40 text-black pt-40">
-              <div>攏山借貸案例</div>
-            </div>
-          </section>
+          <motion.section className="overflow-hidden text-primary mb-20"></motion.section>
+          <section></section>
         </Layout>
       </main>
     </>
   )
 }
+
+export default CasesDynamicPage

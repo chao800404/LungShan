@@ -1,3 +1,4 @@
+import { MouseFollower } from '@/components/mouse'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Oswald } from 'next/font/google'
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
+      <MouseFollower />
       <Component {...pageProps} />
     </>
   )

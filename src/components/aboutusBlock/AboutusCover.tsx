@@ -71,7 +71,7 @@ const TimelineBlock = ({
       <motion.h3 className="mb-3">{year}</motion.h3>
       <motion.div
         onClick={onClick}
-        className={`cursor-pointer relative rounded-full w-4 h-4 ${
+        className={`relative rounded-full w-4 h-4 ${
           !isLast && animateEnd && lineStyle
         }
         ${isActive ? blockBorder : 'bg-slate-100 border-4 border-gray-300'}

@@ -5,7 +5,6 @@ export const TagLineSection = ({ description }: { description: string }) => {
     <section className="bg-primaryBlack text-primary text-sm p-2 flex">
       <span
         className="
-                cursor-pointer
                 m-auto 
                 relative 
                 after:content-['→']  

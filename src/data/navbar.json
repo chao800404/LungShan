@@ -52,7 +52,7 @@
     {
       "title": "為什麼是我們?",
       "id": 2,
-      "slug": "/products_sevices",
+      "slug": "/chooseOurCompany",
       "content": []
     },
     {
@@ -80,7 +80,7 @@
       "title": "防詐騙專區",
       "description": "1/20也可以！只要您開口，我們就幫您",
       "id": 2,
-      "slug": "/products_sevices",
+      "slug": "/scamPrevention",
       "content": []
     },
     {
