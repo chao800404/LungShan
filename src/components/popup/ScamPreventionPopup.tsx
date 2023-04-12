@@ -64,7 +64,7 @@ export const ScamPreventionPopup: React.FC<ScamPreventionPopupProps> = ({
               <motion.div
                 onClick={close}
                 variants={varaints}
-                className="absolute border  -right-12 -top-12 h-24 w-24 flex items-center justify-center rounded-full bg-primaryBlack text-primary"
+                className="absolute border -right-12 -top-12 h-24 w-24 flex items-center justify-center rounded-full bg-primaryBlack text-primary"
               >
                 <motion.span
                   variants={buttonVariants}

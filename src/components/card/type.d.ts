@@ -9,7 +9,7 @@ export type LoancaseCardProps = {
   title: string
   imgUrl: string
   id: number | string
-  slug?: string
+  casePath?: string
   cases: CasesType[]
   index?: number
 }

@@ -9,14 +9,14 @@ import { useRouter } from 'next/router'
 import { useMouseStore } from '@/store'
 
 export default function LoancasesPage() {
-  const [anEnd, setAnEnd] = useState(false)
   const route = useRouter()
 
-  useEffect(() => {
-    const reset = useMouseStore.getState().reset
-    route.events.on('routeChangeStart', reset)
-    return () => route.events.off('routeChangeStart', reset)
-  }, [route])
+  // useEffect(() => {
+  //   if (route.basePath.length === 0) return
+  //   const reset = useMouseStore.getState().reset
+  //   route.events.on('routeChangeStart', reset)
+  //   return () => route.events.off('routeChangeStart', reset)
+  // }, [route])
 
   return (
     <>

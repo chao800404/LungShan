@@ -3,7 +3,7 @@ import { MouseFollower } from '@/components/mouse'
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="zh-Hant-TW">
       <Head />
       <body className="relative">
         <Main />

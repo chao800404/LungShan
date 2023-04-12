@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { BlockComponent } from './type'
+import React from 'react'
 import { useLoanCasesStore, useMouseStore } from '@/store'
 import { shallow } from 'zustand/shallow'
 import { FiExternalLink } from 'react-icons/fi'
@@ -27,6 +26,12 @@ export const LoanCasesBody = ({
   const setFocusId = useLoanCasesStore((state) => state.setFocusId, shallow)
   const route = useRouter()
 
+  const handleCardPointerdown = (id: string | number, casePath?: string) => {
+    setFocusId(id)
+    console.log(route.query.case)
+    if (!route.query.case && casePath) route.push(casePath)
+  }
+
   if (length >= 3) length = 3
 
   return (
@@ -40,17 +45,19 @@ export const LoanCasesBody = ({
             className={`${titleSize} cursor-pointer font-black mb-5 hover:text-gray-700 hover:underline duration-300`}
             onMouseEnter={() => setPointerEvent('Focus')}
             onMouseLeave={() => setPointerEvent('Default')}
-            onClick={() => route.push(item.slug || '')}
+            onClick={() => route.push(item.casePath || '')}
           >
             {item.title}
           </h3>
           <div className="mt-3">
-            {item?.cases?.map((item) => (
+            {item?.cases?.map((cases) => (
               <motion.div
                 onMouseEnter={() => setPointerEvent('Focus')}
                 onMouseLeave={() => setPointerEvent('Default')}
-                onPointerDown={() => setFocusId(item.id)}
-                key={item.id}
+                onPointerDown={() =>
+                  handleCardPointerdown(cases.id, item.casePath)
+                }
+                key={cases.id}
                 whileHover={{
                   scale: 1.01,
                   transition: { type: 'tween', duration: 0.3 },
@@ -58,7 +65,7 @@ export const LoanCasesBody = ({
                 initial={{ scale: 1 }}
                 className="shadow border cursor-pointer mt-2 p-3 flex justify-between group items-center hover:bg-gray-100 duration-300"
               >
-                <p className="w-4/5 truncate">{item.title}</p>
+                <p className="w-4/5 truncate">{cases.title}</p>
                 <FiExternalLink className="text-gray-300 group-hover:text-gray-700 duration-200" />
               </motion.div>
             ))}

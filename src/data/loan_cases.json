@@ -3,7 +3,7 @@
     "title": "房屋借貸",
     "id": 0,
     "imgUrl": "/images/lungshan_loan_9.jpg",
-    "slug": "/loancases/housing-loan",
+    "casePath": "/loancases/housing-loan",
     "cases": [
       {
         "id": "/loancases/housing-loan/0",
@@ -41,7 +41,7 @@
     "title": "土地借貸",
     "id": 1,
     "imgUrl": "/images/lungshan_loan_12.jpg",
-    "slug": "/loancases/land-loan",
+    "casePath": "/loancases/land-loan",
     "cases": [
       {
         "id": "/loancases/land-loan/0",
@@ -67,7 +67,7 @@
     "title": "汽機車貸款",
     "id": 2,
     "imgUrl": "/images/lungshan_loan_11.jpg",
-    "slug": "/loancases/vehicle-loan",
+    "casePath": "/loancases/vehicle-loan",
     "cases": [
       {
         "id": "loancases/vehicle-loan/0",
@@ -99,7 +99,7 @@
     "title": "手機商品貸款",
     "id": 3,
     "imgUrl": "/images/lungshan_loan_24.jpg",
-    "slug": "/loancases/product-loan",
+    "casePath": "/loancases/product-loan",
     "cases": [
       {
         "id": "/loancases/product-loan/0",
@@ -131,7 +131,7 @@
     "title": "銀行信用貸款",
     "id": 4,
     "imgUrl": "/images/lungshan_loan_14.jpg",
-    "slug": "/loancases/bankCredit-loan",
+    "casePath": "/loancases/bankCredit-loan",
     "cases": [
       {
         "id": "/loancases/bankCredit-loan/0",
@@ -155,7 +155,7 @@
   },
   {
     "title": "民間代書借款",
-    "slug": "/loancases/CoSignert-loan",
+    "casePath": "/loancases/CoSignert-loan",
     "id": 5,
     "imgUrl": "/images/lungshan_loan_1.jpeg",
     "cases": [

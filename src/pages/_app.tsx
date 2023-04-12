@@ -1,23 +1,23 @@
 import { MouseFollower } from '@/components/mouse'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Oswald } from 'next/font/google'
+// import { Oswald } from 'next/font/google'
 
-const lora = Oswald({
-  subsets: ['latin'],
-  weight: '400',
-})
+// const lora = Oswald({
+//   subsets: ['latin'],
+//   weight: '400',
+// })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <style jsx global>
+      {/* <style jsx global>
         {`
           :root {
             --lora-font: ${lora.style.fontFamily};
           }
         `}
-      </style>
+      </style> */}
       <MouseFollower />
       <Component {...pageProps} />
     </>

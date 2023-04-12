@@ -15,6 +15,7 @@ type ProductBlockProps = {
     title: string
     path: string
     id: number
+    casePath: string
   }[]
   className?: string
 }

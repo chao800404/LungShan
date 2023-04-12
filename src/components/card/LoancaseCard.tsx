@@ -30,7 +30,7 @@ export const LoancaseCard = ({
   cases,
   id,
   index,
-  slug,
+  casePath,
 }: LoancaseCardProps) => {
   const { setContent, setPointerEvent } = useMouseStore(
     (state) => ({
@@ -64,7 +64,7 @@ export const LoancaseCard = ({
       onMouseLeave={clear}
       initial="init"
       onClick={() => {
-        route.push(slug || '')
+        route.push(casePath || '')
         clear()
       }}
       className="rounded-lg cursor-pointer relative w-80 h-80 overflow-hidden border drop-shadow-2xl mx-4 will-change-transform"

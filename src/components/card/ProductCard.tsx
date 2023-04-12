@@ -1,12 +1,14 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState } from 'react'
 import Lottie from 'react-lottie-player'
+import Link from 'next/link'
 
 type ProductCardProps = {
   path: string
   title: string
+  casePath: string
 }
 
-export const ProductCard = ({ path, title }: ProductCardProps) => {
+export const ProductCard = ({ path, title, casePath }: ProductCardProps) => {
   const [onEnter, setOnEnter] = useState(false)
 
   return (
@@ -18,7 +20,6 @@ export const ProductCard = ({ path, title }: ProductCardProps) => {
       <h3 className="font-bold text-base text-center">{title}</h3>
       <div className="w-full h-44">
         <Lottie
-          // animationData={json}
           path={path}
           loop={true}
           play={onEnter}
@@ -28,9 +29,13 @@ export const ProductCard = ({ path, title }: ProductCardProps) => {
       </div>
 
       <div className="flex flex-col w-full gap-2">
-        <button className="w-full bg-primaryBlack p-2 text-primary rounded-md text-sm font-bold">
+        <Link
+          className="w-full text-center bg-primaryBlack p-2 text-primary rounded-md text-sm font-bold"
+          href={casePath}
+        >
           查看案例
-        </button>
+        </Link>
+
         <button className="w-ful text-gray-400 font-bold border rounded-md text-sm p-2 group-hover:bg-slate-200 duration-300 group-hover:border-gray-300 group-hover:text-gray-700">
           了解詳情
         </button>

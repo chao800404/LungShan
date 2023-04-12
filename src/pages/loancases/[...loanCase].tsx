@@ -1,29 +1,22 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Layout } from '@/components/layout'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
-import {
-  LoanCasesBody,
-  LoanCasesCover,
-  LoanCasesPreview,
-} from '@/components/loancasesBlock'
+import { LoanCasesPreview } from '@/components/loancasesBlock'
 import LOAN_CASES_DATA from '@/data/loan_cases.json'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import { MdKeyboardArrowLeft } from 'react-icons/md'
-import { useMouseStore, useProductCardStore } from '@/store'
-import { shallow } from 'zustand/shallow'
+import { useProductCardStore } from '@/store'
 import PRODUCT_DATA from '@/data/product.json'
 import { ProductBlock } from '@/components/productBlock'
 
 const CasesDynamicPage = () => {
   const router = useRouter()
-  const { slug } = router.query
+  const { loanCase } = router.query
   const [anEnd, setAnEnd] = useState(false)
   const data = LOAN_CASES_DATA.filter((item) => {
-    const splitSlug = item.slug.split('/')
-    return splitSlug[splitSlug.length - 1] === slug?.[0]
+    const splitSlug = item.casePath.split('/')
+    return splitSlug[splitSlug.length - 1] === loanCase?.[0]
   })
 
   useEffect(() => {
