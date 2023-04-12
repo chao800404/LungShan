@@ -21,6 +21,7 @@ type MouseState = {
   setPointerEvent: (pointerEvent: PointerEventState) => void
   setColor: (color: ColorState) => void
   setContent: (content?: string) => void
+  reset: () => void
 }
 
 export const useMouseStore = create<MouseState>((set) => ({
@@ -29,6 +30,12 @@ export const useMouseStore = create<MouseState>((set) => ({
   setPointerEvent: (pointerEvent) => set(() => ({ pointerEvent })),
   setColor: (color) => set(() => ({ color })),
   setContent: (content) => set(() => ({ content })),
+  reset: () =>
+    set(() => ({
+      pointerEvent: 'Default',
+      color: 'Default',
+      content: undefined,
+    })),
 }))
 
 useMouseStore.subscribe(console.log)

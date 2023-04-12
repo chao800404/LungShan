@@ -5,7 +5,7 @@ import { TimeLineBlockProps } from './type'
 import ABOUTUS_COVER_DATA from '@/data/about_us_cover.json'
 import { shallow } from 'zustand/shallow'
 
-import { useAboutusStore } from '@/store'
+import { useProductCardStore } from '@/store'
 
 const lineStyle =
   'after:w-[9.5rem] after:h-[1px] after:bg-primaryBlack after:absolute after:top-1/2 after:-translate-y-1/2 after:-z-10 after:left-1/2'
@@ -51,7 +51,10 @@ const TimelineBlock = ({
   onClick,
 }: TimeLineBlockProps) => {
   const [animateEnd, setAnimateEnd] = useState(false)
-  const coverOnLoad = useAboutusStore((state) => state.setCoverOnLoad, shallow)
+  const setShouldShow = useProductCardStore(
+    (state) => state.setShouldShow,
+    shallow
+  )
 
   return (
     <motion.li
@@ -65,7 +68,7 @@ const TimelineBlock = ({
       className="w-[9rem] flex items-center flex-col"
       onAnimationComplete={() => {
         setAnimateEnd(true)
-        isLast && coverOnLoad(true)
+        isLast && setShouldShow(true)
       }}
     >
       <motion.h3 className="mb-3">{year}</motion.h3>

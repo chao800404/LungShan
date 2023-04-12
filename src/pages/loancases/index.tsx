@@ -1,13 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Layout } from '@/components/layout'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { LoanCasesBody, LoanCasesCover } from '@/components/loancasesBlock'
 import LOAN_CASES_DATA from '@/data/loan_cases.json'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useMouseStore } from '@/store'
 
 export default function LoancasesPage() {
   const [anEnd, setAnEnd] = useState(false)
+  const route = useRouter()
+
+  useEffect(() => {
+    const reset = useMouseStore.getState().reset
+    route.events.on('routeChangeStart', reset)
+    return () => route.events.off('routeChangeStart', reset)
+  }, [route])
 
   return (
     <>
@@ -23,7 +32,11 @@ export default function LoancasesPage() {
             <LoanCasesCover list={LOAN_CASES_DATA} />
           </motion.section>
           <section>
-            <LoanCasesBody list={LOAN_CASES_DATA} />
+            <LoanCasesBody
+              list={LOAN_CASES_DATA}
+              length={LOAN_CASES_DATA.length}
+              className="px-40 py-40"
+            />
           </section>
         </Layout>
       </main>

@@ -11,7 +11,7 @@ import {
   ScamPreventionHeader,
   ScamPreventionBox,
 } from '@/components/scamPreventionBlock'
-import { useAboutusStore } from '@/store'
+import { useProductCardStore } from '@/store'
 import { shallow } from 'zustand/shallow'
 
 type UpdatePopupFn = ({ show, index }: { show: boolean; index: number }) => void
@@ -19,9 +19,9 @@ type UpdatePopupFn = ({ show, index }: { show: boolean; index: number }) => void
 export default function ScamPrevention() {
   const [{ show, index }, setPopup] = useState({ show: false, index: 0 })
 
-  const { setCoverOnload } = useAboutusStore(
+  const { setShouldShow } = useProductCardStore(
     (state) => ({
-      setCoverOnload: state.setCoverOnLoad,
+      setShouldShow: state.setShouldShow,
     }),
     shallow
   )
@@ -32,8 +32,8 @@ export default function ScamPrevention() {
   }
 
   useEffect(() => {
-    setCoverOnload(true)
-    return () => setCoverOnload(false)
+    setShouldShow(true)
+    return () => setShouldShow(false)
   }, [])
 
   return (

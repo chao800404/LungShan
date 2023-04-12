@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ProductCard } from '@/components/card'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useAboutusStore } from '@/store'
+import { useProductCardStore } from '@/store'
 import { shallow } from 'zustand/shallow'
 
 type MotionBlockProps = {
@@ -49,10 +49,10 @@ const MotionBlock: React.FC<MotionBlockProps> = ({ children, index }) => {
 }
 
 export const ProductBlock = ({ data, className }: ProductBlockProps) => {
-  const { coverOnload, setCoverOnload } = useAboutusStore(
+  const { coverOnload, setCoverOnload } = useProductCardStore(
     (state) => ({
-      coverOnload: state.coverOnLoad,
-      setCoverOnload: state.setCoverOnLoad,
+      coverOnload: state.shouldShow,
+      setCoverOnload: state.setShouldShow,
     }),
     shallow
   )

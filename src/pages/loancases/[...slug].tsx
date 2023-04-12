@@ -1,12 +1,21 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { Layout } from '@/components/layout'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
-import { LoanCasesBody, LoanCasesCover } from '@/components/loancasesBlock'
+import {
+  LoanCasesBody,
+  LoanCasesCover,
+  LoanCasesPreview,
+} from '@/components/loancasesBlock'
 import LOAN_CASES_DATA from '@/data/loan_cases.json'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import { MdKeyboardArrowLeft } from 'react-icons/md'
+import { useMouseStore, useProductCardStore } from '@/store'
+import { shallow } from 'zustand/shallow'
+import PRODUCT_DATA from '@/data/product.json'
+import { ProductBlock } from '@/components/productBlock'
 
 const CasesDynamicPage = () => {
   const router = useRouter()
@@ -16,6 +25,14 @@ const CasesDynamicPage = () => {
     const splitSlug = item.slug.split('/')
     return splitSlug[splitSlug.length - 1] === slug?.[0]
   })
+
+  useEffect(() => {
+    const setShowShow = useProductCardStore.getState().setShouldShow
+    if (anEnd) {
+      setShowShow(true)
+      return () => setShowShow(false)
+    }
+  }, [anEnd])
 
   if (!data) return null
 
@@ -29,13 +46,14 @@ const CasesDynamicPage = () => {
       </Head>
       <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
         <Layout>
+          <div className="h-28" />
           <section>
             <div className="flex">
               <motion.div
                 animate={{ width: '43.5vw' }}
                 initial={{ width: '100vw' }}
                 transition={{ delay: 1.2, type: 'tween' }}
-                className="relative overflow-hidden  h-screen z-20"
+                className="relative overflow-hidden z-20 h-screen"
                 onAnimationComplete={() => setAnEnd(true)}
               >
                 {data[0] && data[0].imgUrl && (
@@ -45,19 +63,15 @@ const CasesDynamicPage = () => {
                     className="object-cover"
                     sizes="auto"
                     alt={data[0].title}
+                    priority
                   />
                 )}
               </motion.div>
-              {anEnd && (
-                <motion.div
-                  style={{ width: '43.5vw' }}
-                  className="flex items-center justify-center mt-10"
-                >
-                  {/* <LoanCasesBody list={data} /> */}
-                </motion.div>
-              )}
+              {anEnd && <LoanCasesPreview list={data} />}
             </div>
           </section>
+          <div className="h-24 border-t" />
+          <ProductBlock data={PRODUCT_DATA} />
         </Layout>
       </main>
     </>
