@@ -66,7 +66,7 @@ export const ProductBlock = ({ data, className }: ProductBlockProps) => {
   }, [coverOnload])
 
   return (
-    <section className={`pr-40 pl-40 pt-2 pb-20 ${className}`}>
+    <section className={`max-w-screen-xxl m-auto pt-2 pb-20 ${className}`}>
       <div className="grid grid-cols-[10rem_1fr_1.5rem]">
         <h3 className="text-xl rounded-sm w-full text-center font-bold bg-primaryBlack text-white pt-2 pb-2 pl-3 pr-3">
           產品服務項目

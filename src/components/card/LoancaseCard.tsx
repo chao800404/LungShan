@@ -77,6 +77,8 @@ export const LoancaseCard = ({
         priority
         className="object-cover saturate-50 hover:saturate-150 duration-300 will-change-contents"
         draggable={false}
+        placeholder="blur"
+        blurDataURL={imgUrl}
       />
     </motion.div>
   )

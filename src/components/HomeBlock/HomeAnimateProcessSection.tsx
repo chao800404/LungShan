@@ -84,6 +84,8 @@ const ImageComponent = ({
         priority
         sizes="auto"
         draggable={false}
+        placeholder="blur"
+        blurDataURL={image}
       />
     </div>
   )

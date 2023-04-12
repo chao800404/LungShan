@@ -17,6 +17,8 @@ const ImageContent = ({ url }: { url: string }) => {
         src={url}
         priority
         draggable={false}
+        placeholder="blur"
+        blurDataURL={url}
       />
     </div>
   )
@@ -91,6 +93,8 @@ const LogoAnWrapper = ({ list }: { list: ImageContent[]; index?: number }) => {
               sizes="auto"
               priority
               draggable={false}
+              placeholder="blur"
+              blurDataURL={c.url}
             />
           </motion.div>
         )

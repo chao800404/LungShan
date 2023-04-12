@@ -14,6 +14,8 @@ export const LoanCasesOverview = (props: CasesType) => {
             alt={props.title}
             className="object-cover rounded border border-gray-900"
             sizes="auto"
+            placeholder="blur"
+            blurDataURL={props.imgUrl}
           />
         </div>
         <div className="flex-1 border p-5 rounded">

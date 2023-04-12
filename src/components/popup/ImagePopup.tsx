@@ -18,7 +18,7 @@ export const ImagePopup = React.memo(
     const [focusIndex, setFocusIndex] = useState(index)
 
     return (
-      <div className="bg-[rgba(0,0,0,0.1)] backdrop-blur-sm w-screen h-screen fixed top-0 left-0 z-40 grid select-none">
+      <div className="bg-[rgba(0,0,0,0.1)] backdrop-blur-sm w-screen h-screen fixed top-0 left-0 z-[999] grid select-none">
         <div className="max-w-6xl h-fit bg-white m-auto self-center justify-self-center border rounded-md shadow-xl overflow-hidden">
           <div className="border-b p-3 flex items-center justify-between">
             <h3 className="font-bold text-gray-300">公司環境照片</h3>

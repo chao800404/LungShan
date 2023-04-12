@@ -15,6 +15,8 @@ export const HomePageCover = () => {
             src="/images/cover.svg"
             priority
             draggable={false}
+            placeholder="blur"
+            blurDataURL="/images/cover.svg"
           />
           <div className="absolute left-0 -bottom-8 w-full h-5 overflow-hidden flex justify-center">
             <motion.div

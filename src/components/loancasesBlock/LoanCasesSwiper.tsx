@@ -11,8 +11,7 @@ import {
   wrap,
 } from 'framer-motion'
 import { LoancaseCard } from '../card'
-import { LoancaseCardProps } from '../card/type'
-import { BlockComponent, LoanCasesSwiperProps } from './type'
+import { BlockComponent } from './type'
 
 export const LoanCasesSwiper: BlockComponent = ({ list }) => {
   const baseX = useMotionValue(0)

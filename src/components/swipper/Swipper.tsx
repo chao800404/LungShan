@@ -109,6 +109,8 @@ export const Swipper = ({
           alt="image"
           onDragEnd={handleOnDrag as HandleOnDrag}
           priority
+          placeholder="blur"
+          blurDataURL={images[imageIndex]}
         />
       </AnimatePresence>
       <div className="absolute right-0 bottom-0 z-20 flex bg-primaryBlack text-primary ">

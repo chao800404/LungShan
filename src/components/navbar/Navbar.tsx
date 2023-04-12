@@ -58,7 +58,8 @@ export const Navbar = ({ list }: NavbarProps) => {
     >
       <motion.nav
         animate={{ height: !onTop ? 0 : 60, opacity: !onTop ? 0 : 1 }}
-        className="flex items-center border-b-[1px]"
+        initial={{ height: 60 }}
+        className="flex items-center border-b-[1px] will-change-contents"
       >
         <Link
           href="/"

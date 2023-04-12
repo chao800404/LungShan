@@ -21,6 +21,8 @@ export const MediaAndImageBlock: React.FC<MediaAndImageBlockProps> = ({
           sizes="auto"
           priority
           draggable={false}
+          placeholder="blur"
+          blurDataURL={imageUrl}
         />
       </div>
       <div className="w-full h-[17rem] bg-slate-200 rounded-md  overflow-hidden border shadow-sm shadow-primaryBlack relative">

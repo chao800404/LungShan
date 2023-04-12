@@ -28,7 +28,6 @@ export const LoanCasesBody = ({
 
   const handleCardPointerdown = (id: string | number, casePath?: string) => {
     setFocusId(id)
-    console.log(route.query.case)
     if (!route.query.case && casePath) route.push(casePath)
   }
 

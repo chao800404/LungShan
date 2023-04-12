@@ -19,6 +19,8 @@ export const QAndABlockFigure = ({
         src={imgUrl}
         sizes="auto"
         priority
+        placeholder="blur"
+        blurDataURL={imgUrl}
       />
       <figcaption className="relative bg-white w-full p-5 shadow-md shadow-[rgba(0,0,0,0.2)] z-10">
         <h2 className="font-black">
