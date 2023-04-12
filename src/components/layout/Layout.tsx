@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar } from '../navbar'
 import { Footer } from '../footer'
+import NAVBAR_DATA from '@/data/navbar.json'
 
 type LayoutProps = {
   children: JSX.Element[] | JSX.Element
@@ -9,9 +10,9 @@ type LayoutProps = {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <Navbar />
+      <Navbar list={NAVBAR_DATA} />
       <div className="min-h-screen">{children}</div>
-      <Footer />
+      <Footer list={NAVBAR_DATA} />
     </>
   )
 }

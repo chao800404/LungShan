@@ -12,14 +12,22 @@ export type NavbarItem<T> = {
   slug: string
 }
 
+export type NavbarData = {
+  title: string
+  id: number
+  slug: string
+  description?: string
+  content?: NavbarData[]
+}
+
 export type NavbarListProps = {
-  list: NavbarItem<LabelContent>[]
+  list: NavbarData[]
   route?: string
   transferRoute?: (slug: string) => void
   setRoute?: (slug) => void
 }
 
-export type NavbarProps = NavbarItem<LabelContent> & {
+export type NavbarProps = NavbarItem<NavbarDatat> & {
   isActive?: boolean
   setRoute?: (slug: sring) => void
   transferRoute?: (slug: string) => void

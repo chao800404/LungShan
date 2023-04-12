@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import * as uuid from 'uuid'
 
 type TapProps = {
   label: string
@@ -46,7 +47,7 @@ const TabContent = ({ label }: { label: LabelContent['content'] }) => {
   return (
     <div className="p-4 bg-gray-50">
       {label.map((item) => (
-        <details className={`border-b pt-2 pb-2 pl-3`}>
+        <details key={uuid.v4()} className={`border-b pt-2 pb-2 pl-3`}>
           <summary id="question_and_answer" className="font-black text-lg">
             {item.question}
           </summary>

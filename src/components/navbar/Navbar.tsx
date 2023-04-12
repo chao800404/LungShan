@@ -1,27 +1,26 @@
 import React, { useCallback, useMemo, useState, useEffect } from 'react'
-import NAVBAR_DATA from '@/data/navbar.json'
 import Link from 'next/link'
 import { NavbarList, NavbarBaseList } from './NavbarList'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Button } from '../button'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import { NavbarData } from './type'
 
-type NavbarData = {
-  title: string
-  id: number
-  slug: string
-  description?: string
-  content?: NavbarData[]
+type NavbarProps = {
+  list: {
+    first: NavbarData[]
+    second: NavbarData[]
+  }
 }
 
-export const Navbar = () => {
-  const routes = [...NAVBAR_DATA.first, ...NAVBAR_DATA.second]
+export const Navbar = ({ list }: NavbarProps) => {
   const router = useRouter()
+  const routes = [...list.first, ...list.second]
   const [curRoute, setCurRoute] = useState({
     slug: router.route,
   })
-
+  const [onTop, setOnTop] = useState(true)
   const routeName = useMemo(() => {
     return selectRouteName(routes, router.route)
   }, [router.route])
@@ -42,9 +41,25 @@ export const Navbar = () => {
     })
   }
 
+  useEffect(() => {
+    const handleOnScroll = () => {
+      const scrollY = window.scrollY
+      if (scrollY !== 0) setOnTop(false)
+      else setOnTop(true)
+    }
+
+    window.addEventListener('scroll', handleOnScroll)
+    return () => window.removeEventListener('scroll', handleOnScroll)
+  }, [])
+
   return (
-    <header className="font-bold text-sm text-primaryBlack fixed top-0 w-full max-w-screen-2xl bg-white z-50">
-      <nav className="flex items-center border-b-[1px]">
+    <header
+      className={`font-bold text-sm text-primaryBlack fixed top-0 w-full max-w-screen-2xl bg-white z-50 `}
+    >
+      <motion.nav
+        animate={{ height: !onTop ? 0 : 60, opacity: !onTop ? 0 : 1 }}
+        className="flex items-center border-b-[1px]"
+      >
         <Link
           href="/"
           className="w-40 h-auto  border-r border-gray-200 mr-5 px-8 py-2"
@@ -60,8 +75,8 @@ export const Navbar = () => {
             draggable={false}
           />
         </Link>
-        <NavbarList list={NAVBAR_DATA.first} />
-      </nav>
+        <NavbarList list={list.first} />
+      </motion.nav>
       <nav className="flex justify-between items-center border-b-[1px] px-8 py-3">
         <motion.div className="text-lg overflow-hidden">
           <motion.h2
@@ -75,7 +90,7 @@ export const Navbar = () => {
         <div className="flex items-center">
           <NavbarBaseList
             transferRoute={transferRoute}
-            list={NAVBAR_DATA.second}
+            list={list.second}
             route={curRoute.slug}
             setRoute={setRoute}
           />
