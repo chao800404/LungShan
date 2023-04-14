@@ -8,10 +8,10 @@ import { motion, useInView } from 'framer-motion'
 
 const ImageContent = ({ url }: { url: string }) => {
   return (
-    <div className="h-[25rem] relative">
+    <div className="h-[25rem] relative max-sm:h-[10rem]">
       <Image
         fill
-        className="object-cover rounded-xl overflow-hidden border-[1px] border-gray-400"
+        className="object-cover rounded-xl overflow-hidden border-[1px] border-gray-400 max-sm:rounded-sm max-sm:border-0"
         sizes="auto"
         alt="隴山特色"
         src={url}
@@ -24,11 +24,21 @@ const ImageContent = ({ url }: { url: string }) => {
   )
 }
 
-const ImageTableContent: React.FC<TableProps> = ({ title, contents }) => {
+const ImageTableContent: React.FC<TableProps> = ({
+  title,
+  contents,
+  left = false,
+}) => {
   return (
     <>
-      <h2 className="text-4xl font-extrabold">{title}</h2>
-      <ul className="flex gap-2 text-[0.8rem] pt-4 pb-4 font-bold">
+      <h2 className="text-4xl font-extrabold max-lg:text-5xl max-sm:text-3xl max-sm:m-auto">
+        {title}
+      </h2>
+      <ul
+        className={`flex gap-2 text-[0.8rem] pt-4 pb-4 font-bold max-xl:text-lg max-xl:flex-wrap max-xl:w-full max-sm:text-[0.95rem] ${
+          left && 'justify-end max-sm:justify-start'
+        }`}
+      >
         {contents.map((item, i) => (
           <li
             key={i}
@@ -38,14 +48,17 @@ const ImageTableContent: React.FC<TableProps> = ({ title, contents }) => {
           </li>
         ))}
       </ul>
-      <div className="border-[1px] w-fit">
+      <div className="border-[1px] w-fit max-xl:w-full max-lg:flex max-lg:flex-wrap max-lg:text-lg max-sm:text-[0.95rem]">
         {contents.map((item, i) => (
-          <div className={`flex items-center`} key={i}>
+          <div
+            className="flex items-center max-lg:w-1/2 max-mmd:w-full"
+            key={i}
+          >
             <div
               className={`pt-2 pb-2 pr-4 pl-4 w-fit whitespace-nowrap border-r-[1px] font-bold flex items-center bg-primary text-primaryBlack ${
                 i < contents.length - 1 &&
-                'border-b-[1px] border-b-primaryBlack'
-              }`}
+                'border-b-[1px] border-b-primaryBlack max-lg:h-full'
+              } `}
             >
               <p> {item.title}</p>
             </div>
@@ -113,9 +126,11 @@ const BankLogoContent = ({ list }: { list: ImageContent[] }) => {
 
   return (
     <>
-      <h3 className="text-5xl font-bold text-center p-[5rem]">合作相關銀行</h3>
+      <h3 className="text-5xl font-bold text-center p-[5rem] max-sm:text-3xl max-sm:p-0 max-sm:mt-5">
+        合作相關銀行
+      </h3>
       <div className="overflow-hidden h-[5rem]">
-        <div className="grid grid-cols-[repeat(6,_1fr)] gap-10">
+        <div className="grid grid-cols-[repeat(6,_1fr)] gap-10 ">
           {splitImageGroup?.map((list, i) => (
             <LogoAnWrapper key={i} list={list} />
           ))}
@@ -137,8 +152,11 @@ export const HomePageSectionBody = () => {
   const secondBlockIsInView = useInView(secondBlockRef)
 
   return (
-    <motion.div ref={ref} className="text-primary relative z-20">
-      <motion.div className="top-[5rem] grid gird grid-cols-[minmax(1rem,_10rem)_1fr_1fr_minmax(1rem,_10rem)] grid-rows-[5rem_12rem_repeat(2,_1.2fr)_1fr_5rem] bg-[rgba(31,31,31,0.98)] rounded-lg">
+    <motion.div
+      ref={ref}
+      className="text-primary relative z-20 overflow-hidden"
+    >
+      <motion.div className="top-[5rem] grid gird grid-cols-[minmax(1rem,_10rem)_1fr_1fr_minmax(1rem,_10rem)] grid-rows-[5rem_12rem_repeat(2,_1.2fr)_1fr_5rem] bg-[rgba(31,31,31,0.98)] rounded-lg max-xxl:grid-cols-[1.4rem_1fr_1fr_1.4rem] max-xl:gap-3 max-lg:flex max-lg:flex-col max-lg:px-5 max-lg:py-10 max-lg:gap-10 max-sm:rounded-none max-sm:gap-5">
         <motion.div className="col-start-1 col-span-5 row-start-2 row-span-1 justify-self-center">
           <motion.h2
             animate={{
@@ -148,7 +166,7 @@ export const HomePageSectionBody = () => {
                 duration: 0.5,
               },
             }}
-            className="text-5xl font-black text-center will-change-transform"
+            className="text-5xl font-black text-center will-change-transform max-sm:text-3xl"
           >
             選擇攏山優勢
           </motion.h2>
@@ -161,7 +179,7 @@ export const HomePageSectionBody = () => {
                 duration: 0.5,
               },
             }}
-            className="pt-6 will-change-transform"
+            className="pt-6 will-change-transform max-lg:my-5 max-lg:text-center max-sm:pt-2"
           >
             <span className="bg-primary text-primaryBlack pl-3 pr-3 pt-1 pb-1 shadow-lg">
               優質服務、透明流程、 絕對保密、快速支付
@@ -177,7 +195,7 @@ export const HomePageSectionBody = () => {
               duration: 0.5,
             },
           }}
-          className="col-start-2 col-span-1 row-start-3 row-span-1 relative"
+          className="col-start-2 col-span-1 row-start-3 row-span-1 relative max-lg:order-1"
         >
           <ImageContent url="/images/lungshan_loan_1.jpeg" />
         </motion.div>
@@ -189,7 +207,7 @@ export const HomePageSectionBody = () => {
               delay: 0.5,
             },
           }}
-          className="col-start-3 col-span-1 row-start-3 row-span-1 self-center justify-self-start ml-10 flex flex-col items-start"
+          className="col-start-3 col-span-1 row-start-3 row-span-1 self-center justify-self-start ml-10 flex flex-col items-start max-xl:ml-0 max-lg:w-full max-lg:order-2"
         >
           <ImageTableContent
             title={LUNGSHAN_FEATURES.title}
@@ -204,11 +222,12 @@ export const HomePageSectionBody = () => {
               delay: 0.5,
             },
           }}
-          className="col-start-2 col-span-1 row-start-4 row-span-1 self-center justify-self-end mr-10 flex flex-col items-end"
+          className="col-start-2 col-span-1 row-start-4 row-span-1 self-center justify-self-end mr-10 flex flex-col items-end max-xl:mr-0 max-lg:w-full max-lg:order-4"
         >
           <ImageTableContent
             title={LUNGSHAN_PROCESO.title}
             contents={LUNGSHAN_PROCESO.contents}
+            left={true}
           />
         </motion.div>
         <motion.div
@@ -220,11 +239,11 @@ export const HomePageSectionBody = () => {
               duration: 0.5,
             },
           }}
-          className="col-start-3 col-span-1 row-start-4 row-span-1"
+          className="col-start-3 col-span-1 row-start-4 row-span-1 max-lg:order-3"
         >
           <ImageContent url="/images/lungshan_loan_2.jpg" />
         </motion.div>
-        <div className="col-start-1 col-span-4 row-start-5 row-span-1 text-primary self-center justify-self-center pl-40 pr-40 w-full">
+        <div className="col-start-1 col-span-4 row-start-5 row-span-1 text-primary self-center justify-self-center max-w-screen-xxl px-5 w-full max-lg:order-6">
           <BankLogoContent list={LUNGSHAN_BANK_LOGO} />
         </div>
       </motion.div>

@@ -23,6 +23,7 @@ const spring = {
 export const WrapperAnimateNavbarItem = ({
   isVisible,
   list,
+  onPointerDown,
 }: WrapperAnimateNavbarItemProps<PopupItemProps>) => (
   <AnimatePresence>
     {isVisible && (
@@ -33,7 +34,7 @@ export const WrapperAnimateNavbarItem = ({
         key="navbar_popup"
         className="absolute w-[16rem] pt-2"
       >
-        <Popup list={list} />
+        <Popup list={list} onPointerDown={onPointerDown} />
       </motion.div>
     )}
   </AnimatePresence>
@@ -43,16 +44,17 @@ export const NavbarItem = ({ title, content, slug }: NavbarProps) => {
   const [hover, setHover] = useState(false)
 
   const setHide = useCallback(() => setHover(false), [])
+  const setShow = useCallback(() => setHover(true), [])
   const toggleShow = useCallback(() => setHover((prev) => !prev), [])
 
   return (
     <motion.li
       whileHover="hover"
       className="relative z-30 cursor-pointer"
-      onMouseEnter={toggleShow}
-      onMouseLeave={toggleShow}
+      onMouseEnter={setShow}
+      onMouseLeave={setHide}
     >
-      <motion.div className="p-2 ">
+      <motion.div className="p-2">
         <Link href={`${slug}`}>{title}</Link>
       </motion.div>
       <motion.span
@@ -60,7 +62,11 @@ export const NavbarItem = ({ title, content, slug }: NavbarProps) => {
         className="flex w-full h-full -z-10 absolute top-0 left-0 bg-white rounded-md will-change-auto scale-0"
       />
       {content && content.length > 0 && (
-        <WrapperAnimateNavbarItem isVisible={hover} list={content} />
+        <WrapperAnimateNavbarItem
+          isVisible={hover}
+          list={content}
+          onPointerDown={setHide}
+        />
       )}
     </motion.li>
   )

@@ -5,6 +5,7 @@ import * as LOAN_PHONE_AN_1 from '../../../public/lottieJson/loan_phone_an_1.jso
 import * as LOAN_PHONE_AN_3 from '../../../public/lottieJson/loan_phone_an_3.json'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { useCalcWindowSize } from '@/utils'
 
 type Data = {
   title: string
@@ -72,9 +73,11 @@ const ImageComponent = ({
 }) => {
   return (
     <div
-      className={`relative w-[20rem] h-[16rem] rounded-md shadow-gray-500 shadow-sm border border-gray-400 overflow-hidden ${
-        align === 'left' ? 'mr-auto' : 'ml-auto'
-      }`}
+      className={`relative w-[20rem] h-[16rem] rounded-md shadow-gray-500 shadow-sm border border-gray-400 overflow-hidden ml-auto  ${
+        align === 'left'
+          ? 'mr-auto max-lg:ml-0 max-lg:mr-auto'
+          : 'ml-auto max-lg:ml-0 max-lg:mr-auto'
+      } max-md:hidden`}
     >
       <Image
         src={image}
@@ -115,18 +118,24 @@ const AnimateBlock = ({
     }
   }
 
+  const { screenW } = useCalcWindowSize()
+  // const isDesktop = screenW >= 1024
   const isEven = index % 2 === 0
 
   return (
     <motion.div
-      className={`pl-40 pr-40 w-full grid grid-cols-[repeat(3,_1fr)] min-h-screen overflow-hidden absolute top-0 ${
+      className={`w-full grid max-w-screen-xxl px-5 grid-cols-[repeat(3,_1fr)] min-h-screen overflow-hidden absolute top-0 ${
         isActive ? 'z-10' : 'z-0'
-      } `}
+      } max-lg:grid-cols-[repeat(2,_1fr)] max-md:grid-cols-[100%]`}
     >
       <motion.div
-        className={`self-center col-span-1 justify-self-end row-start-1 row-span-1 ${
+        className={`self-center col-span-1 justify-self-end  row-start-1 row-span-1 ${
           isActive ? 'visible' : 'invisible'
-        } ${isEven ? 'col-start-1' : 'col-start-3'}`}
+        } ${
+          isEven
+            ? 'col-start-1 max-lg:col-start-2 max-lg:col-span-1 max-md:col-start-1  max-md:row-start-1'
+            : 'col-start-3 max-lg:col-start-2 max-lg:col-span-1 max-md:col-start-1  max-md:row-start-1'
+        } max-lg:ml-0 mr-auto`}
       >
         <AnimatePresence>
           {isLast && isActive && (
@@ -147,7 +156,7 @@ const AnimateBlock = ({
         onAnimationComplete={() => setAnComplete(true)}
         className={`h-[40rem] w-[21rem] rounded-xl bg-primaryBlack p-2 col-start-2 col-span-1 shadow-sm shadow-black justify-self-center self-center ${
           isActive ? 'visible' : 'invisible'
-        }`}
+        } max-xl:h-[35rem] max-xl:w-[18rem] max-lg:h-[45rem] max-lg:w-[24rem] max-lg:col-start-1 max-lg:col-span-1 max-mmd:h-[85vw] max-mmd:w-[44vw] max-md:row-start-1 max-sm:w-[36vh] max-sm:h-[70vh]`}
       >
         <div className="bg-gray-100 h-full w-full col-start-2 colr-span-1 rounded-[8px] overflow-hidden">
           <Lottie
@@ -162,8 +171,12 @@ const AnimateBlock = ({
       </motion.div>
       <motion.div
         className={`text-black self-center col-span-1 justify-self-end row-start-1 row-span-1 ${
-          isEven ? 'col-start-3' : 'col-start-1'
-        } ${isEven ? 'text-start' : 'text-end'}   ${isLast && 'text-start'}`}
+          isEven
+            ? 'col-start-3 max-lg:col-start-2 max-lg:col-span-1 max-md:col-start-1  max-md:row-start-1'
+            : 'col-start-1 max-lg:col-start-2 max-lg:col-span-1 max-md:col-start-1  max-md:row-start-1'
+        } ${isEven ? 'text-start' : 'text-end max-lg:text-start'}   ${
+          isLast && 'text-start max-lg:mb-[25rem]'
+        } max-md:z-20 max-md:mb-[25rem]`}
       >
         <AnimatePresence>
           {isActive && (
@@ -174,14 +187,17 @@ const AnimateBlock = ({
               exit="exit"
             >
               <motion.h3
-                className={`font-bold text-[2rem] ${!isLast && 'mb-5'}`}
+                className={`font-bold text-[2rem] ${
+                  !isLast && 'mb-5'
+                } max-xl:text-[1.8rem] max-md:max-w-sm max-md:bg-[rgba(255,255,255,0.8)] max-md:p-5 max-md:text-2xl max-md:rounded-lg max-md:drop-shadow-lg max-md:border-2 max-md:backdrop-blur-sm max-md:border-primaryBlack max-sm:text-base max-sm:p-2`}
               >
                 <motion.span>{title}</motion.span>
+                <hr className="hidden max-sm:block" />
                 <motion.span
                   animate={{
                     opacity: isInView && anComplete ? 1 : 0,
                   }}
-                  className="text-primaryGray"
+                  className="text-primaryGray max-md:text-primaryBlue"
                 >
                   {` "${subTitle}" `}
                 </motion.span>
@@ -230,7 +246,7 @@ export const HomeAnimateProcessSection = () => {
   return (
     <section className="h-auto">
       <div className={`sticky top-0 h-screen snap-center`}>
-        <div className="absolute top-0 w-full h-full">
+        <div className="absolute top-0 w-full h-full flex justify-center">
           {data.map((item, i) => (
             <AnimateBlock
               key={i}

@@ -28,13 +28,13 @@ export const MediaSection = () => {
     <motion.section className="flex items-center justify-center mb-12 overflow-hidden">
       <motion.div
         ref={ref}
-        className={`pl-40 pr-40 flex flex-col w-full relative -z-10`}
+        className={`flex flex-col w-full relative -z-10 max-w-screen-xxl px-5 max-sm:p-0 `}
         style={{ scale: 1 + sc }}
       >
-        <div className="rounded-3xl overflow-hidden flex items-center justify-center relative">
+        <div className="rounded-3xl overflow-hidden flex items-center justify-center relative max-sm:rounded-none">
           <motion.div
             whileHover={{ color: '#6190EB' }}
-            className="text-primaryBlue z-10 absolute text-[5rem]"
+            className="text-primaryBlue z-10 absolute text-[5rem] max-sm:text-[3rem]"
           >
             <BsFillPlayCircleFill className="border-2 border-gray-900 rounded-full" />
           </motion.div>

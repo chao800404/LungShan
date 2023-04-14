@@ -17,6 +17,9 @@ module.exports = {
       '1/2': '50%',
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-notoSans)', ...fontFamily.sans],
+      },
       boxShadow: {
         body: '0 0 0 1px #d9d9d9',
       },
@@ -38,16 +41,13 @@ module.exports = {
         primaryBlue: '#05c',
       },
     },
-    fontFamily: {
-      primary: ['var(--lora-font)', ...fontFamily.sans],
-      serif: ['var(--lora-font)', ...fontFamily.serif],
-    },
     gridTemplateColumns: {
       layout: 'minmax(0 , 1fr) minmax(min-content , 1680px) minmax(0 , 1fr)',
     },
     screens: {
       sm: '640px',
       md: '768px',
+      mmd: '925px',
       lg: '1024px',
       xl: '1280px',
       xxl: '1365px',

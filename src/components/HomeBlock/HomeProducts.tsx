@@ -161,11 +161,6 @@ type Content = {
   subtitle?: string
 }
 
-type BlockProps = {
-  type: string
-  contents: Content[]
-}
-
 const ImageBlock = ({ contents }: { contents: Content[] }) => {
   return (
     <div className="flex gap-2">
@@ -226,20 +221,32 @@ export const HomeProducts = () => {
 
   return (
     <motion.div className="overflow-hidden">
-      <section className="pb-40">
-        <div className="flex gap-10 mt-[8rem] mb-[8rem] pr-40 pl-40">
-          {data.map((item) => (
-            <div key={item.id} className="text-primaryBlack">
-              <h3 className="text-6xl font-black mb-6">{item.percentage}</h3>
-              <p className="text-xl font-bold">{item.description}</p>
-              <p className="text-xs mt-5">{item.subTitle}</p>
-            </div>
-          ))}
+      <section className="pb-40 max-xl:pb-20 max-sm:pb-5">
+        <div className="max-sm:overflow-auto hide_scrollbar max-sm:touch-x">
+          <div className="flex gap-10 mt-[8rem] mb-[8rem] max-w-screen-xxl m-auto px-5 max-xl:mt-[3rem] max-xl:mb-[3rem] max-lg:flex-wrap max-lg:gap-5 max-sm:gap-3 max-sm:flex  max-sm:flex-nowrap max-sm:w-fit">
+            {data.map((item) => (
+              <div
+                key={item.id}
+                className="text-primaryBlack max-lg:w-[48.5%] max-lg:m-auto max-lg:border max-lg:rounded-lg max-lg:shadow-md max-lg:p-5 max-md:w-[47%] max-sm:w-[18rem]"
+              >
+                <h3 className="text-6xl font-black mb-6 max-xl:text-center max-xl:text-7xl max-xl:mb-10 max-md:text-5xl">
+                  {item.percentage}
+                </h3>
+                <p className="text-xl font-bold max-xl:text-justify max-md:h-32 max-sm:text-base max-sm:h-14">
+                  {item.description}
+                </p>
+                <p className="text-xs mt-5 max-xl:text-base max-xl:border-t max-xl:pt-5 max-lg:text-lg">
+                  {item.subTitle}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-        <h2 className="text-5xl font-black pt-20 pb-10 pl-40 pr-40">
+
+        <h2 className="text-5xl font-black pt-20 pb-10 max-w-screen-xxl m-auto px-5 max-xl:text-7xl max-mmd:text-[8vw] max-mmd:text-center max-sm:text-[9vw] max-sm:px-0">
           我們提供這些服務項目
         </h2>
-        <ul className="pr-40 pl-40 flex gap-2">
+        <ul className="flex gap-2 max-w-screen-xxl m-auto px-5 max-mmd:flex-wrap max-mmd:justify-center max-sm:justify-start">
           {data_2.map((item, i) => (
             <li key={item.id}>
               <Button
@@ -247,7 +254,7 @@ export const HomeProducts = () => {
                   i * 2 !== Math.abs(blockIndex) &&
                   i * 2 + 1 !== Math.abs(blockIndex) &&
                   'bg-white text-primaryBlack hover:bg-gray-100 border-slate-200 hover:border-slate-400  font-black ease-out duration-300'
-                } `}
+                } max-xl:text-xl max-sm:text-[0.9rem]`}
               >
                 <span
                   onClick={() => setBlockIndex(-(i * 2))}
@@ -259,7 +266,7 @@ export const HomeProducts = () => {
             </li>
           ))}
         </ul>
-        <motion.div className="flex w-full h-[38rem] justify-center items-center mt-10">
+        <motion.div className="flex w-full h-[38rem] justify-center items-center mt-10 max-sm:mt-0">
           <motion.div
             className="w-full cursor-grab h-[30rem] will-change-transform touch-none"
             dragConstraints={{ left: 0, right: 0 }}
@@ -278,7 +285,7 @@ export const HomeProducts = () => {
           >
             <motion.div
               ref={ref}
-              className="grid grid-flow-col grid-rows-1 h-full gap-2 pl-40 pr-40"
+              className="grid grid-flow-col grid-rows-1 h-full gap-2 max-w-screen-xxl px-5 m-auto "
             >
               {render()}
             </motion.div>

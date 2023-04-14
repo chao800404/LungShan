@@ -14,4 +14,4 @@ export type ImageContent = {
   id: number
 }
 
-export type TableProps = TableContents<TableItem>
+export type TableProps = TableContents<TableItem> & { left?: boolean }

@@ -115,12 +115,15 @@ export const Swipper = ({
       </AnimatePresence>
       <div className="absolute right-0 bottom-0 z-20 flex bg-primaryBlack text-primary ">
         <div
-          className="next text-[2.2rem] border-r border-gray-700"
+          className="next text-[2.2rem] max-mmd:text-[3rem] border-r border-gray-700"
           onClick={() => paginate(-1)}
         >
           <MdKeyboardArrowLeft />
         </div>
-        <div className="prev text-[2.2rem]" onClick={() => paginate(1)}>
+        <div
+          className="prev text-[2.2rem] max-mmd:text-[3rem]"
+          onClick={() => paginate(1)}
+        >
           <MdKeyboardArrowRight />
         </div>
       </div>

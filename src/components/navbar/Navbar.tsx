@@ -54,7 +54,7 @@ export const Navbar = ({ list }: NavbarProps) => {
 
   return (
     <header
-      className={`font-bold text-sm text-primaryBlack fixed top-0 w-full max-w-screen-2xl bg-white z-50 `}
+      className={`font-bold text-sm text-primaryBlack fixed top-0 w-full max-w-screen-2xl bg-white z-50 max-sm:hidden`}
     >
       <motion.nav
         animate={{ height: !onTop ? 0 : 60, opacity: !onTop ? 0 : 1 }}
@@ -63,7 +63,7 @@ export const Navbar = ({ list }: NavbarProps) => {
       >
         <Link
           href="/"
-          className="w-40 h-auto  border-r border-gray-200 mr-5 px-8 py-2"
+          className="w-40 h-auto border-r border-gray-200 mr-5 px-8 py-2 max-xxl:px-4 max-xxl:w-36"
         >
           <Image
             src="/images/logo-2.webp"
@@ -78,8 +78,8 @@ export const Navbar = ({ list }: NavbarProps) => {
         </Link>
         <NavbarList list={list.first} />
       </motion.nav>
-      <nav className="flex justify-between items-center border-b-[1px] px-8 py-3">
-        <motion.div className="text-lg overflow-hidden">
+      <nav className="flex justify-between items-center border-b-[1px] px-8 py-3 max-xxl:px-5">
+        <motion.div className="text-lg overflow-hidden ">
           <motion.h2
             className="will-change-transform"
             initial={{ y: -100 }}

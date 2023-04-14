@@ -30,13 +30,22 @@ const ArrowVariants = {
 
 const MotionLink = motion(Link)
 
-export const PopupItem = ({ title, description, slug }: PopupItemProps) => {
+export const PopupItem = ({
+  title,
+  description,
+  slug,
+  onPointerDown,
+}: PopupItemProps) => {
   return (
     <motion.li
       whileHover="isHover"
+      onPointerDown={onPointerDown}
       className="pr-5 pl-5 pt-2 pb-2 relative overflow-hidden  will-change-auto"
     >
-      <MotionLink href="#" className="flex flex-col gap-1 relative z-20">
+      <MotionLink
+        href={slug || '#'}
+        className="flex flex-col gap-1 relative z-20"
+      >
         <motion.h4 className="font-bold flex items-center text-sm">
           <strong>{title}</strong>
           <motion.div variants={ArrowVariants}>&nbsp; &rArr;</motion.div>

@@ -1,25 +1,19 @@
 import { MouseFollower } from '@/components/mouse'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-// import { Oswald } from 'next/font/google'
+import { Noto_Sans_HK } from 'next/font/google'
 
-// const lora = Oswald({
-//   subsets: ['latin'],
-//   weight: '400',
-// })
+const notoSans = Noto_Sans_HK({
+  subsets: ['latin'],
+  variable: '--font-notoSans',
+  weight: ['100', '300', '400', '500', '700', '900'],
+})
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      {/* <style jsx global>
-        {`
-          :root {
-            --lora-font: ${lora.style.fontFamily};
-          }
-        `}
-      </style> */}
+    <main className={`${notoSans.variable} font-sans`}>
       <MouseFollower />
       <Component {...pageProps} />
-    </>
+    </main>
   )
 }
