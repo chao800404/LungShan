@@ -7,6 +7,7 @@ const notoSans = Noto_Sans_HK({
   subsets: ['latin'],
   variable: '--font-notoSans',
   weight: ['100', '300', '400', '500', '700', '900'],
+  preload: true,
 })
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -15,5 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <MouseFollower />
       <Component {...pageProps} />
     </main>
+    // <>
+    //   <MouseFollower />
+    //   <Component {...pageProps} />
+    // </>
   )
 }

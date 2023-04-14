@@ -29,7 +29,7 @@ type TabContainerProps = {
 const Tab = ({ label, active, isLast, isFirst, onClick }: TapProps) => {
   return (
     <button
-      className={`px-4 py-2 text-[1rem] font-black whitespace-nowrap flex-1 ${
+      className={`px-4 py-2 text-[1rem] font-medium whitespace-nowrap flex-1 ${
         !isFirst && active && 'border-l'
       } ${!isLast && active && 'border-r'} ${
         active
@@ -48,10 +48,10 @@ const TabContent = ({ label }: { label: LabelContent['content'] }) => {
     <div className="p-4 bg-gray-50">
       {label.map((item) => (
         <details key={uuid.v4()} className={`border-b pt-2 pb-2 pl-3`}>
-          <summary id="question_and_answer" className="font-black text-lg">
+          <summary id="question_and_answer" className="font-medium text-lg">
             {item.question}
           </summary>
-          <p className="pl-8 pr-8 pt-1 pb-2 text-gray-500 font-primary text-justify">
+          <p className="pl-8 pr-8 pt-1 pb-2 text-gray-500  text-justify">
             {item.answer}
           </p>
         </details>

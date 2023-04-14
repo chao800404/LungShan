@@ -31,7 +31,7 @@ const ImageTableContent: React.FC<TableProps> = ({
 }) => {
   return (
     <>
-      <h2 className="text-4xl font-extrabold max-lg:text-5xl max-sm:text-3xl max-sm:m-auto">
+      <h2 className="text-4xl font-medium max-lg:text-5xl max-sm:text-3xl max-sm:m-auto">
         {title}
       </h2>
       <ul
@@ -42,7 +42,7 @@ const ImageTableContent: React.FC<TableProps> = ({
         {contents.map((item, i) => (
           <li
             key={i}
-            className="border-primary text-primary pt-1 pb-1 pr-2 pl-2 border  rounded-md shadow-xl"
+            className="border-primary text-primary pt-1 pb-1 pr-2 pl-2 border rounded-md shadow-xl font-thin"
           >
             {item.title}
           </li>
@@ -55,7 +55,7 @@ const ImageTableContent: React.FC<TableProps> = ({
             key={i}
           >
             <div
-              className={`pt-2 pb-2 pr-4 pl-4 w-fit whitespace-nowrap border-r-[1px] font-bold flex items-center bg-primary text-primaryBlack ${
+              className={`pt-2 pb-2 pr-4 pl-4 w-fit whitespace-nowrap border-r-[1px] font-medium flex items-center bg-primary text-primaryBlack ${
                 i < contents.length - 1 &&
                 'border-b-[1px] border-b-primaryBlack max-lg:h-full'
               } `}
@@ -166,7 +166,7 @@ export const HomePageSectionBody = () => {
                 duration: 0.5,
               },
             }}
-            className="text-5xl font-black text-center will-change-transform max-sm:text-3xl"
+            className="text-5xl font-bold text-center will-change-transform max-sm:text-3xl"
           >
             選擇攏山優勢
           </motion.h2>
@@ -181,7 +181,7 @@ export const HomePageSectionBody = () => {
             }}
             className="pt-6 will-change-transform max-lg:my-5 max-lg:text-center max-sm:pt-2"
           >
-            <span className="bg-primary text-primaryBlack pl-3 pr-3 pt-1 pb-1 shadow-lg">
+            <span className="bg-primary text-primaryBlack pl-3 pr-3 pt-1 pb-1 shadow-lg ">
               優質服務、透明流程、 絕對保密、快速支付
             </span>
           </motion.p>

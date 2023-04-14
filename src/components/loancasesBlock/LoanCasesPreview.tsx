@@ -74,7 +74,7 @@ export const LoanCasesPreview = ({ list }: LoanCasesPreviewProps) => {
               <MdKeyboardArrowLeft className="block m-auto h-full" />
             </motion.div>
           </div>
-          {isOverView && <h2 className="font-black">{list[0].title}</h2>}
+          {isOverView && <h2 className="font-bold">{list[0].title}</h2>}
         </div>
         <div className="w-full h-full relative">
           <div className="p-10">

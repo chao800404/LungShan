@@ -55,11 +55,11 @@ export const ServiceCard = ({
         <p className="px-6 text-start">{subtitle}</p>
       </div>
       <div className="border-t flex justify-between px-6 py-2 items-center">
-        <h5 className="font-black"> {title}</h5>
+        <h5 className="font-mono"> {title}</h5>
         <motion.button
           whileHover="hover"
           initial="init"
-          className="px-3 py-1 border border-transparent duration-300 rounded-sm flex items-center gap-2"
+          className="px-3 py-1 border border-transparent duration-300 rounded-sm flex items-center gap-2 font-mono"
         >
           <p>查看案例</p>
           <motion.div variants={variants}>
@@ -68,7 +68,7 @@ export const ServiceCard = ({
         </motion.button>
       </div>
       <div className="border-t flex justify-between px-6 py-2 items-center">
-        <h5 className="font-black"> {topLevel.title}</h5>
+        <h5 className="font-mono"> {topLevel.title}</h5>
         <motion.button className="px-3 py-1 border border-transparent duration-300 rounded-sm flex items-center gap-2">
           <p className="font-bold">{topLevel.amount}</p>
           <div className="text-xl">

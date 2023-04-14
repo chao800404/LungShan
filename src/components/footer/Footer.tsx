@@ -27,7 +27,7 @@ const FooterList = ({
 }: FooterListProps) => {
   return (
     <div className="justify-self-start border-l w-full max-lg:border-t">
-      <h3 className="text-2xl font-black py-2 px-5 border-b">{title}</h3>
+      <h3 className="text-2xl font-bold py-2 px-5 border-b">{title}</h3>
       <ul
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
@@ -36,7 +36,7 @@ const FooterList = ({
         {list?.map((item) => (
           <li
             key={uuid.v4()}
-            className="text-md text-gray-400 font-black hover:text-gray-800 max-md:text-base max-md:text-gray-500 max-md:w-1/2"
+            className="text-md text-gray-400 font-serif hover:text-gray-800 max-md:text-base max-md:text-gray-500 max-md:w-1/2"
           >
             <Link href={item.slug}> {item.title}</Link>
           </li>
@@ -56,14 +56,16 @@ export const Footer = ({ list }: FooterProps) => {
     <footer className="border-t">
       <div className="grid grid-cols-[1.5fr_1fr_1fr] text-sm  m-auto max-lg:grid-cols-[repeat(2,_1fr)] max-md:grid-cols-[100%]">
         <div className="flex flex-col gap-2 px-10 py-5 max-xxl:px-5 max-lg:col-span-2 max-md:col-span-1">
-          <h3 className="text-3xl font-black">攏山股份有限公司</h3>
-          <p className="max-md:text-base">桃園市中壢區領航南路三段352號</p>
+          <h3 className="text-3xl font-bold ">攏山股份有限公司</h3>
+          <p className="max-md:text-base font-thin">
+            桃園市中壢區領航南路三段352號
+          </p>
           <h2
-            className="text-3xl mt-auto w-fit hover:underline"
+            className="text-3xl mt-auto w-fit hover:underline font-bold"
             onMouseEnter={() => setPointerEvent('Focus')}
             onMouseLeave={() => setPointerEvent('Default')}
           >
-            <a href="tel:032876234">03-2876234</a>
+            <a href="tel:032876234">0800-777-992</a>
           </h2>
         </div>
         <FooterList

@@ -13,7 +13,7 @@ export const NavbarList = ({ list }: NavbarListProps) => {
 
   return (
     <ul
-      className="flex gap-5 "
+      className="flex gap-5"
       onMouseEnter={() => setPointerEvent('Link')}
       onMouseLeave={() => setPointerEvent('Default')}
     >

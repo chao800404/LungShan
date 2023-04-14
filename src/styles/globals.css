@@ -16,6 +16,10 @@
     pointer-events: none;
   } */
 
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+
   ::-webkit-scrollbar {
     height: 5px;
     width: 5px;

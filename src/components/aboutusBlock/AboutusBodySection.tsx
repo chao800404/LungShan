@@ -67,7 +67,7 @@ export const AboutusBodySection = () => {
         </div>
 
         <div className="self-center justify-self-start ml-3">
-          <h3 className="text-4xl font-black">
+          <h3 className="text-4xl font-bold">
             攏山服務
             <br />
             提供舒適環境

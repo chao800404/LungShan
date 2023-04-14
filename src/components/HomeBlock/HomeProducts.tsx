@@ -232,7 +232,7 @@ export const HomeProducts = () => {
                 <h3 className="text-6xl font-black mb-6 max-xl:text-center max-xl:text-7xl max-xl:mb-10 max-md:text-5xl">
                   {item.percentage}
                 </h3>
-                <p className="text-xl font-bold max-xl:text-justify max-md:h-32 max-sm:text-base max-sm:h-14">
+                <p className="text-xl font-medium max-xl:text-justify max-md:h-32 max-sm:text-base max-sm:h-14">
                   {item.description}
                 </p>
                 <p className="text-xs mt-5 max-xl:text-base max-xl:border-t max-xl:pt-5 max-lg:text-lg">
@@ -243,7 +243,7 @@ export const HomeProducts = () => {
           </div>
         </div>
 
-        <h2 className="text-5xl font-black pt-20 pb-10 max-w-screen-xxl m-auto px-5 max-xl:text-7xl max-mmd:text-[8vw] max-mmd:text-center max-sm:text-[9vw] max-sm:px-0">
+        <h2 className="text-5xl font-bold pt-20 pb-10 max-w-screen-xxl m-auto px-5 max-xl:text-7xl max-mmd:text-[8vw] max-mmd:text-center max-sm:text-[9vw] max-sm:px-0">
           我們提供這些服務項目
         </h2>
         <ul className="flex gap-2 max-w-screen-xxl m-auto px-5 max-mmd:flex-wrap max-mmd:justify-center max-sm:justify-start">
@@ -253,7 +253,7 @@ export const HomeProducts = () => {
                 className={`shadow-none shadow-gray-50 border  ${
                   i * 2 !== Math.abs(blockIndex) &&
                   i * 2 + 1 !== Math.abs(blockIndex) &&
-                  'bg-white text-primaryBlack hover:bg-gray-100 border-slate-200 hover:border-slate-400  font-black ease-out duration-300'
+                  'bg-white text-primaryBlack hover:bg-gray-100 border-slate-200 hover:border-slate-400  font-medium ease-out duration-300'
                 } max-xl:text-xl max-sm:text-[0.9rem]`}
               >
                 <span

@@ -10,18 +10,18 @@ export const HomePageCover = () => {
         <div className="relative w-[60rem] h-[13.5rem] max-lg:w-full max-md:h-fit">
           <h1 className="flex h-full text-primaryBlack max-md:flex-col max-sm:items-center">
             <span className="block mt-auto">
-              <span className="block text-[4.5rem] font-black self-end leading-[4.5rem] max-lg:text-[7.1vw] max-md:text-[15.2vw] max-sm:text-[3.2rem] max-sm:leading-[3rem] max-sm:text-center">
+              <span className="block text-[4.5rem] font-bold self-end leading-[4.5rem] max-lg:text-[7.1vw] max-md:text-[15.2vw] max-sm:text-[3.2rem] max-sm:leading-[3rem] max-sm:text-center">
                 最低每10萬元
               </span>
               <span className="block text-[2.5rem] font-bold max-lg:text-[4vw] max-md:text-[5vw] max-md:mt-10 max-sm:mt-2 max-sm:text-center">
-                <span className="text-gray-500 max-sm:font-black max-sm:text-2xl">
+                <span className="text-gray-500 max-sm:font-bold max-sm:text-2xl">
                   無權狀可，
                 </span>
                 最快當天撥款
               </span>
             </span>
 
-            <span className="block ml-3 mt-auto leading-[5.5rem] -tracking-[20px]	text-[17rem] font-[900] h-50 max-lg:text-[25vw] max-md:text-end max-md:mt-20 max-md:mr-8 max-md:text-[35vw] max-sm:text-[9rem] max-sm:mt-10 max-sm:flex max-sm:items-end max-sm:leading-[9rem] max-sm:mx-0 max-sm:m-auto">
+            <span className="block ml-3 mt-auto leading-[5.5rem] -tracking-[20px]	text-[17rem] font-bold h-50 max-lg:text-[25vw] max-md:text-end max-md:mt-20 max-md:mr-8 max-md:text-[35vw] max-sm:text-[9rem] max-sm:mt-10 max-sm:flex max-sm:items-end max-sm:leading-[9rem] max-sm:mx-0 max-sm:m-auto">
               <span className="max-sm:block max-sm:h-fit  max-sm:text-start">
                 478
               </span>

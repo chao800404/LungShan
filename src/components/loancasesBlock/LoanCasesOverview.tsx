@@ -5,7 +5,7 @@ import Image from 'next/image'
 export const LoanCasesOverview = (props: CasesType) => {
   return (
     <div className="w-full h-fit">
-      <h1 className="text-4xl font-black">{props.title}</h1>
+      <h1 className="text-4xl font-bold">{props.title}</h1>
       <div className="flex flex-row-reverse gap-5 mt-8">
         <div className="relative flex-1">
           <Image

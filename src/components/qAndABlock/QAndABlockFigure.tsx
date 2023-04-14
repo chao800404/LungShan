@@ -23,7 +23,7 @@ export const QAndABlockFigure = ({
         blurDataURL={imgUrl}
       />
       <figcaption className="relative bg-white w-full p-5 shadow-md shadow-[rgba(0,0,0,0.2)] z-10">
-        <h2 className="font-black">
+        <h2 className="font-bold">
           <span>適合客戶：</span>
           <span className="font-normal text-base block mt-2 text-gray-500">
             {description}

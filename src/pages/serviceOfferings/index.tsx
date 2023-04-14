@@ -15,7 +15,7 @@ export default function ServiceOfferings() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
+      <main className="max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
         <Layout>
           <div className="h-28 mb-2" />
           <motion.div className="mt-32 max-w-screen-xxl m-auto overflow-hidden">
@@ -31,7 +31,7 @@ export default function ServiceOfferings() {
               animate={{ y: 0, opacity: 1 }}
               initial={{ y: 100, opacity: 0 }}
               transition={{ duration: 0.6, type: 'just' }}
-              className="text-7xl font-black text-center py-3 will-change-transform"
+              className="text-7xl font-bold text-center py-3 will-change-transform"
             >
               攏山服務項目
             </motion.h1>

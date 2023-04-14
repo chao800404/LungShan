@@ -81,7 +81,7 @@ export const ScaleAndCoverImageBlock: React.FC<
       >
         <motion.h3
           variants={H3Container}
-          className="text-gray-200 font-black text-3xl mb-5"
+          className="text-gray-200 font-bold text-3xl mb-5"
         >
           {title}
         </motion.h3>
@@ -91,7 +91,7 @@ export const ScaleAndCoverImageBlock: React.FC<
         >
           <HiOutlineExternalLink />
         </motion.div>
-        <motion.p variants={BaseContainer} className="text-primary font-black ">
+        <motion.p variants={BaseContainer} className="text-primary font-medium">
           {description}
         </motion.p>
       </motion.div>

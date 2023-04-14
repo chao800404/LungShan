@@ -54,7 +54,7 @@ export const Navbar = ({ list }: NavbarProps) => {
 
   return (
     <header
-      className={`font-bold text-sm text-primaryBlack fixed top-0 w-full max-w-screen-2xl bg-white z-50 max-sm:hidden`}
+      className={`font-normal text-sm text-primaryBlack fixed top-0 w-full max-w-screen-2xl bg-white z-50 max-sm:hidden`}
     >
       <motion.nav
         animate={{ height: !onTop ? 0 : 60, opacity: !onTop ? 0 : 1 }}

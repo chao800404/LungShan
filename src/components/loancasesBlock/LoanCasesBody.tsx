@@ -41,7 +41,7 @@ export const LoanCasesBody = ({
       {list?.map((item) => (
         <div className="w-full" key={item.id}>
           <h3
-            className={`${titleSize} cursor-pointer font-black mb-5 hover:text-gray-700 hover:underline duration-300`}
+            className={`${titleSize} cursor-pointer font-bold mb-5 hover:text-gray-700 hover:underline duration-300`}
             onMouseEnter={() => setPointerEvent('Focus')}
             onMouseLeave={() => setPointerEvent('Default')}
             onClick={() => route.push(item.casePath || '')}
