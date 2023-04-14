@@ -75,6 +75,10 @@
   }
 
   details > summary#question_and_answer::marker {
-    content: '';
+    display: none;
+  }
+
+  details > summary::-webkit-details-marker {
+    display: none;
   }
 }
