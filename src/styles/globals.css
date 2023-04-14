@@ -34,6 +34,10 @@
     background: var(--background);
   }
 
+  .tabs_background::-webkit-scrollbar-corner {
+    background: #c3c3c3;
+  }
+
   .hide_scrollbar::-webkit-scrollbar {
     display: none;
   }

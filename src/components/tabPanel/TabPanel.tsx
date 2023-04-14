@@ -34,8 +34,8 @@ const Tab = ({ label, active, isLast, isFirst, onClick }: TapProps) => {
       } ${!isLast && active && 'border-r'} ${
         active
           ? 'bg-gray-50 relative border-gray-300 z-10 rounded-tr-md rounded-tl-md shadow-md  shadow-[rgba(0,0,0,0.2)]'
-          : 'bg-gray-200 border-b border-gray-300'
-      }`}
+          : 'bg-gray-200 border-b border-gray-300 text-gray-400'
+      } max-xxl:rounded-none max-xxl:text-sm`}
       onClick={onClick}
     >
       {label}
@@ -45,13 +45,16 @@ const Tab = ({ label, active, isLast, isFirst, onClick }: TapProps) => {
 
 const TabContent = ({ label }: { label: LabelContent['content'] }) => {
   return (
-    <div className="p-4 bg-gray-50">
+    <div className="p-4 bg-gray-50 max-xxl:p-0">
       {label.map((item) => (
-        <details key={uuid.v4()} className={`border-b pt-2 pb-2 pl-3`}>
-          <summary id="question_and_answer" className="font-medium text-lg">
+        <details key={uuid.v4()} className="border-b py-2 pl-3 max-lg:pl-1">
+          <summary
+            id="question_and_answer"
+            className="font-medium text-lg max-xxl:text-base"
+          >
             {item.question}
           </summary>
-          <p className="pl-8 pr-8 pt-1 pb-2 text-gray-500  text-justify">
+          <p className="pl-8 pr-8 pt-1 pb-2 text-gray-500 text-justify">
             {item.answer}
           </p>
         </details>
@@ -75,11 +78,11 @@ export const TabContainer = ({
   updateLabelIndex,
 }: TabContainerProps) => {
   return (
-    <div className="w-full h-full rounded-md overflow-hidden border border-gray-300 shadow-sm">
-      <div className="flex bg-gray-200">
+    <div className="w-full h-full rounded-md overflow-hidden border border-gray-300 shadow-sm max-xxl:rounded-none max-xxl:border-none">
+      <div className="flex bg-gray-200 tabs_background max-xxl:overflow-scroll touch-pan-x">
         {list.map((tab, index) => (
           <Tab
-            key={tab.id}
+            key={uuid.v4()}
             label={tab.title}
             isLast={index === list.length - 1}
             isFirst={index === 0}

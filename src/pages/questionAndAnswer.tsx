@@ -28,21 +28,35 @@ export default function QuestionAndAnswerPage() {
       <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
         <Layout>
           <section className="min-h-screen">
-            <div className="px-40 text-black pt-48 pb-40 flex gap-5">
+            <div className="max-w-screen-xxl m-auto text-black pt-48 pb-40 flex gap-5 max-xxl:flex max-xxl:pt-28 max-xxl:gap-0 max-xxl:pb-10 max-md:flex-col">
+              <motion.div className="hidden max-md:block sticky top-14 z-30 bg-white border-b shadow-md">
+                <h2 className="p-5 text-base font-mono">
+                  <span className="text-2xl block font-bold mb-2">
+                    {content[0].title}
+                  </span>
+
+                  <span className="font-mono block ">適合客戶：</span>
+                  <span className="text-xs font-medium">
+                    {content[0].description}
+                  </span>
+                </h2>
+              </motion.div>
               <motion.div
                 animate={{ x: 0, opacity: 1 }}
                 initial={{ x: 50, opacity: 0 }}
-                className="sticky top-48 h-[42rem] flex-1 border overflow-hidden rounded-md shadow-md group"
+                className="sticky top-48 h-[42rem] flex-1 border overflow-hidden rounded-md shadow-md group max-xxl:top-14 max-xxl:h-[calc(100vh-1rem)] max-xxl:border-none max-xxl:rounded-none max-xxl:shadow-none max-xxl:border-b-2"
               >
-                <QAndABlockFigure
-                  imgUrl={content[0].imgUrl}
-                  description={content[0].description}
-                />
+                <div className="max-xxl:h-full max-md:h-[25rem]">
+                  <QAndABlockFigure
+                    imgUrl={content[0].imgUrl}
+                    description={content[0].description}
+                  />
+                </div>
                 <Lottie
                   animationData={jsonFile}
                   loop={true}
                   play
-                  className="w-[22rem] h-[22rem] absolute z-20 -left-16 -bottom-20"
+                  className="w-[22rem] h-[22rem] absolute z-20 -left-16 -bottom-20 "
                 />
                 <div className="absolute w-full h-full top-0 left-0 ease-in-out duration-300 flex items-center justify-center group-hover:bg-[rgba(0,0,0,0.3)]">
                   <button className="px-5 py-3 mt-16 text-primary border bg-gray-800 opacity-40 rounded-md group-hover:bg-[rgba(0,0,0,0.5)] group-hover:opacity-100">
@@ -54,7 +68,7 @@ export default function QuestionAndAnswerPage() {
               <motion.div
                 animate={{ x: 0, opacity: 1 }}
                 initial={{ x: -50, opacity: 0 }}
-                className="w-[45rem] min-h-[45rem] bg-gray-50"
+                className="w-[45rem] min-h-[45rem] bg-gray-50 max-xxl:w-[50vw] max-xxl:mt-2.5 max-xxl:border-b max-xxl:border-l max-md:w-[100vw] z-10"
               >
                 <TabContainer
                   updateLabelIndex={updateLabelIndex}
