@@ -66,7 +66,9 @@ export const ProductBlock = ({ data, className }: ProductBlockProps) => {
   }, [coverOnload])
 
   return (
-    <section className={`max-w-screen-xxl m-auto pt-2 pb-20 ${className}`}>
+    <section
+      className={`max-w-screen-xxl m-auto pt-2 pb-20 ${className} max-xxl:px-5`}
+    >
       <div className="grid grid-cols-[10rem_1fr_1.5rem]">
         <h3 className="text-xl rounded-sm w-full text-center font-bold bg-primaryBlack text-white pt-2 pb-2 pl-3 pr-3">
           產品服務項目
@@ -86,21 +88,25 @@ export const ProductBlock = ({ data, className }: ProductBlockProps) => {
       </div>
       <AnimatePresence>
         {load && (
-          <motion.div
-            initial="hide"
-            whileInView="show"
-            className={`flex gap-2 mt-10 ${!shouldShow && 'hidden'}`}
-            viewport={{
-              margin: '-30%',
-              once: true,
-            }}
-            onAnimationComplete={() => setCoverOnload(false)}
-          >
-            {data?.map((item, i) => (
-              <MotionBlock key={`${item.id}_${item.title}`} index={i}>
-                <ProductCard {...item} />
-              </MotionBlock>
-            ))}
+          <motion.div className="max-sm: w-full max-sm:overflow-scroll max-sm:py-3 max-sm:px-1 hide_scrollbar touch-pan-x">
+            <motion.div
+              initial="hide"
+              whileInView="show"
+              className={`flex gap-2 mt-10 ${
+                !shouldShow && 'hidden'
+              } max-xl:grid max-xl:grid-cols-[repeat(3,_1fr)] max-xl:gap-5 max-sm:grid-cols-[repeat(6,_15rem)]`}
+              viewport={{
+                margin: '-30%',
+                once: true,
+              }}
+              onAnimationComplete={() => setCoverOnload(false)}
+            >
+              {data?.map((item, i) => (
+                <MotionBlock key={`${item.id}_${item.title}`} index={i}>
+                  <ProductCard {...item} />
+                </MotionBlock>
+              ))}
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

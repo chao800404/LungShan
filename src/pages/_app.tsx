@@ -12,13 +12,13 @@ const notoSans = Noto_Sans_HK({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${notoSans.variable} font-sans`}>
-      <MouseFollower />
-      <Component {...pageProps} />
-    </main>
-    // <>
+    // <main className={`${notoSans.variable} font-sans`}>
     //   <MouseFollower />
     //   <Component {...pageProps} />
-    // </>
+    // </main>
+    <>
+      <MouseFollower />
+      <Component {...pageProps} />
+    </>
   )
 }

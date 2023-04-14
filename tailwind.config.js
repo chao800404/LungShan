@@ -17,9 +17,9 @@ module.exports = {
       '1/2': '50%',
     },
     extend: {
-      fontFamily: {
-        sans: ['var(--font-notoSans)', ...fontFamily.sans],
-      },
+      // fontFamily: {
+      //   sans: ['var(--font-notoSans)', ...fontFamily.sans],
+      // },
       boxShadow: {
         body: '0 0 0 1px #d9d9d9',
       },

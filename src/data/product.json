@@ -13,26 +13,26 @@
   },
   {
     "id": 2,
-    "title": "汽機車貸款",
-    "path": "/lottieJson/loan_car_an.json",
-    "casePath": "/loancases/vehicle-loan"
-  },
-  {
-    "id": 3,
-    "title": "手機貸款商品業務",
-    "path": "/lottieJson/loan_phone_an.json",
-    "casePath": "/loancases/product-loan"
-  },
-  {
-    "id": 4,
     "title": "民間代書借款",
     "path": "/lottieJson/loan_contracts_an.json",
     "casePath": "/loancases/CoSignert-loan"
   },
   {
-    "id": 5,
+    "id": 3,
     "title": "銀行信用貸款",
     "path": "/lottieJson/loan_credit_an.json",
     "casePath": "/loancases/bankCredit-loan"
+  },
+  {
+    "id": 4,
+    "title": "汽機車貸款",
+    "path": "/lottieJson/loan_car_an.json",
+    "casePath": "/loancases/vehicle-loan"
+  },
+  {
+    "id": 5,
+    "title": "手機貸款商品業務",
+    "path": "/lottieJson/loan_phone_an.json",
+    "casePath": "/loancases/product-loan"
   }
 ]

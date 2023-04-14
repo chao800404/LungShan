@@ -5,6 +5,7 @@ import { FiExternalLink } from 'react-icons/fi'
 import { useRouter } from 'next/router'
 import { LoancaseCardProps } from '../card/type'
 import { motion } from 'framer-motion'
+import { GoLinkExternal } from 'react-icons/go'
 
 type LoanCasesBodyProps = {
   className?: string
@@ -41,11 +42,14 @@ export const LoanCasesBody = ({
       {list?.map((item) => (
         <div className="w-full" key={item.id}>
           <h3
-            className={`${titleSize} cursor-pointer font-bold mb-5 hover:text-gray-700 hover:underline duration-300`}
+            className={`${titleSize} cursor-pointer font-bold flex items-center mb-5 hover:text-gray-700 hover:underline duration-300`}
             onMouseEnter={() => setPointerEvent('Focus')}
             onMouseLeave={() => setPointerEvent('Default')}
             onClick={() => route.push(item.casePath || '')}
           >
+            <span>
+              <GoLinkExternal className="mr-2 text-gray-500 mt-1" />
+            </span>
             {item.title}
           </h3>
           <div className="mt-3">

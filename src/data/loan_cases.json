@@ -64,8 +64,66 @@
     ]
   },
   {
-    "title": "汽機車貸款",
+    "title": "民間代書借款",
+    "casePath": "/loancases/CoSignert-loan",
     "id": 2,
+    "imgUrl": "/images/lungshan_loan_1.jpeg",
+    "cases": [
+      {
+        "id": "/loancases/CoSignert-loan/0",
+        "imgUrl": "/images/cases/co_signer_loan/lungshan_co_signer_loan_1.png",
+        "title": "高雄顏先生成功核貸代書借款15萬元",
+        "description": "顏先生是一位居住在高雄的45歲男性，因為兒子欠下了超過200萬元的賭債，他需要一筆錢來幫助兒子償還債務。顏先生已經賣掉了車子、解約定存，並使用自己的積蓄來償還大部分的債務。然而，仍然存在一些資金缺口。此外，由於顏先生在年輕時期的不懂事行為，與銀行有些瑕疵，現在銀行拒絕與他合作，而且他曾經是融資公司的拖車戶，也被列入黑名單，因此，在正常管道下，他找遍了所有可能的途徑，但仍然無法借到錢，陷入了絕望的境地。"
+      },
+      {
+        "id": "/loancases/CoSignert-loan/1",
+        "imgUrl": "/images/cases/co_signer_loan/lungshan_co_signer_loan_2.jpg",
+        "title": "嘉義許小姐(28)成功核准代書借款10萬元",
+        "description": "嘉義地區的許小姐(28)因為投資而被詐騙，不幸地變成了警示帳戶，進而面臨生活上的困頓。她背負了一筆債務，無法償還，生活壓力倍增。在這個時候，許小姐遇到了我們，尋求財務協助。"
+      },
+      {
+        "id": "/loancases/CoSignert-loan/2",
+        "imgUrl": "/images/cases/co_signer_loan/lungshan_co_signer_loan_3.jpg",
+        "title": "新北廖先生成功核貸代書借款18萬元",
+        "description": "廖先生是一位43歲的中年人，由於前公司進行人力整編而被裁員，完全無預警之下失業了。他不得不改變跑道，已經待業了兩個月，但由於缺乏工作機會，他很快就面臨了財務困境。他育有三個子女，不能讓收入中斷，所以他很幸運地得到了一家連鎖便利商店的雇用，這讓他稍微放心了一些。然而，他仍然感到非常苦惱，因為他需要支付孩子的學費，並且要還清他從親友借的一些錢。他計劃通過貸款來解決這個問題，但他發現銀行和其他貸款機構要求他提供完整六個月的收入證明，這對他來說非常困難。"
+      },
+      {
+        "id": "/loancases/CoSignert-loan/3",
+        "imgUrl": "/images/cases/co_signer_loan/lungshan_co_signer_loan_4.jpg",
+        "title": "新竹許先生(33)成功核貸代書借款20萬元",
+        "description": "新竹地區的許先生(33)是一位勤奮的小型工程行老闆，但因營運資金不足，面臨了資金周轉問題。工人需要日結現金，而且上游廠商拖欠了貨款，這些因素都使得許先生的困境更加嚴重。由於親友借貸的方式讓他感到困擾，許先生因此尋求我們的協助。"
+      }
+    ]
+  },
+  {
+    "title": "銀行信用貸款",
+    "id": 3,
+    "imgUrl": "/images/lungshan_loan_14.jpg",
+    "casePath": "/loancases/bankCredit-loan",
+    "cases": [
+      {
+        "id": "/loancases/bankCredit-loan/0",
+        "imgUrl": "/images/cases/bank_credit_loan/lungshan_bank_credit_loan_1.jpg",
+        "title": "基隆江先生成功核貸信用卡",
+        "description": "江先生(32)是位來自基隆的顧客，他在銀行申請信用卡時一直遇到困難。他被稱為「銀行小白」，因為他一再提交申請，但銀行總是以一句「評分不足」為由婉拒他的申請。江先生一直都渴望擁有一張信用卡，但卻一直難以如願以償，直到他找上了我們。"
+      },
+      {
+        "id": "/loancases/bankCredit-loan/1",
+        "imgUrl": "/images/cases/bank_credit_loan/lungshan_bank_credit_loan_2.png",
+        "title": "台北市陳先生供核貸銀行信貸100萬",
+        "description": "陳先生是一位28歲的年輕人，來自台北市。他因沉迷主播斗內打賞而欠下許多債務，包括數十家小額貸款、地下錢莊、房屋二胎等等。這些債務使他陷入債台高築的境地，無法償還。幸好，他通過朋友的介紹，接觸到了我們。"
+      },
+      {
+        "id": "/loancases/bankCredit-loan/2",
+        "imgUrl": "/images/cases/bank_credit_loan/lungshan_bank_credit_loan_3.jpg",
+        "title": "台中蔡小姐，成功核貸６０萬，並解除查封",
+        "description": "蔡小姐（５２歲），台中人，是一位在國外工作多年的人，由於長期不在台灣，她對於自己名下的不動產並不是很在意。然而，由於她偶爾需要回台灣處理一些事務，她疏忽了稅款的繳納，最終導致了不動產被法院查封的局面。這種突發狀況讓蔡小姐感到十分緊張，因為她沒有足夠的資金來解除查封，欠稅金額高達５０萬元，這是一個非常大的數字。"
+      }
+    ]
+  },
+  {
+    "title": "汽機車貸款",
+    "id": 4,
     "imgUrl": "/images/lungshan_loan_11.jpg",
     "casePath": "/loancases/vehicle-loan",
     "cases": [
@@ -97,7 +155,7 @@
   },
   {
     "title": "手機商品貸款",
-    "id": 3,
+    "id": 5,
     "imgUrl": "/images/lungshan_loan_24.jpg",
     "casePath": "/loancases/product-loan",
     "cases": [
@@ -124,64 +182,6 @@
         "imgUrl": "/images/cases/product_loan/lungshan_product_loan_4.jpg",
         "title": "新竹高先生成功核貸手機貸款5萬元",
         "description": "高先生是一位計程車司機，平時沒有使用信用卡的習慣。然而，最近發生了一場車禍，由於沒有保險，他需要一筆資金來維修車子，以繼續載客賺錢。在這樣的情況下，本公司建議高先生可以使用手機貸款來解決這個維修問題。透過這個方案，高先生成功地貸出了5萬元的資金，並且可以分12期來還款，每個月支付4410元的分期付款。這樣的方案不僅成功地解決了他的車子維修問題，還可以讓他繼續載客賺錢，保持他的收入和生計的來說，透過本公司提供的手機貸款方案，高先生成功地解決了他的維修問題，同時也能夠繼續維持自己的生計和收入。這樣的方案不僅讓他能夠更加輕鬆地應對生活和工作上的挑戰，還可以讓他更好地管理自己的財務狀況，保障自己和家人的生活質量。"
-      }
-    ]
-  },
-  {
-    "title": "銀行信用貸款",
-    "id": 4,
-    "imgUrl": "/images/lungshan_loan_14.jpg",
-    "casePath": "/loancases/bankCredit-loan",
-    "cases": [
-      {
-        "id": "/loancases/bankCredit-loan/0",
-        "imgUrl": "/images/cases/bank_credit_loan/lungshan_bank_credit_loan_1.jpg",
-        "title": "基隆江先生成功核貸信用卡",
-        "description": "江先生(32)是位來自基隆的顧客，他在銀行申請信用卡時一直遇到困難。他被稱為「銀行小白」，因為他一再提交申請，但銀行總是以一句「評分不足」為由婉拒他的申請。江先生一直都渴望擁有一張信用卡，但卻一直難以如願以償，直到他找上了我們。"
-      },
-      {
-        "id": "/loancases/bankCredit-loan/1",
-        "imgUrl": "/images/cases/bank_credit_loan/lungshan_bank_credit_loan_2.png",
-        "title": "台北市陳先生供核貸銀行信貸100萬",
-        "description": "陳先生是一位28歲的年輕人，來自台北市。他因沉迷主播斗內打賞而欠下許多債務，包括數十家小額貸款、地下錢莊、房屋二胎等等。這些債務使他陷入債台高築的境地，無法償還。幸好，他通過朋友的介紹，接觸到了我們。"
-      },
-      {
-        "id": "/loancases/bankCredit-loan/2",
-        "imgUrl": "/images/cases/bank_credit_loan/lungshan_bank_credit_loan_3.jpg",
-        "title": "台中蔡小姐，成功核貸６０萬，並解除查封",
-        "description": "蔡小姐（５２歲），台中人，是一位在國外工作多年的人，由於長期不在台灣，她對於自己名下的不動產並不是很在意。然而，由於她偶爾需要回台灣處理一些事務，她疏忽了稅款的繳納，最終導致了不動產被法院查封的局面。這種突發狀況讓蔡小姐感到十分緊張，因為她沒有足夠的資金來解除查封，欠稅金額高達５０萬元，這是一個非常大的數字。"
-      }
-    ]
-  },
-  {
-    "title": "民間代書借款",
-    "casePath": "/loancases/CoSignert-loan",
-    "id": 5,
-    "imgUrl": "/images/lungshan_loan_1.jpeg",
-    "cases": [
-      {
-        "id": "/loancases/CoSignert-loan/0",
-        "imgUrl": "/images/cases/co_signer_loan/lungshan_co_signer_loan_1.png",
-        "title": "高雄顏先生成功核貸代書借款15萬元",
-        "description": "顏先生是一位居住在高雄的45歲男性，因為兒子欠下了超過200萬元的賭債，他需要一筆錢來幫助兒子償還債務。顏先生已經賣掉了車子、解約定存，並使用自己的積蓄來償還大部分的債務。然而，仍然存在一些資金缺口。此外，由於顏先生在年輕時期的不懂事行為，與銀行有些瑕疵，現在銀行拒絕與他合作，而且他曾經是融資公司的拖車戶，也被列入黑名單，因此，在正常管道下，他找遍了所有可能的途徑，但仍然無法借到錢，陷入了絕望的境地。"
-      },
-      {
-        "id": "/loancases/CoSignert-loan/1",
-        "imgUrl": "/images/cases/co_signer_loan/lungshan_co_signer_loan_2.jpg",
-        "title": "嘉義許小姐(28)成功核准代書借款10萬元",
-        "description": "嘉義地區的許小姐(28)因為投資而被詐騙，不幸地變成了警示帳戶，進而面臨生活上的困頓。她背負了一筆債務，無法償還，生活壓力倍增。在這個時候，許小姐遇到了我們，尋求財務協助。"
-      },
-      {
-        "id": "/loancases/CoSignert-loan/2",
-        "imgUrl": "/images/cases/co_signer_loan/lungshan_co_signer_loan_3.jpg",
-        "title": "新北廖先生成功核貸代書借款18萬元",
-        "description": "廖先生是一位43歲的中年人，由於前公司進行人力整編而被裁員，完全無預警之下失業了。他不得不改變跑道，已經待業了兩個月，但由於缺乏工作機會，他很快就面臨了財務困境。他育有三個子女，不能讓收入中斷，所以他很幸運地得到了一家連鎖便利商店的雇用，這讓他稍微放心了一些。然而，他仍然感到非常苦惱，因為他需要支付孩子的學費，並且要還清他從親友借的一些錢。他計劃通過貸款來解決這個問題，但他發現銀行和其他貸款機構要求他提供完整六個月的收入證明，這對他來說非常困難。"
-      },
-      {
-        "id": "/loancases/CoSignert-loan/3",
-        "imgUrl": "/images/cases/co_signer_loan/lungshan_co_signer_loan_4.jpg",
-        "title": "新竹許先生(33)成功核貸代書借款20萬元",
-        "description": "新竹地區的許先生(33)是一位勤奮的小型工程行老闆，但因營運資金不足，面臨了資金周轉問題。工人需要日結現金，而且上游廠商拖欠了貨款，這些因素都使得許先生的困境更加嚴重。由於親友借貸的方式讓他感到困擾，許先生因此尋求我們的協助。"
       }
     ]
   }

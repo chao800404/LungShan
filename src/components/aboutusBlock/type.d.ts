@@ -5,5 +5,6 @@ export type TimeLineBlockProps = {
   isLast: boolean
   isActive: boolean
   index: number
+  setActiveIndex: (index: number) => vodi
   onClick: () => void
 }

@@ -56,7 +56,8 @@ export const ScamPreventionPopup: React.FC<ScamPreventionPopupProps> = ({
         initial={{ y: -200 }}
         animate={{ y: 0 }}
         onAnimationComplete={() => setComplete(true)}
-        className="rounded-md w-full will-change-transform overflow-hidden bg-gray-50 max-w-3xl  pb-8 shadow-lg border relative"
+        onClick={(e) => e.preventDefault}
+        className="rounded-md w-full will-change-transform overflow-hidden bg-gray-50 max-w-3xl pb-8 shadow-lg border relative"
       >
         {complete ? (
           <motion.div whileHover="show" initial="hide">
@@ -90,6 +91,10 @@ export const ScamPreventionPopup: React.FC<ScamPreventionPopupProps> = ({
           <div className="h-[50vh]"></div>
         )}
       </motion.div>
+      <div
+        onClick={close}
+        className="absolute top-0 left-0 w-screen h-screen -z-10"
+      ></div>
     </motion.div>
   )
 }
