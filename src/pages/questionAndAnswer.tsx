@@ -7,6 +7,8 @@ import * as jsonFile from '../../public/lottieJson/loan_qAndA_an_1.json'
 import Lottie from 'react-lottie-player'
 import { QAndABlockFigure } from '@/components/qAndABlock'
 import { motion } from 'framer-motion'
+import { Button } from '@/components/button'
+import Link from 'next/link'
 
 export default function QuestionAndAnswerPage() {
   const [curLabelIndex, setCurLabelIndex] = useState(0)
@@ -29,7 +31,7 @@ export default function QuestionAndAnswerPage() {
         <Layout>
           <section className="min-h-screen">
             <div className="max-w-screen-xxl m-auto text-black pt-48 pb-40 flex gap-5 max-xxl:flex max-xxl:pt-28 max-xxl:gap-0 max-xxl:pb-10 max-md:flex-col">
-              <motion.div className="hidden max-md:block sticky top-14 z-30 bg-white border-b shadow-md">
+              <motion.div className="hidden max-md:block sticky top-0 z-10 bg-white border-b shadow-md pb-5">
                 <h2 className="p-5 text-base font-mono">
                   <span className="text-2xl block font-bold mb-2">
                     {content[0].title}
@@ -40,6 +42,11 @@ export default function QuestionAndAnswerPage() {
                     {content[0].description}
                   </span>
                 </h2>
+                <motion.div className="ml-5">
+                  <Button className="px-3 py-2 text-xs border-none shadow-none rounded-sm">
+                    <Link href="/">快速聯絡我們</Link>
+                  </Button>
+                </motion.div>
               </motion.div>
               <motion.div
                 animate={{ x: 0, opacity: 1 }}
@@ -68,7 +75,7 @@ export default function QuestionAndAnswerPage() {
               <motion.div
                 animate={{ x: 0, opacity: 1 }}
                 initial={{ x: -50, opacity: 0 }}
-                className="w-[45rem] min-h-[45rem] bg-gray-50 max-xxl:w-[50vw] max-xxl:mt-2.5 max-xxl:border-b max-xxl:border-l max-md:w-[100vw] z-10"
+                className="w-[45rem] min-h-[45rem] bg-gray-50 max-xxl:w-[50vw] max-xxl:mt-2.5 max-xxl:border-b max-xxl:border-l max-md:w-[100vw] z-10 max-md:relative"
               >
                 <TabContainer
                   updateLabelIndex={updateLabelIndex}
