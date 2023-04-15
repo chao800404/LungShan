@@ -23,7 +23,7 @@ export const ImagePopup = React.memo(
           className="absolute w-screen h-screen -z-10 top-0 left-0"
           onClick={onClose}
         />
-        <div className="max-w-6xl h-fit bg-white m-auto self-center justify-self-center border rounded-md shadow-xl overflow-hidden max-lg:w-[90vw] max-md:border max-md:border-primaryBlack">
+        <div className="max-w-6xl h-fit bg-white m-auto self-center justify-self-center border rounded-md shadow-xl overflow-hidden max-lg:w-[90vw] max-md:border max-md:border-primaryBlack max-sm:w-[80vw]">
           <div className="border-b p-3 flex items-center justify-between">
             <h3 className="font-bold text-gray-300 max-md:text-primaryBlack">
               公司環境照片
@@ -35,7 +35,7 @@ export const ImagePopup = React.memo(
               <AiOutlineCloseSquare />
             </div>
           </div>
-          <div className="w-[50rem] h-[25rem] overflow-hidden p-10 max-lg:w-[90vw]  max-lg:m-auto max-md:p-0">
+          <div className="w-[50rem] h-[25rem] overflow-hidden p-10 max-lg:w-[90vw]  max-lg:m-auto max-md:p-0 max-sm:w-full">
             <div className="relative h-full border-primaryBlack border-2 overflow-hidden max-md:border-0">
               <Swipper
                 images={data.map((item) => item.image)}
@@ -45,7 +45,7 @@ export const ImagePopup = React.memo(
               />
             </div>
           </div>
-          <div className="h-fit p-5 w-[50rem] overflow-scroll overflow-y-hidden border-t">
+          <div className="h-fit p-5 w-[50rem] overflow-scroll overflow-y-hidden border-t max-lg:w-full">
             <div className="flex gap-2 w-fit">
               {data.map((item, i) => (
                 <div

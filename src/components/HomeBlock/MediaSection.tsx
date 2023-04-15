@@ -1,28 +1,33 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { BsFillPlayCircleFill } from 'react-icons/bs'
 import { motion } from 'framer-motion'
+import { useWindowStore } from '@/store'
+import { shallow } from 'zustand/shallow'
 
 export const MediaSection = () => {
   const ref = useRef<HTMLDivElement>(null)
   const [sc, setSc] = useState(0)
+  const scrollYPosition = useWindowStore(
+    (state) => state.scrollYPosition,
+    shallow
+  )
 
   useEffect(() => {
     if (ref && ref.current) {
       const elem = ref.current
       const { bottom } = elem.getBoundingClientRect()
       const bodyHeight = document.body.getBoundingClientRect().height
-      const scrollY = window.scrollY
-      const handleOnScroll = () => {
-        if (scrollY > bottom && sc < 0.3) {
-          const move = (scrollY - bottom) / bodyHeight
-          setSc(move)
-        }
-      }
 
-      window.addEventListener('scroll', handleOnScroll)
-      return () => window.removeEventListener('scroll', handleOnScroll)
+      if (
+        scrollYPosition > bottom &&
+        scrollYPosition <= window.innerHeight / 2 + bottom
+      ) {
+        const move = (scrollYPosition - bottom) / bodyHeight
+
+        setSc(move)
+      }
     }
-  }, [])
+  }, [scrollYPosition])
 
   return (
     <motion.section className="flex items-center justify-center mb-12 overflow-hidden">

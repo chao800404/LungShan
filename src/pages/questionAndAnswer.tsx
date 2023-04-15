@@ -53,7 +53,7 @@ export default function QuestionAndAnswerPage() {
                 initial={{ x: 50, opacity: 0 }}
                 className="sticky top-48 h-[42rem] flex-1 border overflow-hidden rounded-md shadow-md group max-xxl:top-14 max-xxl:h-[calc(100vh-1rem)] max-xxl:border-none max-xxl:rounded-none max-xxl:shadow-none max-xxl:border-b-2 max-sm:-z-10"
               >
-                <div className="max-xxl:h-full max-md:h-[25rem]">
+                <div className="max-xxl:h-full h-full max-md:h-[25rem]">
                   <QAndABlockFigure
                     imgUrl={content[0].imgUrl}
                     description={content[0].description}

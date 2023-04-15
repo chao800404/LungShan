@@ -28,14 +28,14 @@ export default function LoancasesPage() {
       </Head>
       <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
         <Layout>
-          <motion.section className="overflow-hidden text-primary mb-20">
+          <motion.section className="overflow-hidden text-primary mb-20 max-lg:mb-0 max-sm:sticky max-sm:top-0 max-sm:z-0">
             <LoanCasesCover list={LOAN_CASES_DATA} />
           </motion.section>
-          <section>
+          <section className="max-sm:relative z-10">
             <LoanCasesBody
               list={LOAN_CASES_DATA}
               length={LOAN_CASES_DATA.length}
-              className="px-40 py-40"
+              className="max-w-screen-xxl m-auto pt-20 pb-20 grid-cols-[repeat(3,minmax(0,_1fr))] bg-[rgba(255,255,255,0.8)] backdrop-blur px-5 max-lg:grid-cols-[repeat(2,minmax(0,_1fr))] max-sm:grid-cols-[repeat(1,minmax(0,_1fr))]"
             />
           </section>
         </Layout>

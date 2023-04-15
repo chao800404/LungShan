@@ -6,6 +6,8 @@ import { Button } from '../button'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { NavbarData } from './type'
+import { useWindowStore } from '@/store'
+import { shallow } from 'zustand/shallow'
 
 type NavbarProps = {
   list: {
@@ -24,6 +26,10 @@ export const Navbar = ({ list }: NavbarProps) => {
   const routeName = useMemo(() => {
     return selectRouteName(routes, router.route)
   }, [router.route])
+  const setScrollYPostition = useWindowStore(
+    (state) => state.setScrollYPosition,
+    shallow
+  )
 
   const transferRoute = useCallback((slug: string) => {
     router.push(slug)
@@ -44,6 +50,7 @@ export const Navbar = ({ list }: NavbarProps) => {
   useEffect(() => {
     const handleOnScroll = () => {
       const scrollY = window.scrollY
+      setScrollYPostition(scrollY)
       if (scrollY !== 0) setOnTop(false)
       else setOnTop(true)
     }

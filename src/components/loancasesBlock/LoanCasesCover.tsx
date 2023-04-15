@@ -14,18 +14,18 @@ export const LoanCasesCover: BlockComponent = (props) => {
 
   return (
     <motion.div
-      className="origin-left h-screen bg-primaryBlack rounded-br-2xl rounded-bl-2xl pt-60"
+      className="origin-left h-[60rem] bg-primaryBlack rounded-br-2xl rounded-bl-2xl pt-60 pb-40 max-lg:pb-20 max-lg:h-[45rem] max-lg:rounded-none max-sm:pt-0"
       initial={{ scaleX: 0 }}
       animate={{ scaleX: 1 }}
       onMouseEnter={() => setColor('White')}
       onMouseLeave={() => setColor('Default')}
     >
-      <div className="px-40">
+      <div className="max-w-screen-xxl m-auto px-5 max-lg:text-center max-sm:text-left max-sm:pt-20">
         <motion.h1
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.3 }}
-          className="text-6xl font-black"
+          className="text-6xl font-black max-sm:text-5xl max-sm:font-bold"
         >
           攏山借貸案例
         </motion.h1>
@@ -33,7 +33,7 @@ export const LoanCasesCover: BlockComponent = (props) => {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.3 }}
-          className="mt-5"
+          className="mt-5 max-sm:font-mono max-sm:text-sm"
           onAnimationComplete={() => setAnEnd(true)}
         >
           <span>『</span>
@@ -45,7 +45,7 @@ export const LoanCasesCover: BlockComponent = (props) => {
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ delay: 1, duration: 0.3 }}
-        className="pl-40 mt-5 flex items-center gap-3"
+        className="mt-5 flex items-center gap-3 max-w-screen-xxl m-auto px-5 max-lg:justify-center max-sm:flex-wrap max-sm:justify-start max-sm:mt-10"
       >
         {tags.map((item) => (
           <p key={uuid.v4()} className="p-2 border rounded drop-shadow-sm">

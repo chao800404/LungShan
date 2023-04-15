@@ -67,7 +67,7 @@ export const LoancaseCard = ({
         route.push(casePath || '')
         clear()
       }}
-      className="rounded-lg cursor-pointer relative w-80 h-80 overflow-hidden border drop-shadow-2xl mx-4 will-change-transform"
+      className="rounded-lg cursor-pointer relative w-80 h-80 overflow-hidden border drop-shadow-2xl mx-4 will-change-transform max-lg:h-40 max-sm:h-52"
     >
       <Image
         sizes="auto"
