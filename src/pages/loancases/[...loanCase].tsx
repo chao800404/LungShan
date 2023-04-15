@@ -101,7 +101,7 @@ const CasesDynamicPage = () => {
               )}
             </div>
           </section>
-          <div className="h-24 border-t" />
+          <div className="h-24 border-t max-sm:h-12 max-sm:relative max-sm:bg-white max-sm:z-20 max-sm:-translate-y-1 max-sm:border-t max-sm:shadow-[0_-10px_10px_rgba(0,0,0,0.1)]" />
           <ProductBlock data={PRODUCT_DATA} />
         </Layout>
       </main>

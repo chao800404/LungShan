@@ -77,7 +77,7 @@ export const LoanCasesPreview = ({ list }: LoanCasesPreviewProps) => {
           {isOverView ? list[0].title : '全部案例'}
         </motion.h2>
       </div>
-      <div className="w-full h-[calc(100%-3rem)]  relative max-md:border-l max-md:border-white">
+      <div className="w-full h-[calc(100%-2.5rem)]  relative max-md:border-l max-md:border-white">
         <div className="p-10">
           <LoanCasesBody
             titleSize="text-4xl max-sm:text-2xl"
