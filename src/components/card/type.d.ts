@@ -3,6 +3,8 @@ export type CasesType = {
   id: number | string
   description: string
   imgUrl: string
+  date?: string
+  author?: string
 }
 
 export type LoancaseCardProps = {

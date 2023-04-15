@@ -50,7 +50,7 @@ export const LoanCasesBody = ({
             {item.title}
           </h3>
           <div className="mt-3">
-            {item?.cases?.map((cases) => (
+            {item?.cases?.map((cases, index) => (
               <motion.div
                 onMouseEnter={() => setPointerEvent('Focus')}
                 onMouseLeave={() => setPointerEvent('Default')}
@@ -63,7 +63,11 @@ export const LoanCasesBody = ({
                 initial={{ scale: 1 }}
                 className="shadow bg-white border cursor-pointer mt-2 p-3 flex justify-between group items-center hover:bg-gray-100 duration-300 max-sm:text-sm"
               >
-                <p className="w-4/5 truncate">{cases.title}</p>
+                <p className="w-4/5 truncate">
+                  <span className="text-gray-300">{index}.</span>
+                  <span>&nbsp;&nbsp;</span>
+                  {cases.title}
+                </p>
                 <FiExternalLink className="text-gray-300 group-hover:text-gray-700 duration-200" />
               </motion.div>
             ))}
