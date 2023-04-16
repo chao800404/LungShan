@@ -47,7 +47,7 @@ export const PopupItem = ({
         className="flex flex-col gap-1 relative z-20"
       >
         <motion.h4 className="font-bold flex items-center text-sm">
-          <strong>{title}</strong>
+          {title}
           <motion.div variants={ArrowVariants}>&nbsp; &rArr;</motion.div>
         </motion.h4>
         <p className="text-xs text-primaryGray500 truncate ">{description}</p>

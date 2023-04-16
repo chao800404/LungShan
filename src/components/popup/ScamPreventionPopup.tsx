@@ -1,10 +1,23 @@
 import React, { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { motion } from 'framer-motion'
+import { useMediaQuery } from 'react-responsive'
 
 const varaints = {
   show: {
     scale: 1,
+  },
+  hide: {
+    scale: 0,
+  },
+}
+
+const varaints_2 = {
+  show: {
+    scale: [0, 1],
+    transition: {
+      delay: 0.2,
+    },
   },
   hide: {
     scale: 0,
@@ -33,6 +46,10 @@ export const ScamPreventionPopup: React.FC<ScamPreventionPopupProps> = ({
 }) => {
   const [complete, setComplete] = useState(false)
 
+  const ScreenMd = useMediaQuery({
+    query: '(max-width: 767px)',
+  })
+
   const truncateSentenceAn = (sentence: string) => {
     return sentence.split('').map((word, i) => (
       <motion.span
@@ -57,14 +74,19 @@ export const ScamPreventionPopup: React.FC<ScamPreventionPopupProps> = ({
         animate={{ y: 0 }}
         onAnimationComplete={() => setComplete(true)}
         onClick={(e) => e.preventDefault}
-        className="rounded-md w-full will-change-transform overflow-hidden bg-gray-50 max-w-3xl pb-8 shadow-lg border relative"
+        className="rounded-md w-full will-change-transform overflow-hidden bg-gray-50 max-w-3xl pb-8 shadow-lg border relative max-lg:w-[70vw] max-sm:w-[90vw]"
       >
         {complete ? (
-          <motion.div whileHover="show" initial="hide">
+          <motion.div
+            whileHover={ScreenMd ? undefined : 'show'}
+            className="overflow-hidden"
+            initial="hide"
+            animate={ScreenMd ? 'show' : 'hide'}
+          >
             {complete && (
               <motion.div
                 onClick={close}
-                variants={varaints}
+                variants={ScreenMd ? varaints_2 : varaints}
                 className="absolute border -right-12 -top-12 h-24 w-24 flex items-center justify-center rounded-full bg-primaryBlack text-primary"
               >
                 <motion.span
@@ -75,20 +97,20 @@ export const ScamPreventionPopup: React.FC<ScamPreventionPopupProps> = ({
                 </motion.span>
               </motion.div>
             )}
-            <h1 className="font-bold pl-8 pr-20 py-3 mt-5">
-              <span>『</span>
+            <h1 className="font-bold pl-8 pr-20 py-3 mt-5   max-sm:font-normal max-sm:text-lg max-sm:pr-12 max-sm:pl-5 max-sm:mt-0">
+              <span className="max-sm:hidden">『</span>
               <span>{title}</span>
-              <span>』</span>
+              <span className="max-sm:hidden">』</span>
             </h1>
             <hr />
-            <div className="p-8 max-h-96 overflow-scroll">
+            <div className="p-8 max-h-96 overflow-scroll max-sm:p-5 max-sm:max-h-[60vh]">
               <p className="flex flex-wrap text-justify">
                 {truncateSentenceAn(caseContent)}
               </p>
             </div>
           </motion.div>
         ) : (
-          <div className="h-[50vh]"></div>
+          <div className="h-[50vh] max-sm:h-[70vh]"></div>
         )}
       </motion.div>
       <div

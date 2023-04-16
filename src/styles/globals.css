@@ -8,14 +8,6 @@
 }
 
 @layer base {
-  /* a {
-    pointer-events: none;
-  }
-
-  body {
-    pointer-events: none;
-  } */
-
   body {
     font-family: 'Noto Sans TC', sans-serif;
   }

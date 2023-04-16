@@ -40,47 +40,20 @@ export const WrapperAnimateNavbarItem = ({
   </AnimatePresence>
 )
 
-export const NavbarItem = ({ title, content, slug }: NavbarProps) => {
+export const NavbarItem = ({
+  title,
+  content,
+  slug,
+  isActive,
+  setRoute,
+  transferRoute,
+}: NavbarProps) => {
   const [hover, setHover] = useState(false)
 
   const setHide = useCallback(() => setHover(false), [])
   const setShow = useCallback(() => setHover(true), [])
   const toggleShow = useCallback(() => setHover((prev) => !prev), [])
 
-  return (
-    <motion.li
-      whileHover="hover"
-      className="relative z-30 cursor-pointer"
-      onMouseEnter={setShow}
-      onMouseLeave={setHide}
-    >
-      <motion.div className="p-2">
-        <Link href={`${slug}`}>{title}</Link>
-      </motion.div>
-      <motion.span
-        variants={LabelVaraints}
-        className="flex w-full h-full -z-10 absolute top-0 left-0 bg-white rounded-md will-change-auto scale-0"
-      />
-      {content && content.length > 0 && (
-        <WrapperAnimateNavbarItem
-          isVisible={hover}
-          list={content}
-          onPointerDown={setHide}
-        />
-      )}
-    </motion.li>
-  )
-}
-
-export const NavbarBaseItem = ({
-  title,
-  isActive,
-  slug,
-  setRoute,
-  transferRoute,
-  onMouseEnter = undefined,
-  onMouseLeave = undefined,
-}: NavbarProps) => {
   const handleOnClick = () => {
     if (typeof setRoute === 'function') {
       setRoute(slug)
@@ -94,22 +67,37 @@ export const NavbarBaseItem = ({
 
   return (
     <motion.li
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onClick={handleOnClick}
-      className="relative cursor-pointer"
+      // whileHover="hover"
+      className="relative z-30 cursor-pointer"
+      // onMouseEnter={setShow}
+      // onMouseLeave={setHide}
     >
-      <motion.div className="p-2">
+      <motion.div
+        onClick={handleOnClick}
+        className="p-2 relative z-10 max-lg:text-xs"
+      >
         <motion.span>{title}</motion.span>
       </motion.div>
+      <motion.span
+        variants={LabelVaraints}
+        className="flex w-full h-full -z-10 absolute top-0 left-0 bg-white rounded-md will-change-auto scale-0"
+      />
+
       {isActive && (
         <motion.span
           variants={LabelVaraints}
-          className="absolute w-full h-[1.5px] rounded-lg bg-black bottom-0 z-40 will-change-transform"
+          className="absolute w-full h-[1.5px] rounded-lg bg-black bottom-[1px] z-40 will-change-transform"
           layoutId="underline"
           animate={{ x: 0 }}
           transition={spring}
           onAnimationComplete={handleTransferRoute}
+        />
+      )}
+      {content && content.length > 0 && (
+        <WrapperAnimateNavbarItem
+          isVisible={hover}
+          list={content}
+          onPointerDown={setHide}
         />
       )}
     </motion.li>

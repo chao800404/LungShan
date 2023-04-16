@@ -6,10 +6,7 @@ import { useMouseStore } from '@/store'
 import { shallow } from 'zustand/shallow'
 
 type FooterProps = {
-  list: {
-    first: NavbarData[]
-    second: NavbarData[]
-  }
+  list: NavbarData[]
 }
 
 type FooterListProps = {
@@ -53,7 +50,7 @@ export const Footer = ({ list }: FooterProps) => {
   )
 
   return (
-    <footer className="border-t">
+    <footer className="border-t w-full">
       <div className="grid grid-cols-[1.5fr_1fr_1fr] text-sm  m-auto max-lg:grid-cols-[repeat(2,_1fr)] max-md:grid-cols-[100%]">
         <div className="flex flex-col gap-2 px-10 py-5 max-xxl:px-5 max-lg:col-span-2 max-md:col-span-1">
           <h3 className="text-3xl font-bold ">攏山股份有限公司</h3>
@@ -72,13 +69,13 @@ export const Footer = ({ list }: FooterProps) => {
           title="服務產品項目"
           onMouseEnter={() => setPointerEvent('Link')}
           onMouseLeave={() => setPointerEvent('Default')}
-          list={list.first.filter((item) => item.id === 1)[0]?.content}
+          list={list.filter((item) => item.id === 2)[0]?.content}
         />
         <FooterList
           onMouseEnter={() => setPointerEvent('Link')}
           onMouseLeave={() => setPointerEvent('Default')}
           title="快速導覽"
-          list={[...list.first, ...list.second]}
+          list={list}
         />
       </div>
       <div className="border-t text-xs text-gray-400 py-4 px-4 flex justify-between max-lg:text-base max-lg:p-0 max-lg:flex-col-reverse max-md:text-sm">

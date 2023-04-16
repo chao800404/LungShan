@@ -9,7 +9,6 @@ import Image from 'next/image'
 import { useProductCardStore } from '@/store'
 import PRODUCT_DATA from '@/data/product.json'
 import { ProductBlock } from '@/components/productBlock'
-import { useCalcWindowSize } from '@/utils'
 import { useMediaQuery } from 'react-responsive'
 
 const CasesDynamicPage = () => {
@@ -42,8 +41,6 @@ const CasesDynamicPage = () => {
     else if (ScreenMd) return '100vw'
     else return '43.5vw'
   }, [ScreenTwoXl, ScreenMd, ScreenMd])
-
-  console.log(ScreenTwoXl, ScreenMd)
 
   if (!data) return null
 

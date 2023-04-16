@@ -1,20 +1,37 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 type ScamPreventionHeaderProps = {
   title: string
   subtitle: string
+  onTop?: boolean
 }
 
 export const ScamPreventionHeader = ({
   title,
   subtitle,
+  onTop,
 }: ScamPreventionHeaderProps) => {
   return (
-    <h1 className="font-black col-span-2">
+    <motion.h1
+      className={`font-black text-primaryBlack duration-500 max-md:text-center`}
+    >
       <i>
-        <span className="text-5xl">{title}</span>
-        <span className="block">{subtitle}</span>
+        <motion.span
+          className={`text-5xl block max-sm:text-3xl duration-300 ${
+            !onTop && 'max-sm:-translate-x-[15vw]'
+          }`}
+        >
+          {title}
+        </motion.span>
+        <motion.span
+          className={`block font-medium mt-2 duration-300 max-sm:text-xl ${
+            !onTop && 'max-sm:-translate-x-[10vw]'
+          }`}
+        >
+          {subtitle}
+        </motion.span>
       </i>
-    </h1>
+    </motion.h1>
   )
 }
