@@ -7,24 +7,6 @@ import Link from 'next/link'
 import * as jsonFile from '../../../public/lottieJson/loan_phone_an_4.json'
 import { Button } from '../button'
 
-// const data = [
-//   {
-//     id: 0,
-//     title: 'HomeServicesSection1',
-//     image: "/images/lungshan_loan_6.jpg'",
-//   },
-//   {
-//     id: 1,
-//     title: 'HomeServicesSection2',
-//     image: "/images/lungshan_loan_6.jpg'",
-//   },
-//   {
-//     id: 2,
-//     title: 'HomeServicesSection3',
-//     image: "/images/lungshan_loan_6.jpg'",
-//   },
-// ]
-
 export const HomeServicesSection = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, {

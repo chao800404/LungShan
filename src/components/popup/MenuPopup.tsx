@@ -38,7 +38,10 @@ export const MenuPopup = ({
           <div className="bg-[rgba(255,255,255,0.8)] w-[85%] h-full relative z-10 backdrop-blur flex flex-col border-r shadow-[0.2rem_0_0.5rem_rgba(0,0,0,0.3)]">
             <ul className="flex flex-col gap-5 w-full my-auto">
               {list.map((item) => (
-                <li className="text-2xl w-full border-b px-5 py-1 ">
+                <li
+                  onClick={hide}
+                  className="text-2xl w-full border-b px-5 py-1 "
+                >
                   <Link href={item.slug} className="flex gap-5 items-center">
                     {item.title}
                     <BiLinkExternal />

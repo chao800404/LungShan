@@ -666,7 +666,9 @@
           "description": "本金加利息攤還"
         }
       ]
-    }
+    },
+    "content_3": null,
+    "compare_table": null
   },
   {
     "title": "汽機車貸款",
@@ -762,7 +764,8 @@
           "description": "今日審核完成，最快隔日可撥款。最長可貸7年，減輕您的還款負擔。"
         }
       ]
-    }
+    },
+    "compare_table": null
   },
   {
     "title": "手機商品貸款",
@@ -852,6 +855,7 @@
           "description": "今日審核完成，最快隔日可撥款。最長可貸3年，減輕您的還款負擔。"
         }
       ]
-    }
+    },
+    "compare_table": null
   }
 ]

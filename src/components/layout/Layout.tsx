@@ -26,7 +26,7 @@ export const Layout = ({ children }: LayoutProps) => {
         setShowMenu={() => setShowMenu((prev) => !prev)}
       />
       <DynamicMenu list={NAVBAR_DATA} showMenu={showMenu} hide={hide} />
-      <div className="min-w-[100%]">{children}</div>
+      <div className="w-full">{children}</div>
       <Footer list={NAVBAR_DATA} />
     </>
   )
