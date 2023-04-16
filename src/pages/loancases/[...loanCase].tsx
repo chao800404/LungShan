@@ -54,7 +54,7 @@ const CasesDynamicPage = () => {
       </Head>
       <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
         <Layout>
-          <div className="h-28 mt-2 max-sm:h-0 max-sm:mt-0" />
+          <div className="h-12 max-sm:h-0 max-sm:mt-0" />
           <section>
             <div className="flex max-sm:h-screen">
               <motion.div

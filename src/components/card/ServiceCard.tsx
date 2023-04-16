@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { RiMoneyDollarBoxLine } from 'react-icons/ri'
+import { useRouter } from 'next/router'
 
 const variants = {
   hover: {
@@ -28,18 +29,26 @@ type ServiceCardProps = {
   }
   recommendations: boolean
   subtitle: string
+  casePath: string
+  slug: string
 }
 
 export const ServiceCard = ({
   imgUrl,
   title,
-  description,
   topLevel,
   recommendations,
   subtitle,
+  casePath,
+  slug,
 }: ServiceCardProps) => {
+  const router = useRouter()
+
   return (
-    <motion.div className="w-full relative duration-300 justify-self-center text-center z-0 border rounded-md shadow-md hover:scale-105 hover:-translate-y-2 hover:z-20 hover:shadow-xl will-change-transform will-change-contents">
+    <motion.div
+      onClick={() => router.push(slug)}
+      className="w-full relative duration-300 justify-self-center text-center z-0 border rounded-md shadow-md hover:scale-105 hover:-translate-y-2 hover:z-20 hover:shadow-xl will-change-transform will-change-contents"
+    >
       <div className="w-full h-52 relative">
         <Image
           src={imgUrl}
@@ -59,6 +68,11 @@ export const ServiceCard = ({
         <motion.button
           whileHover="hover"
           initial="init"
+          onClick={(e) => {
+            e.preventDefault()
+            e.isPropagationStopped()
+            router.push(casePath)
+          }}
           className="px-3 py-1 border border-transparent duration-300 rounded-sm flex items-center gap-2 font-mono"
         >
           <p>查看案例</p>

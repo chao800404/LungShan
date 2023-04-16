@@ -10,8 +10,9 @@ import { useMediaQuery } from 'react-responsive'
 import { GrMenu } from 'react-icons/gr'
 import { AiFillPhone } from 'react-icons/ai'
 
-type NavbarProps = {
+export type NavbarProps = {
   list: NavbarData[]
+  setShowMenu?: () => void
 }
 
 type NavbarPropsDs = {
@@ -86,27 +87,37 @@ const DesktopNavbar = ({
   )
 }
 
-const MobileNavbar = ({ list }: NavbarProps) => {
+type MobileNavbarMb = {
+  slug: string
+} & NavbarProps
+
+const MobileNavbar = ({ list, slug, setShowMenu }: MobileNavbarMb) => {
+  const routeName = list.filter((item) => item.slug === slug)?.[0]?.title || ''
+
   return (
-    <motion.header className="h-10 w-full text-xl flex justify-between fixed bottom-0 bg-white z-40 border-t shadow-[0_-1px_0.5rem_rgba(0,0,0,0.05)]">
-      <div className="h-full border-r w-10">
-        <GrMenu className="h-full m-auto" />
+    <motion.header className="hidden h-14  w-screen max-md:flex justify-between fixed bottom-0 bg-white z-40 border-t shadow-[0_-1px_0.5rem_rgba(0,0,0,0.05)]">
+      <div className="h-full flex items-center">
+        <GrMenu
+          onClick={setShowMenu}
+          className="m-auto w-14 border-r h-full p-3"
+        />
+        <h2 className="text-xl px-2">{routeName}</h2>
       </div>
       <div className="flex items-center">
-        <a href="tel:0800-777-992" className="h-full border-l w-10">
+        <a href="tel:0800-777-992" className="h-full border-l w-14 text-3xl">
           <AiFillPhone className="h-full m-auto" />
         </a>
         <a
           href="https://line.me/R/ti/p/@798advyq"
-          className="h-full border-l w-10 flex"
+          className="h-full border-l w-14 flex"
         >
           <Image
             alt="lineIcon"
             className="block m-auto"
             sizes="auto"
             src="/images/decoration/line-logo.svg"
-            width={20}
-            height={20}
+            width={28}
+            height={28}
             priority={true}
           />
         </a>
@@ -115,7 +126,7 @@ const MobileNavbar = ({ list }: NavbarProps) => {
   )
 }
 
-export const Navbar = ({ list }: NavbarProps) => {
+export const Navbar = ({ list, setShowMenu }: NavbarProps) => {
   const router = useRouter()
 
   const [overHeader, setOverHeader] = useState(false)
@@ -142,21 +153,22 @@ export const Navbar = ({ list }: NavbarProps) => {
     query: '(max-width: 1280px)',
   })
 
-  const screenMd = useMediaQuery({
-    query: '(max-width: 768px)',
-  })
-
-  return !screenMd ? (
-    <DesktopNavbar
-      list={list}
-      setRoute={setRoute}
-      transferRoute={transferRoute}
-      screenXl={screenXl}
-      overHeader={overHeader}
-      slug={curRoute.slug}
-    />
-  ) : (
-    <MobileNavbar list={list} />
+  return (
+    <>
+      <DesktopNavbar
+        list={list}
+        setRoute={setRoute}
+        transferRoute={transferRoute}
+        screenXl={screenXl}
+        overHeader={overHeader}
+        slug={curRoute.slug}
+      />
+      <MobileNavbar
+        list={list}
+        slug={curRoute.slug}
+        setShowMenu={setShowMenu}
+      />
+    </>
   )
 }
 

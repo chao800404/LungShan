@@ -11,6 +11,7 @@
     },
     "recommendations": true,
     "slug": "/serviceOfferings/housing-loan",
+    "casePath": "/loancases/housing-loan",
     "content_1": {
       "title": "哪些狀況不適合銀行貸款?",
       "list": [
@@ -199,6 +200,7 @@
       "title": "最高可貸",
       "amount": "無上限"
     },
+    "casePath": "/loancases/land-loan",
     "content_1": {
       "title": "哪些狀況不適合銀行貸款?",
       "list": [
@@ -386,6 +388,7 @@
       "title": "最高可貸",
       "amount": "單筆30萬"
     },
+    "casePath": "/loancases/CoSignert-loan",
     "slug": "/serviceOfferings/Co-Signert-loan",
     "content_1": {
       "title": "代書借款適合族群",
@@ -586,6 +589,7 @@
       "title": "最高可貸",
       "amount": "300萬"
     },
+    "casePath": "/loancases/bankCredit-loan",
     "recommendations": false,
     "content_1": {
       "title": "信用貸款適合之族群",
@@ -676,6 +680,7 @@
       "title": "最高可貸",
       "amount": "車價220%"
     },
+    "casePath": "/loancases/vehicle-loan",
     "content_1": {
       "title": "汽機車貸款適合之族群",
       "list": [
@@ -760,7 +765,7 @@
     }
   },
   {
-    "title": "手機貸款商品業務",
+    "title": "手機商品貸款",
     "description": "萬物皆可貸，適合目前無擔保品的您，單筆最高15萬元",
     "subtitle": "電腦分期，筆電分期，手機分期，只要有工作即可辦理！",
     "id": 6,
@@ -771,6 +776,7 @@
       "title": "最高可貸",
       "amount": "單筆15萬"
     },
+    "casePath": "/loancases/product-loan",
     "content_1": {
       "title": "商品貸款/手機貸款適合族群",
       "list": [

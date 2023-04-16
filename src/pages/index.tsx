@@ -13,9 +13,9 @@ import {
 } from '@/components/HomeBlock'
 
 export default function Home() {
-  useEffect(() => {
-    window.history.scrollRestoration = 'manual'
-  }, [])
+  // useEffect(() => {
+  //   window.history.scrollRestoration = 'manual'
+  // }, [])
   return (
     <>
       <Head>
@@ -26,7 +26,7 @@ export default function Home() {
       </Head>
       <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen flex flex-col items-center">
         <Layout>
-          <div className="h-[3.3rem]" />
+          <div className="h-[3.3rem] max-md:h-0" />
           <TagLineSection description="了解更多最近快速成功借貸實例" />
           <HomePageCover />
           <section>

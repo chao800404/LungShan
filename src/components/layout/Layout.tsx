@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Navbar } from '../navbar'
 import { Footer } from '../footer'
 import NAVBAR_DATA from '@/data/navbar.json'
 import dynamic from 'next/dynamic'
-const DynamicHeader = dynamic(() => import('../navbar/Navbar'), {
+import { motion } from 'framer-motion'
+
+const DynamicMenu = dynamic(() => import('@/components/popup/MenuPopup'), {
   loading: () => null,
   ssr: false,
 })
@@ -13,10 +15,18 @@ type LayoutProps = {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
+  const [showMenu, setShowMenu] = useState(false)
+
+  const hide = () => setShowMenu(false)
+
   return (
     <>
-      <DynamicHeader list={NAVBAR_DATA} />
-      <div className="min-h-screen w-full">{children}</div>
+      <Navbar
+        list={NAVBAR_DATA}
+        setShowMenu={() => setShowMenu((prev) => !prev)}
+      />
+      <DynamicMenu list={NAVBAR_DATA} showMenu={showMenu} hide={hide} />
+      <div className="min-w-[100%]">{children}</div>
       <Footer list={NAVBAR_DATA} />
     </>
   )

@@ -1,12 +1,21 @@
 import Head from 'next/head'
 import { Layout } from '@/components/layout'
-import React from 'react'
+import React, { useState } from 'react'
 import SERVICE_OFFERINGS_DATA from '@/data/service_offerings.json'
 import * as uuid from 'uuid'
 import { ServiceCard } from '@/components/card'
-import { motion } from 'framer-motion'
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 
 export default function ServiceOfferings() {
+  const [onTop, setOnTop] = useState(true)
+
+  const { scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    if (latest > 0) setOnTop(false)
+    else setOnTop(true)
+  })
+
   return (
     <>
       <Head>
@@ -15,10 +24,15 @@ export default function ServiceOfferings() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
+      <main className="max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen ">
         <Layout>
-          <div className="h-28 mb-2" />
-          <motion.div className="mt-32 max-w-screen-xxl m-auto overflow-hidden">
+          <div className="h-14 mb-2 w-full max-sm:h-10" />
+          <motion.div
+            className={`mt-32 max-w-screen-xxl m-auto overflow-hidden max-lg:mt-0 max-sm:sticky max-sm:-top-2 max-sm:z-10 max-sm:bg-[rgba(255,255,255,0.8)] max-sm:py-5 max-sm:backdrop-blur  ${
+              !onTop &&
+              'max-sm:shadow-[0_0.5rem_0.8rem_rgba(0,0,0,0.05)] max-sm:border-b'
+            }`}
+          >
             <motion.p
               animate={{ opacity: 1 }}
               initial={{ opacity: 0 }}
@@ -31,7 +45,7 @@ export default function ServiceOfferings() {
               animate={{ y: 0, opacity: 1 }}
               initial={{ y: 100, opacity: 0 }}
               transition={{ duration: 0.6, type: 'just' }}
-              className="text-7xl font-bold text-center py-3 will-change-transform"
+              className="text-7xl font-bold text-center py-3 will-change-transform max-sm:text-4xl"
             >
               攏山服務項目
             </motion.h1>
@@ -39,14 +53,14 @@ export default function ServiceOfferings() {
               transition={{ duration: 0.6, type: 'just', delay: 0.3 }}
               animate={{ rotateX: 0, scale: 1, opacity: 1 }}
               initial={{ rotateX: 100, scale: 1.2, opacity: 0 }}
-              className="text-center w-fit m-auto mt-14 border p-2 will-change-transform"
+              className="text-center w-fit m-auto mt-14 border p-2 will-change-transform max-md:mx-5 max-sm:mt-3"
               style={{ perspective: '1000px' }}
             >
               攏山是一家致力於協助有資金需求的客戶找到最合適的解決方案的公司
             </motion.p>
           </motion.div>
-          <section className="py-20 max-w-screen-xxl m-auto">
-            <div className="grid grid-cols-[repeat(4,_1fr)] gap-3 gap-y-6">
+          <section className="py-20 max-w-screen-xxl m-auto  px-5 max-sm:relative max-sm:z-0">
+            <div className="grid grid-cols-[repeat(4,_1fr)] gap-3 gap-y-6 max-xl:grid-cols-[repeat(3,_1fr)] max-lg:grid-cols-[repeat(2,_1fr)] max-sm:grid-cols-[100%]">
               {SERVICE_OFFERINGS_DATA.map((item) => (
                 <ServiceCard key={uuid.v4()} {...item} />
               ))}

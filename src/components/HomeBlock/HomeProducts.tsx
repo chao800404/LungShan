@@ -57,7 +57,7 @@ const data_2 = [
     name: '土地借款',
     contents: [
       {
-        title: '桃園建地全區收購',
+        title: '全地區土地收購',
         description:
           '桃園青埔房屋、青埔建地、青埔持分土地收購資金快速到位最快只要三天。',
         imageUrl: '/images/lungshan_loan_12.jpg',

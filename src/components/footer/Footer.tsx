@@ -50,7 +50,7 @@ export const Footer = ({ list }: FooterProps) => {
   )
 
   return (
-    <footer className="border-t w-full">
+    <footer className="border-t w-full max-md:pb-16">
       <div className="grid grid-cols-[1.5fr_1fr_1fr] text-sm  m-auto max-lg:grid-cols-[repeat(2,_1fr)] max-md:grid-cols-[100%]">
         <div className="flex flex-col gap-2 px-10 py-5 max-xxl:px-5 max-lg:col-span-2 max-md:col-span-1">
           <h3 className="text-3xl font-bold ">攏山股份有限公司</h3>

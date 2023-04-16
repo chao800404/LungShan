@@ -14,7 +14,7 @@ export const LoanCasesCover: BlockComponent = (props) => {
 
   return (
     <motion.div
-      className="origin-left h-[60rem] bg-primaryBlack rounded-br-2xl rounded-bl-2xl pt-60 pb-40 max-lg:pb-20 max-lg:h-[45rem] max-lg:rounded-none max-sm:pt-0"
+      className="origin-left h-[60rem] bg-primaryBlack rounded-br-2xl rounded-bl-2xl pt-52 pb-40 max-lg:pb-20 max-lg:h-[45rem] max-lg:rounded-none max-sm:pt-0"
       initial={{ scaleX: 0 }}
       animate={{ scaleX: 1 }}
       onMouseEnter={() => setColor('White')}
