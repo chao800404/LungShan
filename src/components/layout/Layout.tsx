@@ -24,6 +24,7 @@ export const Layout = ({ children }: LayoutProps) => {
       <Navbar
         list={NAVBAR_DATA}
         setShowMenu={() => setShowMenu((prev) => !prev)}
+        show={showMenu}
       />
       <DynamicMenu list={NAVBAR_DATA} showMenu={showMenu} hide={hide} />
       <div className="w-full">{children}</div>

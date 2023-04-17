@@ -4,6 +4,11 @@ import { ScaleAndCoverImageBlock } from '@/components/imageBlock'
 import { SwipperTextBlock } from '@/components/textBlock'
 import { MediaAndImageBlock } from '@/components/specialBlock'
 import { Button } from '../button'
+import { register } from 'swiper/element/bundle'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Pagination } from 'swiper'
+
+register()
 
 const data = [
   {
@@ -167,7 +172,7 @@ type Content = {
 
 const ImageBlock = ({ contents }: { contents: Content[] }) => {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 h-[90%] w-[30.5rem] m-auto justify-center max-sm:flex-col max-sm:w-[16rem]">
       <ScaleAndCoverImageBlock
         title={contents[0]?.title}
         description={contents[0]?.description}
@@ -187,7 +192,7 @@ const ImageBlock = ({ contents }: { contents: Content[] }) => {
 
 const VideoBlock = ({ contents }: { contents: Content[] }) => {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 h-[90%] w-[30.5rem] m-auto justify-center max-sm:flex-col max-sm:w-[16rem]">
       <MediaAndImageBlock
         imageUrl={contents[0].imageUrl || ''}
         mediaUrl={contents[0].mediaUrl || ''}
@@ -204,28 +209,39 @@ const VideoBlock = ({ contents }: { contents: Content[] }) => {
   )
 }
 
-const BLOCK_WIDTH = 17.5 * 16
-
 export const HomeProducts = () => {
-  const [blockIndex, setBlockIndex] = useState(0)
-  const ref = useRef<HTMLDivElement>(null)
-
-  const x = useMemo(() => BLOCK_WIDTH * blockIndex, [blockIndex])
+  const swiperRef = useRef<SwiperCore>()
+  const [activeIndex, setActiveIndex] = useState(0)
 
   const render = useCallback(() => {
     const result = data_2.map((item) =>
       item.type === 'onlyImage' ? (
-        <ImageBlock key={item.id} contents={item.contents as Content[]} />
+        <SwiperSlide className="w-fit swiper-slide" key={item.id}>
+          <ImageBlock contents={item.contents as Content[]} />
+        </SwiperSlide>
       ) : (
-        <VideoBlock key={item.id} contents={item.contents as Content[]} />
+        <SwiperSlide className="w-fit swiper-slide" key={item.id}>
+          <VideoBlock contents={item.contents as Content[]} />
+        </SwiperSlide>
       )
     )
     return result
   }, [])
 
+  const handleSlideTo = (index: number) => {
+    if (swiperRef.current) {
+      swiperRef.current.slideTo(index)
+      setActiveIndex(index)
+    }
+  }
+
+  const handleSlideChange = (swiper: SwiperCore) => {
+    setActiveIndex(swiper.activeIndex)
+  }
+
   return (
     <motion.div className="overflow-hidden">
-      <section className="pb-40 max-xl:pb-20 max-sm:pb-5">
+      <section className="pb-40 max-w-screen-xxl m-auto max-xl:pb-20 max-sm:pb-5">
         <div className="max-sm:overflow-auto hide_scrollbar max-sm:touch-x">
           <div className="flex gap-10 mt-[8rem] mb-[8rem] max-w-screen-xxl m-auto px-5 max-xl:mt-[3rem] max-xl:mb-[3rem] max-lg:flex-wrap max-lg:gap-5 max-sm:gap-3 max-sm:flex  max-sm:flex-nowrap max-sm:w-fit">
             {data.map((item) => (
@@ -255,13 +271,12 @@ export const HomeProducts = () => {
             <li key={item.id}>
               <Button
                 className={`shadow-none shadow-gray-50 border  ${
-                  i * 2 !== Math.abs(blockIndex) &&
-                  i * 2 + 1 !== Math.abs(blockIndex) &&
+                  i !== activeIndex &&
                   'bg-white text-primaryBlack hover:bg-gray-100 border-slate-200 hover:border-slate-400  font-medium ease-out duration-300'
                 } max-xl:text-xl max-sm:text-[0.9rem]`}
               >
                 <span
-                  onClick={() => setBlockIndex(-(i * 2))}
+                  onClick={() => handleSlideTo(i)}
                   className="block pt-2 pb-2 pr-4 pl-4"
                 >
                   {item.name}
@@ -270,32 +285,21 @@ export const HomeProducts = () => {
             </li>
           ))}
         </ul>
-        <motion.div className="flex w-full h-[38rem] justify-center items-center mt-10 max-sm:mt-0">
-          <motion.div
-            className="w-full cursor-grab h-[30rem] will-change-transform touch-none"
-            dragConstraints={{ left: 0, right: 0 }}
-            drag="x"
-            dragElastic={1}
-            animate={{ x, transition: { type: 'just' } }}
-            onDragEnd={(e, { offset, velocity }) => {
-              const { x } = offset
-              const index = Math.round(x / BLOCK_WIDTH)
-
-              setBlockIndex((prev) => {
-                const newIndex = prev + index
-                return newIndex > 0 ? 0 : newIndex
-              })
+        <motion.div className="flex w-[31rem] h-[35rem] ml-5 justify-center items-center mt-10 max-sm:mt-0 max-sm:w-[16.5rem]">
+          <Swiper
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper
             }}
+            onSlideChange={handleSlideChange}
+            pagination={{ clickable: true, el: null }}
+            navigation
           >
-            <motion.div
-              ref={ref}
-              className="grid grid-flow-col grid-rows-1 h-full gap-2 max-w-screen-xxl px-5 m-auto "
-            >
-              {render()}
-            </motion.div>
-          </motion.div>
+            {render()}
+          </Swiper>
         </motion.div>
       </section>
     </motion.div>
   )
 }
+
+export default HomeProducts

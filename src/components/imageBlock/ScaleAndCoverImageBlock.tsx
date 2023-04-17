@@ -73,7 +73,7 @@ export const ScaleAndCoverImageBlock: React.FC<
     <motion.div
       initial="hidden"
       whileHover="show"
-      className="w-[17rem] h-full rounded-lg border shadow-sm shadow-primaryBlack overflow-hidden relative snap-center"
+      className="w-[17rem] h-auto rounded-lg border shadow-sm shadow-primaryBlack overflow-hidden relative snap-center max-sm:flex-1 max-sm:w-full"
     >
       <motion.div
         variants={container}
@@ -81,7 +81,7 @@ export const ScaleAndCoverImageBlock: React.FC<
       >
         <motion.h3
           variants={H3Container}
-          className="text-gray-200 font-bold text-3xl mb-5"
+          className="text-gray-200 font-bold text-2xl mb-5"
         >
           {title}
         </motion.h3>

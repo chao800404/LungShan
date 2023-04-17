@@ -100,3 +100,5 @@ export const MouseFollower = () => {
     </div>
   )
 }
+
+export default MouseFollower

@@ -11,8 +11,8 @@ export const MediaAndImageBlock: React.FC<MediaAndImageBlockProps> = ({
   imageUrl,
 }) => {
   return (
-    <div className="w-[17rem] flex flex-wrap justify-center items-center gap-2 -translate-y-[7.5%] snap-center">
-      <div className="w-full h-[17rem] bg-slate-200 rounded-md  border shadow-sm shadow-primaryBlack relative overflow-hidden">
+    <div className="w-[17rem] flex flex-wrap justify-center items-center gap-2 -translate-y-[7.5%] snap-center max-sm:flex-1 max-sm:-translate-y-0 max-sm:w-full">
+      <div className="w-full h-[17rem] bg-slate-200 rounded-md  border shadow-sm shadow-primaryBlack relative overflow-hidden max-sm:hidden">
         <Image
           fill
           className="object-cover"
@@ -26,14 +26,15 @@ export const MediaAndImageBlock: React.FC<MediaAndImageBlockProps> = ({
         />
       </div>
       <div className="w-full h-[17rem] bg-slate-200 rounded-md  overflow-hidden border shadow-sm shadow-primaryBlack relative">
-        <video
-          src={mediaUrl}
-          width="100%"
-          muted={true}
-          loop={true}
-          height="auto"
-          autoPlay
-        />
+        <div className="w-[120%]">
+          <video
+            src={mediaUrl}
+            muted={true}
+            loop={true}
+            autoPlay
+            height="100%"
+          />
+        </div>
       </div>
     </div>
   )

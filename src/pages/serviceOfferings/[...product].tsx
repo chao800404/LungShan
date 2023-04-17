@@ -10,6 +10,7 @@ import { TfiWrite } from 'react-icons/tfi'
 import { useMotionValueEvent, useScroll, motion } from 'framer-motion'
 import LOAN_BOOK_AN from '../../../public/lottieJson/loan_book_an.json'
 import Lottie from 'react-lottie-player'
+import { MdOutlineArrowBackIosNew } from 'react-icons/md'
 
 export default function Product() {
   const route = useRouter()
@@ -35,7 +36,13 @@ export default function Product() {
 
       <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen flex items-center flex-col">
         <Layout>
-          <div className="h-12 mt-1 max-sm:h-0" />
+          <div className="h-12 mt-1 max-sm:h-5" />
+          <div className="hidden fixed  max-md:flex h-12 top-0 bg-white text-2xl border-b z-50 w-full">
+            <MdOutlineArrowBackIosNew
+              onClick={() => route.back()}
+              className="my-auto w-12 border-r p-3 h-full"
+            />
+          </div>
 
           <LoopSwiper
             one={`${data.subtitle} ${data.description}`}
@@ -98,14 +105,14 @@ export default function Product() {
             />
           </section>
           {data.content_2 && (
-            <section className="-mt-10 mx-10 max-lg:mx-0 max-lg:p-5 relative z-30 bg-white max-sm:mt-0 ">
+            <section className="-mt-10 mx-10 max-lg:mx-0 max-lg:p-5 relative z-20 bg-white max-sm:mt-0 ">
               <div className="px-12 pt-24 pb-12 max-lg:px-0 max-sm:pt-12">
                 <h3 className="text-3xl font-medium mb-12 text-center">
                   {data?.content_2?.title}
                 </h3>
                 {data.content_2.description && (
-                  <div className="border rounded p-10 mb-5 flex max-w-5xl m-auto">
-                    <div className="w-1/5 relative">
+                  <div className="border rounded p-10 mb-5 flex max-w-5xl m-auto max-md:flex-col max-md:p-5">
+                    <div className="w-1/5 relative max-md:w-full max-md:h-32">
                       <Lottie
                         animationData={LOAN_BOOK_AN}
                         loop={true}
@@ -113,7 +120,9 @@ export default function Product() {
                         className="absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 w-72"
                       />
                     </div>
-                    <p className="flex-1 ml-5">{data.content_2.description}</p>
+                    <p className="flex-1 ml-5 max-md:ml-0">
+                      {data.content_2.description}
+                    </p>
                   </div>
                 )}
 
@@ -135,7 +144,7 @@ export default function Product() {
             </section>
           )}
 
-          <section className="-mt-10 mx-10 max-lg:mx-0 max-lg:px-5 relative z-40 bg-white max-sm:px-0">
+          <section className="-mt-10 mx-10 max-lg:mx-0 max-lg:px-5 relative z-20 bg-white max-sm:px-0">
             <div className="px-12 flex gap-5 pt-24 pb-12 max-lg:px-0 max-md:flex-col max-sm:pt-5">
               {data.content_3 && (
                 <div className="bg-gray-50 flex-1 rounded-md overflow-hidden border max-sm:border-none max-sm:rounded-none">

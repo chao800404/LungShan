@@ -8,10 +8,11 @@ import Image from 'next/image'
 import { NavbarData } from './type'
 import { useMediaQuery } from 'react-responsive'
 import { GrMenu } from 'react-icons/gr'
-import { AiFillPhone } from 'react-icons/ai'
+import { AiFillPhone, AiOutlineClose } from 'react-icons/ai'
 
 export type NavbarProps = {
   list: NavbarData[]
+  show?: boolean
   setShowMenu?: () => void
 }
 
@@ -91,33 +92,41 @@ type MobileNavbarMb = {
   slug: string
 } & NavbarProps
 
-const MobileNavbar = ({ list, slug, setShowMenu }: MobileNavbarMb) => {
+const MobileNavbar = ({ list, slug, setShowMenu, show }: MobileNavbarMb) => {
   const routeName = list.filter((item) => item.slug === slug)?.[0]?.title || ''
 
   return (
-    <motion.header className="hidden h-14  w-screen max-md:flex justify-between fixed bottom-0 bg-white z-40 border-t shadow-[0_-1px_0.5rem_rgba(0,0,0,0.05)]">
+    <motion.header className="hidden h-12  w-screen max-md:flex justify-between fixed bottom-0 bg-white z-40 border-t shadow-[0_-1px_0.5rem_rgba(0,0,0,0.05)]">
       <div className="h-full flex items-center">
-        <GrMenu
-          onClick={setShowMenu}
-          className="m-auto w-14 border-r h-full p-3"
-        />
-        <h2 className="text-xl px-2">{routeName}</h2>
+        {show ? (
+          <AiOutlineClose
+            onClick={setShowMenu}
+            className="m-auto w-12 border-r h-full p-3"
+          />
+        ) : (
+          <GrMenu
+            onClick={setShowMenu}
+            className="m-auto w-12 border-r h-full p-3"
+          />
+        )}
+
+        <h2 className="text-xl px-2 max-sm:text-lg">{routeName}</h2>
       </div>
       <div className="flex items-center">
-        <a href="tel:0800-777-992" className="h-full border-l w-14 text-3xl">
+        <a href="tel:0800-777-992" className="h-full border-l w-12 text-2xl">
           <AiFillPhone className="h-full m-auto" />
         </a>
         <a
           href="https://line.me/R/ti/p/@798advyq"
-          className="h-full border-l w-14 flex"
+          className="h-full border-l w-12 flex"
         >
           <Image
             alt="lineIcon"
             className="block m-auto"
             sizes="auto"
             src="/images/decoration/line-logo.svg"
-            width={28}
-            height={28}
+            width={22}
+            height={22}
             priority={true}
           />
         </a>
@@ -126,7 +135,7 @@ const MobileNavbar = ({ list, slug, setShowMenu }: MobileNavbarMb) => {
   )
 }
 
-export const Navbar = ({ list, setShowMenu }: NavbarProps) => {
+export const Navbar = ({ list, setShowMenu, show }: NavbarProps) => {
   const router = useRouter()
 
   const [overHeader, setOverHeader] = useState(false)
@@ -167,6 +176,7 @@ export const Navbar = ({ list, setShowMenu }: NavbarProps) => {
         list={list}
         slug={curRoute.slug}
         setShowMenu={setShowMenu}
+        show={show}
       />
     </>
   )

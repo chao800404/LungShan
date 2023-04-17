@@ -36,8 +36,8 @@ const ImageTableContent: React.FC<TableProps> = ({
       </h2>
       <ul
         className={`flex gap-2 text-[0.8rem] pt-4 pb-4 font-bold max-xl:text-lg max-xl:flex-wrap max-xl:w-full max-sm:text-[0.95rem] ${
-          left && 'justify-end max-sm:justify-start'
-        }`}
+          left && 'justify-end'
+        } max-sm:justify-center`}
       >
         {contents.map((item, i) => (
           <li
@@ -65,7 +65,7 @@ const ImageTableContent: React.FC<TableProps> = ({
             <div
               className={`pt-2 w-full pb-2 pr-5 pl-5 ${
                 i < contents.length - 1 && 'border-b-[1px] border-b-primary'
-              }`}
+              } max-sm:text-sm`}
             >
               <span>{item.description}</span>
             </div>

@@ -19,7 +19,7 @@ export const HomeServicesSection = () => {
         ref={ref}
         className="pt-20 pb-10 relative h-screen grid grid-cols-[20rem_1fr] gap-5 max-w-screen-xxl m-auto px-5 max-xl:grid-cols-[30rem_1fr] max-xl:h-[40rem] max-xl:pb-0 max-xl:border-b max-mmd:grid-cols-[1fr] max-mmd:h-fit"
       >
-        <div className="self-center cols-start-1 col-span-1 relative z-30 max-xl:p-3 max-xl:self-start">
+        <div className="self-center cols-start-1 col-span-1 relative z-20 max-xl:p-3 max-xl:self-start">
           <motion.h3
             animate={{
               opacity: isInView ? 1 : 0,

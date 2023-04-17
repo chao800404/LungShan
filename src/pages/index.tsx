@@ -11,6 +11,12 @@ import {
   HomeProducts,
   HomePageCover,
 } from '@/components/HomeBlock'
+import dynamic from 'next/dynamic'
+
+const DynamicProductBlock = dynamic(
+  () => import('@/components/HomeBlock/HomeProducts'),
+  { ssr: false }
+)
 
 export default function Home() {
   // useEffect(() => {

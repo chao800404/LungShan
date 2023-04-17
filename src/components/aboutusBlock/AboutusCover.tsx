@@ -83,23 +83,23 @@ const TimelineBlock = ({
       }}
       animate="show"
       initial="initial"
-      className="w-[9rem] flex items-center flex-col max-xxl:w-[5rem] max-lg:flex-row max-lg:w-fit max-lg:items-center max-lg:h-24"
+      className="w-[9rem] flex items-center flex-col max-xxl:w-[5rem] max-lg:flex-row max-lg:w-fit max-lg:items-center max-lg:h-24 max-sm:gap-5 max-sm:h-32"
       onAnimationComplete={() => {
         setAnimateEnd(true)
         isLast && setShouldShow(true)
       }}
       ref={elemRef}
     >
-      <motion.h3 className="mb-3 max-lg:text-3xl max-lg:font-bold max-lg:order-2 max-lg:ml-3 max-lg:m-auto max-lg:italic">
+      <motion.h3 className="mb-3 max-lg:text-3xl max-lg:font-bold max-lg:order-2 max-lg:ml-3 max-lg:m-auto max-lg:italic max-sm:text-2xl max-sm:m-auto">
         {year}
       </motion.h3>
       <motion.div
         onClick={onClick}
-        className={`relative rounded-full w-4 h-4 ${
+        className={`rounded-full w-4 h-4 max-sm:w-5 max-sm:h-5 max-sm:p-1 ${
           !isLast && animateEnd && lineStyle
         }
         ${isActive ? blockBorder : 'bg-slate-100 border-4 border-gray-300'}
-        max-xxl:after:w-[5rem] max-lg:after:hidden max-lg:order-1`}
+        max-xxl:after:w-[5rem] max-lg:after:hidden max-lg:order-1 `}
       />
       {isActive && animateEnd && (
         <AnimatePresence>
@@ -107,7 +107,7 @@ const TimelineBlock = ({
             animate="show"
             initial="initial"
             variants={descriptionBox}
-            className={`${blockStyle} max-lg:after:hidden max-lg:order-3 max-lg:m-auto max-lg:ml-5 max-lg:text-xl max-lg:w-fit`}
+            className={`${blockStyle} max-lg:after:hidden max-lg:order-3 max-lg:m-auto max-lg:ml-5 max-lg:text-xl max-lg:w-fit max-sm:text-lg max-sm:m-auto`}
           >
             <p>{description}</p>
           </motion.div>
@@ -139,7 +139,7 @@ export const AboutusCover = () => {
             攏山是一家致力於協助有資金需求的客戶找到最合適的解決方案的公司。
           </h1>
         </div>
-        <div className="h-50 pt-3 pb-3 mt-10 max-lg:h-fit max-lg:w-full max-lg:max-w-screen-lg max-lg:px-10">
+        <div className="h-50 pt-3 pb-3 mt-10 max-lg:h-fit max-lg:w-full max-lg:max-w-screen-lg max-lg:px-10 max-sm:px-2">
           <ul className="flex justify-center max-lg:flex-col max-lg:gap-5">
             {ABOUTUS_COVER_DATA.timelines.map((item, i) => (
               <TimelineBlock

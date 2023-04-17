@@ -20,6 +20,7 @@ module.exports = {
       // fontFamily: {
       //   sans: ['var(--font-notoSans)', ...fontFamily.sans],
       // },
+
       boxShadow: {
         body: '0 0 0 1px #d9d9d9',
       },

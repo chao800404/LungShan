@@ -33,7 +33,7 @@ export const MenuPopup = ({
           exit="hide"
           transition={{ type: 'just' }}
           variants={variants}
-          className="fixed  left-0 w-[100vw] z-30 h-screen"
+          className="fixed hidden left-0 w-[100vw] z-30 h-screen max-md:block"
         >
           <div className="bg-[rgba(255,255,255,0.8)] w-[85%] h-full relative z-10 backdrop-blur flex flex-col border-r shadow-[0.2rem_0_0.5rem_rgba(0,0,0,0.3)]">
             <ul className="flex flex-col gap-5 w-full my-auto">
@@ -53,12 +53,19 @@ export const MenuPopup = ({
               <Image
                 alt="攏山借貸"
                 src="/images/logo-2.webp"
-                width={120}
+                width={80}
                 height={20}
+                className="w-28 max-sm:w-20"
               />
-              <div className="max-md:text-sm font-thin">
+              <div className="max-md:text-sm font-thin max-sm:text-[0.7rem]">
                 <p>桃園市中壢區領航南路三段352號</p>
                 <p>公司統編: 83254205</p>
+                <a
+                  className="text-xl font-bold underline"
+                  href="tel:0800-777-992"
+                >
+                  0800-777-992
+                </a>
               </div>
             </div>
           </div>
