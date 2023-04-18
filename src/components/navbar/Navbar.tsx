@@ -80,7 +80,7 @@ const DesktopNavbar = ({
               overHeader && 'bg-slate-700 text-white border-none'
             }`}
           >
-            <Link href="#">聯絡我們</Link>
+            <Link href="tel:0800-777-992">聯絡我們</Link>
           </Button>
         </div>
       </motion.nav>

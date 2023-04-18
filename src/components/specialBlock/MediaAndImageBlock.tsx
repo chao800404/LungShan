@@ -29,10 +29,13 @@ export const MediaAndImageBlock: React.FC<MediaAndImageBlockProps> = ({
         <div className="w-[120%]">
           <video
             src={mediaUrl}
-            muted={true}
+            muted
+            playsInline
+            typeof="video/mp4"
             loop={true}
             autoPlay
             height="100%"
+            controls={false}
           />
         </div>
       </div>

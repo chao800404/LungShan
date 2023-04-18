@@ -46,11 +46,14 @@ export const MediaSection = () => {
           <video
             src="/medias/loan_media.mp4"
             width="100%"
-            muted={true}
+            muted
             loop={true}
             height="auto"
-            autoPlay
+            autoPlay={true}
             preload="auto"
+            typeof="video/mp4"
+            playsInline
+            controls={false}
           />
         </div>
       </motion.div>
