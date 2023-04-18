@@ -28,7 +28,7 @@ const variants = {
     return {
       x: 0,
       opacity: 1,
-      zIndex: 20 - index,
+      zIndex: 10 - index,
       transition: {
         delay: 0.3 * index,
         duration: 0.5,

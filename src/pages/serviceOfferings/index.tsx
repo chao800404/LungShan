@@ -37,7 +37,7 @@ export default function ServiceOfferings() {
         <Layout>
           <div className="h-14 mb-2 w-full max-sm:h-10" />
           <motion.div
-            className={`mt-32 max-w-screen-xxl m-auto overflow-hidden max-lg:mt-0 max-sm:sticky max-sm:-top-2 max-sm:z-10 max-sm:bg-[rgba(255,255,255,0.8)] max-sm:py-5 max-sm:backdrop-blur  ${
+            className={`mt-32 max-w-screen-xxl m-auto overflow-hidden max-lg:mt-0 max-sm:sticky max-sm:-top-2 max-sm:z-20 max-sm:bg-[rgba(255,255,255,0.8)] max-sm:py-5 max-sm:backdrop-blur  ${
               !onTop &&
               'max-sm:shadow-[0_0.5rem_0.8rem_rgba(0,0,0,0.05)] max-sm:border-b'
             }`}
