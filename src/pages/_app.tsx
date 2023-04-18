@@ -14,6 +14,11 @@ const DynamicHeader = dynamic(
   }
 )
 
+const DynamicFloatBlock = dynamic(
+  () => import('@/components/floatBlock/FloatBlock'),
+  { ssr: false, loading: () => null }
+)
+
 const notoSans = Noto_Sans_HK({
   subsets: ['latin'],
   variable: '--font-notoSans',
@@ -32,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
     //   <Component {...pageProps} />
     // </main>
     <>
+      {!screenLg && <DynamicFloatBlock />}
       {!screenLg && <DynamicHeader />}
       <Component {...pageProps} />
     </>
