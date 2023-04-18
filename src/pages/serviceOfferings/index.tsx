@@ -75,7 +75,11 @@ export default function ServiceOfferings() {
               ))}
             </div>
           </section>
-          <ProductBlock data={PRODUCT_DATA} showProduct={false} />
+          <ProductBlock
+            data={PRODUCT_DATA}
+            showProduct={false}
+            title="查看項目案例"
+          />
         </Layout>
       </main>
     </>

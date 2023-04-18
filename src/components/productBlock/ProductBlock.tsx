@@ -20,6 +20,7 @@ type ProductBlockProps = {
   }[]
   className?: string
   showProduct?: boolean
+  title?: string
 }
 
 const variants = {
@@ -55,6 +56,7 @@ export const ProductBlock = ({
   data,
   className,
   showProduct = true,
+  title = '產品服務項目',
 }: ProductBlockProps) => {
   const { coverOnload, setCoverOnload } = useProductCardStore(
     (state) => ({
@@ -77,7 +79,7 @@ export const ProductBlock = ({
     >
       <div className="grid grid-cols-[10rem_1fr_1.5rem]">
         <h3 className="text-xl rounded-sm w-full text-center font-bold bg-primaryBlack text-white pt-2 pb-2 pl-3 pr-3">
-          產品服務項目
+          {title}
         </h3>
         <div className="w-full h-[2px] bg-primaryBlack self-center" />
         <motion.div
