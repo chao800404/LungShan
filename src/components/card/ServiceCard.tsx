@@ -68,14 +68,9 @@ export const ServiceCard = ({
         <motion.button
           whileHover="hover"
           initial="init"
-          onClick={(e) => {
-            e.preventDefault()
-            e.isPropagationStopped()
-            router.push(casePath)
-          }}
           className="px-3 py-1 border border-transparent duration-300 rounded-sm flex items-center gap-2 font-mono"
         >
-          <p>查看案例</p>
+          <p>了解詳情</p>
           <motion.div variants={variants}>
             <AiOutlineArrowRight />
           </motion.div>

@@ -16,8 +16,10 @@ type ProductBlockProps = {
     path: string
     id: number
     casePath: string
+    productPath: string
   }[]
   className?: string
+  showProduct?: boolean
 }
 
 const variants = {
@@ -49,7 +51,11 @@ const MotionBlock: React.FC<MotionBlockProps> = ({ children, index }) => {
   )
 }
 
-export const ProductBlock = ({ data, className }: ProductBlockProps) => {
+export const ProductBlock = ({
+  data,
+  className,
+  showProduct = true,
+}: ProductBlockProps) => {
   const { coverOnload, setCoverOnload } = useProductCardStore(
     (state) => ({
       coverOnload: state.shouldShow,
@@ -103,7 +109,7 @@ export const ProductBlock = ({ data, className }: ProductBlockProps) => {
             >
               {data?.map((item, i) => (
                 <MotionBlock key={`${item.id}_${item.title}`} index={i}>
-                  <ProductCard {...item} />
+                  <ProductCard {...item} showProduct={showProduct} />
                 </MotionBlock>
               ))}
             </motion.div>

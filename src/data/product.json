@@ -3,36 +3,42 @@
     "id": 0,
     "title": "房屋借貸",
     "path": "/lottieJson/loan_home_an.json",
-    "casePath": "/loancases/housing-loan"
+    "casePath": "/loancases/housing-loan",
+    "productPath": "/serviceOfferings/housing-loan"
   },
   {
     "id": 1,
     "title": "土地借貸",
     "path": "/lottieJson/loan_land_an.json",
-    "casePath": "/loancases/land-loan"
+    "casePath": "/loancases/land-loan",
+    "productPath": "/serviceOfferings/land-loan"
   },
   {
     "id": 2,
     "title": "民間代書借款",
     "path": "/lottieJson/loan_contracts_an.json",
-    "casePath": "/loancases/CoSignert-loan"
+    "casePath": "/loancases/CoSignert-loan",
+    "productPath": "/serviceOfferings/Co-Signert-loan"
   },
   {
     "id": 3,
     "title": "銀行信用貸款",
     "path": "/lottieJson/loan_credit_an.json",
-    "casePath": "/loancases/bankCredit-loan"
+    "casePath": "/loancases/bankCredit-loan",
+    "productPath": "/serviceOfferings/bankCredit-loan"
   },
   {
     "id": 4,
     "title": "汽機車貸款",
     "path": "/lottieJson/loan_car_an.json",
-    "casePath": "/loancases/vehicle-loan"
+    "casePath": "/loancases/vehicle-loan",
+    "productPath": "/serviceOfferings/vehicle-loan"
   },
   {
     "id": 5,
     "title": "手機貸款商品業務",
     "path": "/lottieJson/loan_phone_an.json",
-    "casePath": "/loancases/product-loan"
+    "casePath": "/loancases/product-loan",
+    "productPath": "/serviceOfferings/product-loan"
   }
 ]

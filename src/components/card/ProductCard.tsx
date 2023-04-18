@@ -6,9 +6,17 @@ type ProductCardProps = {
   path: string
   title: string
   casePath: string
+  showProduct?: boolean
+  productPath: string
 }
 
-export const ProductCard = ({ path, title, casePath }: ProductCardProps) => {
+export const ProductCard = ({
+  path,
+  title,
+  casePath,
+  showProduct = true,
+  productPath,
+}: ProductCardProps) => {
   const [onEnter, setOnEnter] = useState(false)
 
   return (
@@ -35,10 +43,14 @@ export const ProductCard = ({ path, title, casePath }: ProductCardProps) => {
         >
           查看案例
         </Link>
-
-        <button className="w-ful text-gray-400 font-bold border rounded-md text-sm p-2 group-hover:bg-slate-200 duration-300 group-hover:border-gray-300 group-hover:text-gray-700">
-          了解詳情
-        </button>
+        {showProduct && (
+          <Link
+            href={productPath}
+            className="w-ful text-gray-400 font-bold border rounded-md text-sm p-2 group-hover:bg-slate-200 duration-300 group-hover:border-gray-300 group-hover:text-gray-700"
+          >
+            <p className="text-center">了解詳情</p>
+          </Link>
+        )}
       </div>
     </div>
   )

@@ -1,10 +1,13 @@
 import Head from 'next/head'
 import { Layout } from '@/components/layout'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SERVICE_OFFERINGS_DATA from '@/data/service_offerings.json'
 import * as uuid from 'uuid'
 import { ServiceCard } from '@/components/card'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
+import { ProductBlock } from '@/components/productBlock'
+import PRODUCT_DATA from '@/data/product.json'
+import { useProductCardStore } from '@/store'
 
 export default function ServiceOfferings() {
   const [onTop, setOnTop] = useState(true)
@@ -15,6 +18,12 @@ export default function ServiceOfferings() {
     if (latest > 0) setOnTop(false)
     else setOnTop(true)
   })
+
+  useEffect(() => {
+    const setShowShow = useProductCardStore.getState().setShouldShow
+    setShowShow(true)
+    return () => setShowShow(false)
+  }, [])
 
   return (
     <>
@@ -66,6 +75,7 @@ export default function ServiceOfferings() {
               ))}
             </div>
           </section>
+          <ProductBlock data={PRODUCT_DATA} showProduct={false} />
         </Layout>
       </main>
     </>
