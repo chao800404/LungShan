@@ -116,6 +116,30 @@ const LogoAnWrapper = ({ list }: { list: ImageContent[]; index?: number }) => {
   )
 }
 
+const BankLogoContent_2 = ({ list }: { list: ImageContent[] }) => {
+  return (
+    <motion.div
+      animate={{ x: '-100%' }}
+      initial={{ x: 0 }}
+      transition={{ repeat: Infinity, duration: 10, ease: [0, 0, 0, 0] }}
+      className="flex gap-3 w-fit"
+    >
+      {list.map((item, i) => (
+        <div className="relative h-15 w-32">
+          <Image
+            key={item.id}
+            src={item.url}
+            alt={item.title}
+            width={150}
+            height={50}
+            className="grayscale object-cover"
+          />
+        </div>
+      ))}
+    </motion.div>
+  )
+}
+
 const BankLogoContent = ({ list }: { list: ImageContent[] }) => {
   const imageTotal = Math.ceil(list.length / 6)
   const splitImageGroup = React.useMemo(() => {
@@ -129,14 +153,18 @@ const BankLogoContent = ({ list }: { list: ImageContent[] }) => {
       <h3 className="text-5xl font-bold text-center p-[5rem] max-sm:text-3xl max-sm:p-0 max-sm:mt-5">
         合作相關銀行
       </h3>
-      <div className="overflow-hidden h-[5rem]">
-        <div className="grid grid-cols-[repeat(6,_1fr)] gap-10 ">
+      <div className="overflow-hidden h-[5rem] max-lg:h-fit">
+        <div className="grid grid-cols-[repeat(6,_1fr)] gap-10 max-lg:hidden">
           {splitImageGroup?.map((list, i) => (
             <LogoAnWrapper key={i} list={list} />
           ))}
           {splitImageGroup?.map((list, i) => (
             <LogoAnWrapper key={i} list={list} />
           ))}
+        </div>
+        <div className="hidden max-lg:flex max-lg:flex-nowrap items-center max-lg:w-full max-sm:mt-6">
+          <BankLogoContent_2 list={list} />
+          <BankLogoContent_2 list={list} />
         </div>
       </div>
     </>
@@ -243,7 +271,7 @@ export const HomePageSectionBody = () => {
         >
           <ImageContent url="/images/lungshan_loan_2.jpg" />
         </motion.div>
-        <div className="col-start-1 col-span-4 row-start-5 row-span-1 text-primary self-center justify-self-center max-w-screen-xxl px-5 w-full max-lg:order-6">
+        <div className="col-start-1 col-span-4 row-start-5 row-span-1 text-primary self-center justify-self-center max-w-screen-xxl px-5 w-full max-lg:order-6 max-lg:px-0">
           <BankLogoContent list={LUNGSHAN_BANK_LOGO} />
         </div>
       </motion.div>
