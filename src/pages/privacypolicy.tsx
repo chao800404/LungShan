@@ -19,7 +19,7 @@ const Privacypolicy = () => {
       <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none">
         <Layout>
           <div className="h-12 max-md:hidden" />
-          <section className="mt-32 m-auto max-w-screen-xxl max-xxl:px-5 max-md:mt-24">
+          <section className="mt-32 m-auto max-w-screen-xxl max-xxl:px-5 max-md:mt-0 max-md:pt-24">
             <div className="text-center flex flex-col gap-3">
               <h1 className="text-4xl font-bold">{PRIVACYPOLOLICY.title}</h1>
               <h2 className="text-lg p-5 font-mono max-w-screen-lg m-auto">

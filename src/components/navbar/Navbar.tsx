@@ -55,7 +55,7 @@ const DesktopNavbar = ({
       >
         <Link
           href="/"
-          className="w-40  border-r border-gray-200 h-full px-8 py-2 max-xxl:px-4 max-xxl:w-36 "
+          className="w-40 border-r border-gray-200 h-full px-8 py-2 max-xxl:px-4 max-xxl:w-36 "
         >
           <Image
             src="/images/logo-2.webp"
@@ -97,41 +97,41 @@ const MobileNavbar = ({ list, slug, setShowMenu, show }: MobileNavbarMb) => {
   const routeName = list.filter((item) => item.slug === slug)?.[0]?.title || ''
 
   return (
-    <motion.header className="hidden h-12  w-screen max-md:flex justify-between fixed bottom-0 bg-white z-40 border-t shadow-[0_-1px_0.5rem_rgba(0,0,0,0.05)] max-sm:px-5 max-sm:border-x">
+    <motion.header className="hidden h-14  w-screen max-md:flex justify-between fixed bottom-0 bg-white z-40 border-t shadow-[0_-1px_0.5rem_rgba(0,0,0,0.05)] max-sm:px-5 max-sm:border-x">
       <div className="h-full flex items-center max-sm:border-l">
         {show ? (
           <AiOutlineClose
             onClick={setShowMenu}
-            className="m-auto w-12 border-r h-full p-3"
+            className="m-auto w-16 border-r h-full p-2"
           />
         ) : (
           <GrMenu
             onClick={setShowMenu}
-            className="m-auto w-12 border-r h-full p-3"
+            className="m-auto w-16 border-r h-full p-2"
           />
         )}
 
-        <h2 className="text-xl px-2 max-sm:text-lg">{routeName}</h2>
+        {/* <h2 className="text-xl px-2 max-sm:text-lg">{routeName}</h2> */}
       </div>
       <div className="flex items-center max-sm:border-r">
-        <a href="tel:0800-777-992" className="h-full border-l w-12 text-2xl">
+        <a href="tel:0800-777-992" className="h-full border-l w-14 text-3xl">
           <AiFillPhone className="h-full m-auto" />
         </a>
         <a
           href="https://line.me/R/ti/p/@798advyq"
-          className="h-full border-l w-12 flex"
+          className="h-full border-l w-16 flex"
         >
           <Image
             alt="lineIcon"
             className="block m-auto"
             sizes="auto"
             src="/images/decoration/line-logo.svg"
-            width={22}
-            height={22}
+            width={28}
+            height={28}
             priority={true}
           />
         </a>
-        <Link href="/contact" className="h-full border-l w-12 text-[1.35rem]">
+        <Link href="/contact" className="h-full border-l w-14 text-[1.5rem]">
           <TfiWrite className="h-full m-auto" />
         </Link>
       </div>

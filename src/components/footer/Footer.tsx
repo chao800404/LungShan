@@ -79,7 +79,9 @@ export const Footer = ({ list }: FooterProps) => {
         />
       </div>
       <div className="border-t px-10 py-5 max-xxl:px-5">
-        <h2 className="font-medium">每100萬月息4780最高年利率6%</h2>
+        <h2 className="font-medium">
+          不動產抵押貸款借款100萬元，最短期限3個月,最長還款期限20年，借款金額無限制有價值都可承做，最高年利率百分之6，房屋土地持分借款100萬元，每月利息費用8000元
+        </h2>
         <h6 className="text-gray-400 font-mono py-2">警語：</h6>
         <p className="text-gray-400 font-mono text-[0.8rem] max-md:text-justify">
           本公司在評估及申貸過程，絕不會要求客戶提供任何存摺、印章、提款卡或其他正本文件資料。
