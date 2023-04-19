@@ -64,7 +64,7 @@ export default function Product() {
                 {data.title}
               </h1>
             </div>
-            <div className="m-auto w-full flex justify-center gap-2 mb-5">
+            <div className="m-auto w-full flex justify-center gap-2 mb-5 max-w-4xl">
               <div className="text-gray-400 font-mono flex items-center flex-wrap justify-center">
                 {data.feature.map((item, i) => (
                   <span key={uuid.v4()}>
