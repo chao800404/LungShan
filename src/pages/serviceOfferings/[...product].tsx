@@ -17,6 +17,7 @@ import { useProductCardStore } from '@/store'
 import { ServiceGrouproupBlock, LinkBlock } from '@/components/servicesBlock'
 import { BsBriefcase } from 'react-icons/bs'
 import Link from 'next/link'
+import * as uuid from 'uuid'
 
 export default function Product() {
   const route = useRouter()
@@ -64,16 +65,16 @@ export default function Product() {
               </h1>
             </div>
             <div className="m-auto w-full flex justify-center gap-2 mb-5">
-              <p className="text-gray-400 font-mono">
+              <div className="text-gray-400 font-mono flex items-center flex-wrap justify-center">
                 {data.feature.map((item, i) => (
-                  <>
-                    <span key={item}>{item}</span>
-                    {i !== data.feature.length - 1 && (
+                  <span key={uuid.v4()}>
+                    <span>{item} </span>
+                    {data.feature.length - 1 !== i && (
                       <span className="px-2">/</span>
                     )}
-                  </>
+                  </span>
                 ))}
-              </p>
+              </div>
             </div>
             {data.linkGroup ? (
               <LinkBlock groupLink={data.linkGroup} caseLink={data.casePath} />
@@ -101,7 +102,7 @@ export default function Product() {
                   {data?.content_1?.list?.map((item, i) => (
                     <li
                       className={`${(i + 1) % 4 !== 0 && 'border-r'} border-b`}
-                      key={item.id}
+                      key={uuid.v4()}
                     >
                       <div>
                         <h5 className="py-2 text-lg font-medium px-5 border-b">
@@ -153,7 +154,7 @@ export default function Product() {
 
                 <ul className="grid grid-cols-[repeat(3,_1fr)] gap-5 max-md:grid-cols-[repeat(2,_1fr)] max-sm:grid-cols-[100%] ">
                   {data.content_2.list.map((item, index) => (
-                    <li className="border p-5" key={item.id}>
+                    <li className="border p-5" key={uuid.v4()}>
                       <h5 className="py-2 text-lg font-medium border-b mb-3">
                         <span className="text-gray-500 mr-2">{`${
                           index + 1
@@ -186,7 +187,7 @@ export default function Product() {
                           whileInView={{ scale: 1.05 }}
                           initial={{ scale: 1 }}
                           className="w-[90%]"
-                          key={item.id}
+                          key={uuid.v4()}
                           viewport={{ margin: '-40%', amount: 'some' }}
                         >
                           <div className="rounded-md w-full border overflow-hidden drop-shadow-md text-center">

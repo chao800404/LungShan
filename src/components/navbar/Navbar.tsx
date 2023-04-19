@@ -94,10 +94,8 @@ type MobileNavbarMb = {
 } & NavbarProps
 
 const MobileNavbar = ({ list, slug, setShowMenu, show }: MobileNavbarMb) => {
-  const routeName = list.filter((item) => item.slug === slug)?.[0]?.title || ''
-
   return (
-    <motion.header className="hidden h-14  w-screen max-md:flex justify-between fixed bottom-0 bg-white z-40 border-t shadow-[0_-1px_0.5rem_rgba(0,0,0,0.05)] max-sm:px-5 max-sm:border-x">
+    <motion.header className="hidden h-14  w-screen max-md:flex justify-between border-primaryBlack border-t fixed bottom-0 bg-white z-40 shadow-[0_-1px_0.5rem_rgba(0,0,0,0.05)] max-sm:px-5 max-sm:border-x">
       <div className="h-full flex items-center max-sm:border-l">
         {show ? (
           <AiOutlineClose
@@ -110,8 +108,6 @@ const MobileNavbar = ({ list, slug, setShowMenu, show }: MobileNavbarMb) => {
             className="m-auto w-16 border-r h-full p-2"
           />
         )}
-
-        {/* <h2 className="text-xl px-2 max-sm:text-lg">{routeName}</h2> */}
       </div>
       <div className="flex items-center max-sm:border-r">
         <a href="tel:0800-777-992" className="h-full border-l w-14 text-3xl">

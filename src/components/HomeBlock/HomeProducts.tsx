@@ -54,7 +54,7 @@ const data_2 = [
         title: '房屋借款',
         description:
           '不完整產權，未保存登記，無須冗長審核，快速方便，不看聯徵，不照會。',
-        subtitle: '攏山代書給您超低利率：利率0.45％起，每萬元478元起',
+        subtitle: '攏山代書給您超低利率:利率0.45%起，每萬元478元起',
       },
     ],
   },
@@ -72,7 +72,7 @@ const data_2 = [
       },
       {
         title: '土地借款',
-        description: '借1億也可以，殯葬用地、原住民保護地、公共共有都能承做。',
+        description: '借1億也可以，殯葬用地、原住民保護地、公同共有都能承做。',
         subtitle: '急件可當天撥款一小時內審核，無權狀可',
         titleColor: 'text-yellow-400',
         descriptionColor: 'text-yellow-100',
@@ -89,7 +89,7 @@ const data_2 = [
     contents: [
       {
         title: '一個月薪轉紀錄就可借',
-        description: '貸款利率12%~30%不等，需視客戶條件而定。',
+        description: '貸款利率1.5%~8%不等，需視客戶條件而定。',
         imageUrl: '/images/lungshan_loan_15.jpg',
       },
       {

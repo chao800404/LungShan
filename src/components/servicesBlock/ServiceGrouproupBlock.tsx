@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import * as uuid from 'uuid'
 
 type ServiceGrouproupBlockProps = {
   list: {
@@ -20,7 +21,7 @@ export const ServiceGrouproupBlock = ({ list }: ServiceGrouproupBlockProps) => {
           return (
             <li
               className={`px-3 py-2 relative ${!isActive && 'text-gray-300'}`}
-              key={item.id}
+              key={uuid.v4()}
               onClick={() => setCurInex(index)}
             >
               {item.title}

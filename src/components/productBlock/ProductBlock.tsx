@@ -4,6 +4,7 @@ import { MdKeyboardArrowDown } from 'react-icons/md'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useProductCardStore } from '@/store'
 import { shallow } from 'zustand/shallow'
+import * as uuid from 'uuid'
 
 type MotionBlockProps = {
   children: JSX.Element
@@ -110,7 +111,7 @@ export const ProductBlock = ({
               onAnimationComplete={() => setCoverOnload(false)}
             >
               {data?.map((item, i) => (
-                <MotionBlock key={`${item.id}_${item.title}`} index={i}>
+                <MotionBlock key={item.id} index={i}>
                   <ProductCard {...item} showProduct={showProduct} />
                 </MotionBlock>
               ))}
