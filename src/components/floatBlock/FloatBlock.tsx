@@ -2,6 +2,8 @@ import React from 'react'
 import { AiFillPhone, AiOutlineToTop } from 'react-icons/ai'
 
 import Image from 'next/image'
+import Link from 'next/link'
+import { TfiWrite } from 'react-icons/tfi'
 
 const FloatBlock = () => {
   const scrollToTop = () => window.scrollTo({ top: 0 })
@@ -28,6 +30,12 @@ const FloatBlock = () => {
       <a className="p-1 border rounded-r-sm" onClick={scrollToTop}>
         <AiOutlineToTop className="cursor-pointer" onClick={scrollToTop} />
       </a>
+      <Link
+        href="/contact"
+        className="p-1 px-2 border rounded-r-sm text-2xl flex"
+      >
+        <TfiWrite className="cursor-pointer m-auto" />
+      </Link>
     </div>
   )
 }

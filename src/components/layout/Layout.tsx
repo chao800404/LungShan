@@ -22,7 +22,7 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Navbar
-        list={NAVBAR_DATA}
+        list={NAVBAR_DATA.filter((item) => item.public)}
         setShowMenu={() => setShowMenu((prev) => !prev)}
         show={showMenu}
       />

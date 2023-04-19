@@ -33,7 +33,7 @@ export default function ServiceOfferings() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen ">
+      <main className="max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none">
         <Layout>
           <div className="h-14 mb-2 w-full max-sm:h-10" />
           <motion.div

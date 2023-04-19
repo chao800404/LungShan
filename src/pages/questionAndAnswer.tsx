@@ -27,7 +27,7 @@ export default function QuestionAndAnswerPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
+      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none">
         <Layout>
           <section className="min-h-screen">
             <div className="max-w-screen-xxl m-auto text-black pt-48 pb-40 flex gap-5 max-xxl:flex max-xxl:pt-28 max-xxl:gap-0 max-xxl:pb-10 max-md:flex-col">

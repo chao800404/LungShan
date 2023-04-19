@@ -2,12 +2,24 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  name: string
+  success: boolean
 }
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  if (req.method === 'POST') {
+    try {
+      const userData = req.body
+
+      res.status(200).json({
+        success: true,
+      })
+    } catch (err) {
+      res.status(400).json({
+        success: false,
+      })
+    }
+  }
 }

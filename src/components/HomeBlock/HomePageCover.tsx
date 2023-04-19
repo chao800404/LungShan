@@ -51,14 +51,14 @@ export const HomePageCover = () => {
         <div className="mt-12 mb-2 max-md:text-center max-md:mt-32 max-sm:mt-14">
           <motion.button
             whileTap={{ scale: 0.98, y: 1 }}
-            className="bg-primaryBlue pt-3 pb-3 pl-5 pr-5 rounded-md text-primary font-bold max-md:text-xl max-sm:text-sm"
+            className="bg-primaryBlue pt-3 pb-3 pl-5 pr-5 rounded-md text-primary font-bold max-md:text-xl max-sm:text-lg"
           >
             快速聯絡我們
           </motion.button>
-          <div className="mt-2 mb-2 text-sm max-md:text-xl max-md:mt-5 max-sm:text-sm">
+          <div className="mt-2 mb-2 text-sm max-md:text-xl max-md:mt-5 max-sm:text-lg">
             想使用表單聯繫嗎?
             <span className="text-primaryBlue">
-              <Link href="#"> 點擊此處 </Link>
+              <Link href="/contact"> 點擊此處 </Link>
             </span>
             幫你快速連結表單
           </div>

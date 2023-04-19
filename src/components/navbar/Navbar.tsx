@@ -9,6 +9,7 @@ import { NavbarData } from './type'
 import { useMediaQuery } from 'react-responsive'
 import { GrMenu } from 'react-icons/gr'
 import { AiFillPhone, AiOutlineClose } from 'react-icons/ai'
+import { TfiWrite } from 'react-icons/tfi'
 
 export type NavbarProps = {
   list: NavbarData[]
@@ -130,6 +131,9 @@ const MobileNavbar = ({ list, slug, setShowMenu, show }: MobileNavbarMb) => {
             priority={true}
           />
         </a>
+        <Link href="/contact" className="h-full border-l w-12 text-[1.35rem]">
+          <TfiWrite className="h-full m-auto" />
+        </Link>
       </div>
     </motion.header>
   )

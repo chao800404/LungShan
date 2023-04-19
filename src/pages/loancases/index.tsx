@@ -26,7 +26,7 @@ export default function LoancasesPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
+      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none">
         <Layout>
           <motion.section className="overflow-hidden text-primary mb-20 max-lg:mb-0 max-sm:sticky max-sm:top-0 max-sm:z-0">
             <LoanCasesCover list={LOAN_CASES_DATA} />

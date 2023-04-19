@@ -4,12 +4,14 @@
     "description": "薪轉滿三個月即可辦理 !最高月收入22倍 !",
     "id": 1,
     "slug": "/",
+    "public": true,
     "content": []
   },
   {
     "title": "產品服務",
     "id": 2,
     "slug": "/serviceOfferings",
+    "public": true,
     "content": [
       {
         "title": "房屋借貸",
@@ -59,27 +61,39 @@
     "title": "相關案例",
     "id": 3,
     "slug": "/loancases",
-    "content": []
+    "content": [],
+    "public": true
   },
   {
     "title": "防詐騙專區",
     "description": "1/20也可以！只要您開口，我們就幫您",
     "id": 4,
     "slug": "/scamPrevention",
-    "content": []
+    "content": [],
+    "public": true
   },
   {
     "title": "借貸須知",
     "description": "1/20也可以！只要您開口，我們就幫您",
     "id": 5,
     "slug": "/questionAndAnswer",
-    "content": []
+    "content": [],
+    "public": true
   },
   {
     "title": "關於我們",
     "description": "土地持分借款：1/20也可以！農地、工業地、建地、林地、旱地各種都可以！",
     "id": 6,
     "slug": "/aboutus",
-    "content": []
+    "content": [],
+    "public": true
+  },
+  {
+    "title": "隱私政策",
+    "description": "土地持分借款：1/20也可以！農地、工業地、建地、林地、旱地各種都可以！",
+    "id": 6,
+    "slug": "/privacypolicy",
+    "content": [],
+    "public": false
   }
 ]

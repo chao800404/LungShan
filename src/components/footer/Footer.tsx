@@ -78,6 +78,18 @@ export const Footer = ({ list }: FooterProps) => {
           list={list}
         />
       </div>
+      <div className="border-t px-10 py-5 max-xxl:px-5">
+        <h2 className="font-medium">每100萬月息4780最高年利率6%</h2>
+        <h6 className="text-gray-400 font-mono py-2">警語：</h6>
+        <p className="text-gray-400 font-mono text-[0.8rem] max-md:text-justify">
+          本公司在評估及申貸過程，絕不會要求客戶提供任何存摺、印章、提款卡或其他正本文件資料。
+          本公司在評估及審查過程，前端絕不會要求客戶匯款或任何明目費用。
+          本廣告揭露之年百分率不等於貸款利率，實際貸款仍以銀行提供之產品為準，且每一客戶實際之年百分率，仍視其個別貸款產品及授信條件而有所不同。
+          貸款額度及利率依個人實際條件差異而有所不同，銀行保有核貸額度、適用利率與核貸與否之權利，詳細約定應以銀行貸款申請書及約定書為準。
+          客戶所提供之申辦資料將予以保密義務，非業務需要不得交付或洩漏予第三人，並應盡善良管理人之注意義務為客戶處理事務。
+          請提高警覺，小心查證。謹慎理財，信用至上！
+        </p>
+      </div>
       <div className="border-t text-xs text-gray-400 py-4 px-4 flex justify-between max-lg:text-base max-lg:p-0 max-lg:flex-col-reverse max-md:text-sm">
         <p className="max-lg:p-5 max-lg:border-t max-md:px-5 max-md:py-2">
           Copyright ©2023 舜至有限公司. All rights reserved.

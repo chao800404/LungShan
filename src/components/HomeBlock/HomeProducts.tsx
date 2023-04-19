@@ -20,7 +20,7 @@ const data = [
   {
     id: 1,
     percentage: '72%',
-    description: '全台媒合百分之三十二的銀行品牌，快速審核過件',
+    description: '全台媒合百分之七十二的銀行品牌，快速審核過件',
     subTitle: '個人資料絕對保密跟保護，個資不外流',
   },
   {

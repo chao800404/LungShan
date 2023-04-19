@@ -17,12 +17,10 @@ export default function ChooseOurCompany() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen">
+      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none">
         <Layout>
           <section className="min-h-screen">
-            <div className="px-40 py-40">
-              
-            </div>
+            <div className="px-40 py-40"></div>
           </section>
         </Layout>
       </main>

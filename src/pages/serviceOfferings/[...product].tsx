@@ -7,10 +7,13 @@ import Image from 'next/image'
 import { LoopSwiper, Swipper } from '@/components/swipper'
 import { BsFillArrowDownSquareFill } from 'react-icons/bs'
 import { TfiWrite } from 'react-icons/tfi'
-import { useMotionValueEvent, useScroll, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import LOAN_BOOK_AN from '../../../public/lottieJson/loan_book_an.json'
 import Lottie from 'react-lottie-player'
 import { MdOutlineArrowBackIosNew } from 'react-icons/md'
+import { ProductBlock } from '@/components/productBlock'
+import PRODUCT_DATA from '@/data/product.json'
+import { useProductCardStore } from '@/store'
 
 export default function Product() {
   const route = useRouter()
@@ -19,9 +22,11 @@ export default function Product() {
     (item) => item.slug === route.asPath
   )?.[0]
 
-  const { scrollY } = useScroll()
-
-  useMotionValueEvent(scrollY, 'change', (latest) => {})
+  useEffect(() => {
+    const setShowShow = useProductCardStore.getState().setShouldShow
+    setShowShow(true)
+    return () => setShowShow(false)
+  }, [])
 
   if (!data) return null
 
@@ -34,7 +39,7 @@ export default function Product() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen flex items-center flex-col">
+      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen flex items-center flex-col max-md:shadow-none">
         <Layout>
           <div className="h-12 mt-1 max-sm:h-5" />
           <div className="hidden fixed  max-md:flex h-12 top-0 bg-white text-2xl border-b z-50 w-full">
@@ -217,6 +222,7 @@ export default function Product() {
               )}
             </div>
           </section>
+          <ProductBlock data={PRODUCT_DATA} />
         </Layout>
       </main>
     </>
