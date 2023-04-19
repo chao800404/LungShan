@@ -14,6 +14,9 @@ import { MdOutlineArrowBackIosNew } from 'react-icons/md'
 import { ProductBlock } from '@/components/productBlock'
 import PRODUCT_DATA from '@/data/product.json'
 import { useProductCardStore } from '@/store'
+import { ServiceGrouproupBlock, LinkBlock } from '@/components/servicesBlock'
+import { BsBriefcase } from 'react-icons/bs'
+import Link from 'next/link'
 
 export default function Product() {
   const route = useRouter()
@@ -39,7 +42,7 @@ export default function Product() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen flex items-center flex-col max-md:shadow-none">
+      <main className="font-primary max-w-screen-2xl relative mr-auto ml-auto shadow-body min-h-screen flex items-center flex-col max-md:shadow-none">
         <Layout>
           <div className="h-12 mt-1 max-sm:h-5" />
           <div className="hidden fixed  max-md:flex h-12 top-0 bg-white text-2xl border-b z-50 w-full">
@@ -55,11 +58,28 @@ export default function Product() {
           />
 
           <section className="min-h-screen mx-10 max-lg:mx-0 max-lg:px-5 max-md:min-h-0 max-sm:sticky max-sm:top-0 max-sm:z-0">
-            <div className="p-10">
+            <div className="px-10 py-5">
               <h1 className="text-7xl m-auto text-center font-bold max-md:text-5xl max-sm:text-3xl">
                 {data.title}
               </h1>
             </div>
+            <div className="m-auto w-full flex justify-center gap-2 mb-5">
+              <p className="text-gray-400 font-mono">
+                {data.feature.map((item, i) => (
+                  <>
+                    <span key={item}>{item}</span>
+                    {i !== data.feature.length - 1 && (
+                      <span className="px-2">/</span>
+                    )}
+                  </>
+                ))}
+              </p>
+            </div>
+            {data.linkGroup ? (
+              <LinkBlock groupLink={data.linkGroup} caseLink={data.casePath} />
+            ) : (
+              <></>
+            )}
             <div className="relative h-[80vh] rounded-xl overflow-hidden max-xl:h-[60vh]">
               <Image
                 src={data.imgUrl}
@@ -185,6 +205,9 @@ export default function Product() {
                     ))}
                   </ul>
                 </div>
+              )}
+              {data.content_4 && (
+                <ServiceGrouproupBlock list={data.content_4} />
               )}
               {data.compare_table && (
                 <div className="flex-1 rounded-md border p-5 h-fit shadow sticky top-24 max-sm:border-none max-sm:rounded-none">

@@ -23,12 +23,12 @@ const FooterList = ({
   onMouseLeave,
 }: FooterListProps) => {
   return (
-    <div className="justify-self-start border-l w-full max-lg:border-t">
+    <div className="justify-self-start border-l w-full max-xl:border-t">
       <h3 className="text-2xl font-bold py-2 px-5 border-b">{title}</h3>
       <ul
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        className="flex flex-col gap-2 flex-wrap px-5 max-h-32 py-3 max-md:max-h-40"
+        className="flex flex-col gap-2 flex-wrap px-5 max-h-32 py-3 max-md:max-h-48"
       >
         {list?.map((item) => (
           <li
@@ -51,8 +51,8 @@ export const Footer = ({ list }: FooterProps) => {
 
   return (
     <footer className="border-t w-full max-md:pb-16">
-      <div className="grid grid-cols-[1.5fr_1fr_1fr] text-sm  m-auto max-lg:grid-cols-[repeat(2,_1fr)] max-md:grid-cols-[100%]">
-        <div className="flex flex-col gap-2 px-10 py-5 max-xxl:px-5 max-lg:col-span-2 max-md:col-span-1">
+      <div className="grid grid-cols-[1.5fr_1fr_1fr] text-sm  m-auto max-xxl:grid-cols-[repeat(3,_1fr)] max-xl:grid-cols-[repeat(2,_1fr)] max-mmd:grid-cols-[100%]">
+        <div className="flex flex-col gap-2 px-10 py-5 max-xxl:px-5 max-xl:col-span-2 max-mmd:col-span-1">
           <h3 className="text-3xl font-bold ">攏山股份有限公司</h3>
           <p className="max-md:text-base font-thin">
             桃園市中壢區領航南路三段352號
@@ -80,7 +80,7 @@ export const Footer = ({ list }: FooterProps) => {
       </div>
       <div className="border-t px-10 py-5 max-xxl:px-5">
         <h2 className="font-medium">
-          不動產抵押貸款借款100萬元，最短期限3個月,最長還款期限20年，借款金額無限制有價值都可承做，最高年利率百分之6，房屋土地持分借款100萬元，每月利息費用8000元
+          不動產抵押貸款借款100萬元，最短期限3個月,最長還款期限20年，借款金額無限制有價值都可承做，最高年利率百分之6，房屋土地持分借款100萬元，每月利息費用4780元
         </h2>
         <h6 className="text-gray-400 font-mono py-2">警語：</h6>
         <p className="text-gray-400 font-mono text-[0.8rem] max-md:text-justify">

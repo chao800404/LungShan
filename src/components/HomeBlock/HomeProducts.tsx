@@ -7,6 +7,7 @@ import { Button } from '../button'
 import { register } from 'swiper/element/bundle'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Pagination } from 'swiper'
+import Link from 'next/link'
 
 register()
 
@@ -42,6 +43,7 @@ const data_2 = [
     id: 0,
     type: 'onlyImage',
     name: '房屋借款',
+    slug: '/serviceOfferings/housing-loan',
     contents: [
       {
         title: '無財力證明皆可辦理',
@@ -60,6 +62,7 @@ const data_2 = [
     id: 2,
     type: 'onlyImage',
     name: '土地借款',
+    slug: '/serviceOfferings/land-loan',
     contents: [
       {
         title: '全地區土地收購',
@@ -79,9 +82,10 @@ const data_2 = [
   },
 
   {
-    id: 5,
+    id: 3,
     type: 'onlyImage',
     name: '民間代書借款',
+    slug: '/serviceOfferings/Co-Signert-loan',
     contents: [
       {
         title: '一個月薪轉紀錄就可借',
@@ -102,6 +106,7 @@ const data_2 = [
     id: 4,
     type: 'onlyImage',
     name: '銀行信用貸款',
+    slug: '/serviceOfferings/bankCredit-loan',
     contents: [
       {
         title: '工作滿三個月即可',
@@ -119,9 +124,10 @@ const data_2 = [
     ],
   },
   {
-    id: 1,
+    id: 5,
     type: 'hasVideo',
     name: '汽車機車貸款',
+    slug: '/serviceOfferings/vehicle-loan',
     contents: [
       {
         imageUrl: '/images/lungshan_loan_10.jpg',
@@ -139,9 +145,10 @@ const data_2 = [
     ],
   },
   {
-    id: 3,
+    id: 6,
     type: 'hasVideo',
     name: '手機或精品貸款',
+    slug: '/serviceOfferings/product-loan',
     contents: [
       {
         imageUrl: '/images/lungshan_loan_13.jpg',
@@ -170,9 +177,18 @@ type Content = {
   subtitle?: string
 }
 
-const ImageBlock = ({ contents }: { contents: Content[] }) => {
+const ImageBlock = ({
+  contents,
+  slug,
+}: {
+  contents: Content[]
+  slug: string
+}) => {
   return (
-    <div className="flex gap-2 h-[90%] w-[30.5rem] m-auto justify-center max-sm:flex-col max-sm:w-[16rem]">
+    <Link
+      href={slug || ''}
+      className="flex gap-2 h-[90%] w-[30.5rem] m-auto justify-center max-sm:flex-col max-sm:w-[16rem]"
+    >
       <ScaleAndCoverImageBlock
         title={contents[0]?.title}
         description={contents[0]?.description}
@@ -186,13 +202,22 @@ const ImageBlock = ({ contents }: { contents: Content[] }) => {
         descriptionColor={contents[1]?.descriptionColor}
         backgroundColor={contents[1]?.backgroundColor}
       />
-    </div>
+    </Link>
   )
 }
 
-const VideoBlock = ({ contents }: { contents: Content[] }) => {
+const VideoBlock = ({
+  contents,
+  slug,
+}: {
+  contents: Content[]
+  slug: string
+}) => {
   return (
-    <div className="flex gap-2 h-[90%] w-[30.5rem] m-auto justify-center max-sm:flex-col max-sm:w-[16rem]">
+    <Link
+      href={slug || ''}
+      className="flex gap-2 h-[90%] w-[30.5rem] m-auto justify-center max-sm:flex-col max-sm:w-[16rem]"
+    >
       <MediaAndImageBlock
         imageUrl={contents[0].imageUrl || ''}
         mediaUrl={contents[0].mediaUrl || ''}
@@ -205,7 +230,7 @@ const VideoBlock = ({ contents }: { contents: Content[] }) => {
         descriptionColor={contents[1]?.descriptionColor}
         backgroundColor={contents[1]?.backgroundColor}
       />
-    </div>
+    </Link>
   )
 }
 
@@ -217,11 +242,11 @@ export const HomeProducts = () => {
     const result = data_2.map((item) =>
       item.type === 'onlyImage' ? (
         <SwiperSlide className="w-fit swiper-slide" key={item.id}>
-          <ImageBlock contents={item.contents as Content[]} />
+          <ImageBlock slug={item.slug} contents={item.contents as Content[]} />
         </SwiperSlide>
       ) : (
         <SwiperSlide className="w-fit swiper-slide" key={item.id}>
-          <VideoBlock contents={item.contents as Content[]} />
+          <VideoBlock slug={item.slug} contents={item.contents as Content[]} />
         </SwiperSlide>
       )
     )

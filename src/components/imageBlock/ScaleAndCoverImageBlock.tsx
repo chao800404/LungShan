@@ -77,21 +77,24 @@ export const ScaleAndCoverImageBlock: React.FC<
     >
       <motion.div
         variants={container}
-        className="absolute top-0 left-0 select-none	w-full h-full z-20 bg-[rgba(0,0,0,0.8)]  pt-14 pb-14 pr-5 pl-5 flex flex-col items-center gap-10"
+        className="absolute top-0 left-0 select-none	w-full h-full z-20 bg-[rgba(0,0,0,0.8)]  pt-14 pb-14 pr-5 pl-5 flex flex-col items-center gap-10 max-sm:gap-2 max-sm:p-5 max-sm:justify-center"
       >
         <motion.h3
           variants={H3Container}
-          className="text-gray-200 font-bold text-2xl mb-5"
+          className="text-gray-200 font-bold text-2xl mb-5 max-sm:text-xl max-sm:mb-0"
         >
           {title}
         </motion.h3>
         <motion.div
           variants={BaseContainer}
-          className="text-[5rem] text-gray-200 h-4/6"
+          className="text-[5rem] text-gray-200 h-4/6 max-sm:text-3xl max-sm:h-fit"
         >
           <HiOutlineExternalLink />
         </motion.div>
-        <motion.p variants={BaseContainer} className="text-primary font-medium">
+        <motion.p
+          variants={BaseContainer}
+          className="text-primary font-medium max-sm:text-base max-sm:text-center"
+        >
           {description}
         </motion.p>
       </motion.div>
