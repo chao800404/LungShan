@@ -82,26 +82,43 @@ const Contact = () => {
     e.preventDefault()
     if (!username || !userphone || legalAge !== '是') return setValidate(false)
     if (validate) {
-      setSuccessful(false)
-      const res = await fetch('/api/submitUserData', {
-        method: 'POST',
-        body: JSON.stringify({
-          username,
-          userphone,
-          useremail,
-          service,
-          price,
-          legalAge,
-          userdescription,
-        }),
-      })
-      const isSuccess = res.ok
-      if (isSuccess) {
-        setSuccessful(true)
-      } else {
-        setTimeout(() => setSuccessful(true), 2000)
-      }
+      try {
+        setSuccessful(false)
+        const res = await fetch('/api/submitUserData', {
+          method: 'POST',
+          body: JSON.stringify({
+            username,
+            userphone,
+            useremail,
+            service,
+            price,
+            legalAge,
+            userdescription,
+          }),
+        })
+        const isSuccess = res.ok
 
+        if (res.status === 200) {
+          ;(window as any).push({
+            event: 'formSubmitted',
+          })
+        } else {
+          console.log('Form submission failed.')
+        }
+
+        if (isSuccess) {
+          setSuccessful(true)
+        } else {
+          setTimeout(() => setSuccessful(true), 2000)
+          throw Error('客戶表單傳送失敗')
+        }
+      } catch (error: any) {
+        ;(window as any).dataLayer = (window as any).dataLayer || []
+        ;(window as any).dataLayer.push({
+          event: 'formError',
+          errorMessage: error.message,
+        })
+      }
       resetUserData()
     }
   }
