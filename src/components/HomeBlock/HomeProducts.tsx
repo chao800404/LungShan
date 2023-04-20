@@ -54,7 +54,7 @@ const data_2 = [
         title: '房屋借款',
         description:
           '不完整產權，未保存登記，無須冗長審核，快速方便，不看聯徵，不照會。',
-        subtitle: '攏山代書給您超低利率:利率0.45%起，每萬元478元起',
+        subtitle: '攏山代書給您超低利率:利率0.45%起，每10萬元478元起',
       },
     ],
   },
@@ -116,7 +116,7 @@ const data_2 = [
       {
         title: '銀行信用貸款',
         description: '薪轉滿三個月即可辦理，最高月收入22倍。',
-        subtitle: '貸款利率12%~30%不等，需視客戶條件而定',
+        subtitle: '貸款利率1.6%~8%不等，需視客戶條件而定',
         titleColor: 'text-blue-200',
         descriptionColor: 'text-gray-100',
         backgroundColor: 'bg-gray-800',
