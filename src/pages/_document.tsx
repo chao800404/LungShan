@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 import React from 'react'
 import ReactGA from 'react-ga'
 
-ReactGA.initialize(process.env.GA_TRACKING_ID as string)
+ReactGA.initialize('G-1WDJ70DSYK')
 
 export default function Document() {
   return (
