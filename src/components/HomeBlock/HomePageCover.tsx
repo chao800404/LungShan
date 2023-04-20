@@ -2,8 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useGa } from '@/utils'
 
 export const HomePageCover = () => {
+  const { handleClick } = useGa()
+
   return (
     <section className="flex items-center justify-center snap-none">
       <div className="max-w-screen-xxl py-20  flex flex-col w-full mt-28 px-5 max-mmd:h-fit max-sm:mt-2">
@@ -59,7 +62,18 @@ export const HomePageCover = () => {
           <div className="mt-2 mb-2 text-sm max-md:text-xl max-md:mt-5 max-sm:text-lg">
             想使用表單聯繫嗎?
             <span className="text-primaryBlue">
-              <Link href="/contact"> 點擊此處 </Link>
+              <Link
+                onClick={() =>
+                  handleClick({
+                    category: 'Button',
+                    action: 'Click',
+                    label: '點擊連結到表單頁面',
+                  })
+                }
+                href="/contact"
+              >
+                點擊此處
+              </Link>
             </span>
             幫你快速連結表單
           </div>

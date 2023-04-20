@@ -2,12 +2,9 @@ import { Html, Head, Main, NextScript } from 'next/document'
 import React from 'react'
 import ReactGA from 'react-ga'
 
-export default function Document() {
-  React.useEffect(() => {
-    ReactGA.initialize(process.env.GA_TRACKING_ID as string)
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [])
+ReactGA.initialize(process.env.GA_TRACKING_ID as string)
 
+export default function Document() {
   return (
     <Html lang="zh-Hant-TW">
       <Head>
