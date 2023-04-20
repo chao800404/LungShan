@@ -62,7 +62,7 @@ export const Footer = ({ list }: FooterProps) => {
             onMouseEnter={() => setPointerEvent('Focus')}
             onMouseLeave={() => setPointerEvent('Default')}
           >
-            <a href="tel:032876234">0800-777-992</a>
+            <a href="tel:0800-777-992">0800-777-992</a>
           </h2>
         </div>
         <FooterList
