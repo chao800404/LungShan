@@ -3,6 +3,7 @@
     "title": "房屋借貸",
     "id": 0,
     "imgUrl": "/images/lungshan_loan_9.jpg",
+    "casePath": "/loancases/housing-loan",
     "description": "銀行估不到額度又想脫手、正常管道無法獲得充足資金又等不了時間、面臨未來此地區不利因素過多，眼不見心不煩、政府政策改變，利潤已不足以產生興趣想獲利了結。",
     "content": [
       {
@@ -122,6 +123,7 @@
     "imgUrl": "/images/lungshan_loan_12.jpg",
     "description": "銀行估不到額度又想脫手、正常管道無法獲得充足資金又等不了時間、面臨未來此地區不利因素過多，眼不見心不煩、政府政策改變，利潤已不足以產生興趣想獲利了結。",
     "id": 1,
+    "casePath": "/loancases/land-loan",
     "content": [
       {
         "id": 0,
@@ -238,6 +240,7 @@
   {
     "title": "民間代書借款",
     "imgUrl": "/images/lungshan_loan_1.jpeg",
+    "casePath": "/loancases/CoSignert-loan",
     "description": "銀行貸款條件不足，銀行婉拒，個人信用瑕疵，銀行拒絕放貸，貸款遲繳、呆帳未清紀錄。",
     "id": 2,
     "content": [
@@ -341,6 +344,7 @@
   {
     "title": "銀行信用貸款",
     "imgUrl": "/images/lungshan_loan_14.jpg",
+    "casePath": "/loancases/bankCredit-loan",
     "description": "曾經協商還清，疏忽曾遲繳帳單，評分不足，需要百萬核准十萬。",
     "id": 3,
     "content": [
@@ -419,6 +423,7 @@
   {
     "title": "汽機車貸款",
     "imgUrl": "/images/lungshan_loan_11.jpg",
+    "casePath": "/loancases/vehicle-loan",
     "description": "貸款金額45萬以內、沒有勞保或薪轉，透過汽機車貸款都可以輕鬆申貸、沒有房屋土地的情況下，利用汽機車就可以簡單貸款、無任何貸款的情況下可以透過汽機車貸款輕鬆申貸。",
     "id": 2,
     "content": [
@@ -497,6 +502,7 @@
   {
     "title": "手機商品貸款",
     "imgUrl": "/images/lungshan_loan_24.jpg",
+    "casePath": "/loancases/product-loan",
     "description": "貸款金額20萬以內、沒有勞保或薪轉，沒有房屋土地也沒有汽車的情況下，無任何貸款的情況下可以透過商品貸款/手機貸款輕鬆申貸。",
     "id": 3,
     "content": [

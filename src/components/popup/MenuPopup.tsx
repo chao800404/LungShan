@@ -4,6 +4,7 @@ import { NavbarProps } from '../navbar'
 import Link from 'next/link'
 import { BiLinkExternal } from 'react-icons/bi'
 import Image from 'next/image'
+import { useGa } from '@/utils'
 
 const variants = {
   show: {
@@ -24,6 +25,8 @@ export const MenuPopup = ({
   showMenu: boolean
   hide: () => void
 }) => {
+  const { handleClickPhoneButton } = useGa()
+
   return (
     <AnimatePresence>
       {showMenu && (
@@ -63,6 +66,7 @@ export const MenuPopup = ({
                 <a
                   className="text-xl font-bold underline"
                   href="tel:0800-777-992"
+                  onClick={handleClickPhoneButton}
                 >
                   0800-777-992
                 </a>

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useGa } from '@/utils'
 
 export const HomePageCover = () => {
-  // const { handleClick } = useGa()
+  const { handleClickPhoneButton, handleTranferContactusPage } = useGa()
 
   return (
     <section className="flex items-center justify-center snap-none">
@@ -56,22 +56,14 @@ export const HomePageCover = () => {
             whileTap={{ scale: 0.98, y: 1 }}
             href="tel:0800-777-992"
             className="bg-primaryBlue pt-3 pb-3 pl-5 pr-5 rounded-md text-primary font-bold max-md:text-xl max-sm:text-lg"
+            onClick={handleClickPhoneButton}
           >
             快速聯絡我們
           </motion.a>
-          <div className="mt-2 mb-2 text-sm max-md:text-xl max-md:mt-5 max-sm:text-lg">
+          <div className="mt-5 mb-2 text-sm max-md:text-xl max-md:mt-5 max-sm:text-lg">
             想使用表單聯繫嗎?
             <span className="text-primaryBlue">
-              <Link
-                // onClick={() =>
-                //   handleClick({
-                //     category: 'Button',
-                //     action: 'Click',
-                //     label: '點擊連結到表單頁面',
-                //   })
-                // }
-                href="/contact"
-              >
+              <Link onClick={handleTranferContactusPage} href="/contact">
                 點擊此處
               </Link>
             </span>

@@ -10,6 +10,7 @@ import { useMediaQuery } from 'react-responsive'
 import { GrMenu } from 'react-icons/gr'
 import { AiFillPhone, AiOutlineClose } from 'react-icons/ai'
 import { TfiWrite } from 'react-icons/tfi'
+import { useGa } from '@/utils'
 
 export type NavbarProps = {
   list: NavbarData[]
@@ -33,6 +34,8 @@ const DesktopNavbar = ({
   slug,
   setRoute,
 }: NavbarPropsDs) => {
+  const { handleClickPhoneButton } = useGa()
+
   return (
     <motion.header
       animate={
@@ -81,7 +84,9 @@ const DesktopNavbar = ({
               overHeader && 'bg-slate-700 text-white border-none'
             }`}
           >
-            <Link href="tel:0800-777-992">聯絡我們</Link>
+            <Link onClick={handleClickPhoneButton} href="tel:0800-777-992">
+              聯絡我們
+            </Link>
           </Button>
         </div>
       </motion.nav>
@@ -94,6 +99,12 @@ type MobileNavbarMb = {
 } & NavbarProps
 
 const MobileNavbar = ({ list, slug, setShowMenu, show }: MobileNavbarMb) => {
+  const {
+    handleClickPhoneButton,
+    handleClickLineButton,
+    handleTranferContactusPage,
+  } = useGa()
+
   return (
     <motion.header className="hidden h-14  w-screen max-md:flex justify-between border-primaryBlack border-t fixed bottom-0 bg-white z-40 shadow-[0_-1px_0.5rem_rgba(0,0,0,0.05)] max-sm:px-5 max-sm:border-x">
       <div className="h-full flex items-center max-sm:border-l">
@@ -110,12 +121,17 @@ const MobileNavbar = ({ list, slug, setShowMenu, show }: MobileNavbarMb) => {
         )}
       </div>
       <div className="flex items-center max-sm:border-r">
-        <a href="tel:0800-777-992" className="h-full border-l w-14 text-3xl">
+        <a
+          onClick={handleClickPhoneButton}
+          href="tel:0800-777-992"
+          className="h-full border-l w-14 text-3xl"
+        >
           <AiFillPhone className="h-full m-auto" />
         </a>
         <a
           href="https://line.me/R/ti/p/@798advyq"
           className="h-full border-l w-16 flex"
+          onClick={handleClickLineButton}
         >
           <Image
             alt="lineIcon"
@@ -127,7 +143,11 @@ const MobileNavbar = ({ list, slug, setShowMenu, show }: MobileNavbarMb) => {
             priority={true}
           />
         </a>
-        <Link href="/contact" className="h-full border-l w-14 text-[1.5rem]">
+        <Link
+          onClick={handleTranferContactusPage}
+          href="/contact"
+          className="h-full border-l w-14 text-[1.5rem]"
+        >
           <TfiWrite className="h-full m-auto" />
         </Link>
       </div>

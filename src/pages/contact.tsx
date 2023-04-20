@@ -4,6 +4,7 @@ import React from 'react'
 import { Input, TextArea, Select } from '@/components/form'
 import Link from 'next/link'
 import BeatLoader from 'react-spinners/BeatLoader'
+import { useGa } from '@/utils'
 
 type UserDataType = {
   username?: string
@@ -58,6 +59,7 @@ const Contact = () => {
 
   const [validate, setValidate] = React.useState(true)
   const [sussessful, setSuccessful] = React.useState(true)
+  const { handleSubmitForm, handleSubmitFormError } = useGa()
 
   const handleOnChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const { id: name, value } = e.target
@@ -102,6 +104,7 @@ const Contact = () => {
             event: 'formSubmitted',
           })
           setSuccessful(true)
+          handleSubmitForm()
         } else {
           throw new Error()
         }
@@ -112,6 +115,7 @@ const Contact = () => {
           errorMessage: '客戶表單傳送失敗',
         })
         setSuccessful(true)
+        handleSubmitFormError()
       }
       resetUserData()
     }

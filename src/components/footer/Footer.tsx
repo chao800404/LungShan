@@ -4,6 +4,7 @@ import { NavbarData } from '../navbar/type'
 import * as uuid from 'uuid'
 import { useMouseStore } from '@/store'
 import { shallow } from 'zustand/shallow'
+import { useGa } from '@/utils'
 
 type FooterProps = {
   list: NavbarData[]
@@ -48,6 +49,7 @@ export const Footer = ({ list }: FooterProps) => {
     (state) => state.setPointerEvent,
     shallow
   )
+  const { handleClickPhoneButton, handleClickLineButton } = useGa()
 
   return (
     <footer className="border-t w-full max-md:pb-16">
@@ -62,7 +64,9 @@ export const Footer = ({ list }: FooterProps) => {
             onMouseEnter={() => setPointerEvent('Focus')}
             onMouseLeave={() => setPointerEvent('Default')}
           >
-            <a href="tel:0800-777-992">0800-777-992</a>
+            <a onClick={handleClickPhoneButton} href="tel:0800-777-992">
+              0800-777-992
+            </a>
           </h2>
         </div>
         <FooterList
@@ -108,9 +112,12 @@ export const Footer = ({ list }: FooterProps) => {
           <li
             onMouseEnter={() => setPointerEvent('Focus')}
             onMouseLeave={() => setPointerEvent('Default')}
+            onClick={handleClickLineButton}
             className="hover:text-gray-800 duration-300 max-md:border-t max-md:w-full max-md:px-5 max-md:py-2 "
           >
-            <p>公司官方LINE: @798advyq</p>
+            <a href="https://line.me/R/ti/p/@798advyq">
+              公司官方LINE: @798advyq
+            </a>
           </li>
           <li className="max-md:hidden">|</li>
           <li

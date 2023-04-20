@@ -64,19 +64,19 @@ export default function Product() {
             show={show}
           />
 
-          <section className="min-h-screen mx-10 max-lg:mx-0 max-lg:px-5 max-md:min-h-0 max-sm:sticky max-sm:top-0 max-sm:z-0">
+          <section className="min-h-screen mx-10 max-lg:mx-0 max-lg:px-5 max-md:min-h-0 max-sm:sticky max-sm:-top-20 max-sm:z-0">
             <div className="px-10 py-5">
               <h1 className="text-7xl m-auto text-center font-bold max-md:text-5xl max-sm:text-3xl">
                 {data.title}
               </h1>
             </div>
             <div className="m-auto w-full flex justify-center gap-2 mb-5 max-w-4xl">
-              <div className="text-gray-400 font-mono flex items-center flex-wrap justify-center">
+              <div className="text-gray-400 font-mono flex items-center flex-wrap justify-center max-sm:text-sm">
                 {data.feature.map((item, i) => (
                   <div key={uuid.v4()}>
                     <span>{item} </span>
                     {data.feature.length - 1 !== i && (
-                      <span className="px-2">/</span>
+                      <span className="px-2 max-sm:px-1">/</span>
                     )}
                   </div>
                 ))}

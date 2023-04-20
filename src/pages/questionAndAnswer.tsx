@@ -9,6 +9,7 @@ import { QAndABlockFigure } from '@/components/qAndABlock'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/button'
 import Link from 'next/link'
+import { useGa } from '@/utils'
 
 export default function QuestionAndAnswerPage() {
   const [curLabelIndex, setCurLabelIndex] = useState(0)
@@ -18,6 +19,8 @@ export default function QuestionAndAnswerPage() {
   }, [])
 
   const content = QUESTION_AND_ANSWER.filter((_, i) => i === curLabelIndex)
+
+  const { handleClickPhoneButton } = useGa()
 
   return (
     <>
@@ -44,7 +47,9 @@ export default function QuestionAndAnswerPage() {
                 </h2>
                 <motion.div className="ml-5">
                   <Button className="px-3 py-2 text-xs border-none shadow-none rounded-sm">
-                    <Link href="/">快速聯絡我們</Link>
+                    <a href="tel:0800-777-992" onClick={handleClickPhoneButton}>
+                      快速聯絡我們
+                    </a>
                   </Button>
                 </motion.div>
               </motion.div>
@@ -67,7 +72,7 @@ export default function QuestionAndAnswerPage() {
                 />
                 <div className="absolute w-full h-full top-0 left-0 ease-in-out duration-300 flex items-center justify-center group-hover:bg-[rgba(0,0,0,0.3)]">
                   <button className="px-5 py-3 mt-16 text-primary border bg-gray-800 opacity-40 rounded-md group-hover:bg-[rgba(0,0,0,0.5)] group-hover:opacity-100">
-                    查看更多案例
+                    <Link href={content[0].casePath}>查看更多案例</Link>
                   </button>
                 </div>
               </motion.div>

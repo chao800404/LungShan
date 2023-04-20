@@ -1,5 +1,4 @@
 import React from 'react'
-import * as uuid from 'uuid'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { AiOutlineArrowRight } from 'react-icons/ai'
@@ -39,7 +38,6 @@ export const ServiceCard = ({
   topLevel,
   recommendations,
   subtitle,
-  casePath,
   slug,
 }: ServiceCardProps) => {
   const router = useRouter()
@@ -59,6 +57,11 @@ export const ServiceCard = ({
           sizes="auto"
           priority
         />
+        <div className="absolute z-10 w-full h-full flex items-start justify-end">
+          <h1 className="py-2 px-3 mt-2 mr-2 border bg-[rgba(0,0,0,0.6)] text-sm font-normal text-white rounded-md shadow-xl">
+            {title}
+          </h1>
+        </div>
       </div>
       <div className="py-4 h-36 overflow-scroll">
         <p className="px-6 text-start">{subtitle}</p>

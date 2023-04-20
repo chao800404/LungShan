@@ -15,7 +15,7 @@ type LinkBlockProps = {
 export const LinkBlock = ({ groupLink, caseLink }: LinkBlockProps) => {
   return (
     <div className="w-full p-5 flex justify-center h-fit max-sm:p-0 max-sm:pb-5">
-      <div className="border w-fit top-0 bg-white border-primaryBlack flex gap-2 text-sm">
+      <div className="border w-fit top-0 bg-white border-primaryBlack flex gap-2 text-sm max-sm:text-[0.8rem] max-sm:rounded-md max-sm:overflow-hidden">
         {groupLink.map((item, i) => (
           <Link
             className={`px-3 py-2  ${groupLink.length - 1 !== i && 'border-r'}`}
