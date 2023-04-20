@@ -2,8 +2,6 @@ import { Html, Head, Main, NextScript } from 'next/document'
 import React from 'react'
 import ReactGA from 'react-ga'
 
-ReactGA.initialize('G-1WDJ70DSYK')
-
 export default function Document() {
   return (
     <Html lang="zh-Hant-TW">

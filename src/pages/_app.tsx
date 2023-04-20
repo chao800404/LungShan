@@ -3,10 +3,9 @@ import '@/styles/globals.css'
 
 import type { AppProps } from 'next/app'
 import { Noto_Sans_HK } from 'next/font/google'
-import dynamic from 'next/dynamic'
-import { useMediaQuery } from 'react-responsive'
-
-
+import Router, { useRouter } from 'next/router'
+import ReactGA from 'react-ga'
+import { useEffect } from 'react'
 
 const notoSans = Noto_Sans_HK({
   subsets: ['latin'],
@@ -16,8 +15,20 @@ const notoSans = Noto_Sans_HK({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
- 
+  const router = useRouter()
 
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      ReactGA.initialize(process.env.GA_TRACKING_ID as string)
+      ReactGA.send({ hitType: 'pageview', page: '/my-path' })
+      ReactGA.pageview(url)
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
   return (
     // <main className={`${notoSans.variable} font-sans`}>
     //   <MouseFollower />

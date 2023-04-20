@@ -5,6 +5,7 @@ import LUNGSHAN_PROCESO from '@/data/lungshan_proceso.json'
 import LUNGSHAN_BANK_LOGO from '@/data/bank_logo_content.json'
 import { TableProps, ImageContent } from './type'
 import { motion, useInView } from 'framer-motion'
+import * as uuid from 'uuid'
 
 const ImageContent = ({ url }: { url: string }) => {
   return (
@@ -125,7 +126,7 @@ const BankLogoContent_2 = ({ list }: { list: ImageContent[] }) => {
       className="flex gap-3 w-fit"
     >
       {list.map((item, i) => (
-        <div className="relative h-15 w-32">
+        <div className="relative h-15 w-32" key={uuid.v4()}>
           <Image
             key={item.id}
             src={item.url}

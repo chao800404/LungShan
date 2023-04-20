@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useGa } from '@/utils'
 
 export const HomePageCover = () => {
-  const { handleClick } = useGa()
+  // const { handleClick } = useGa()
 
   return (
     <section className="flex items-center justify-center snap-none">
@@ -63,13 +63,13 @@ export const HomePageCover = () => {
             想使用表單聯繫嗎?
             <span className="text-primaryBlue">
               <Link
-                onClick={() =>
-                  handleClick({
-                    category: 'Button',
-                    action: 'Click',
-                    label: '點擊連結到表單頁面',
-                  })
-                }
+                // onClick={() =>
+                //   handleClick({
+                //     category: 'Button',
+                //     action: 'Click',
+                //     label: '點擊連結到表單頁面',
+                //   })
+                // }
                 href="/contact"
               >
                 點擊此處
