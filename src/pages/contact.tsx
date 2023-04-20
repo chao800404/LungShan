@@ -98,7 +98,7 @@ const Contact = () => {
         })
 
         if (res.status === 200) {
-          ;(window as any).push({
+          ;(window as any).dataLayer.push({
             event: 'formSubmitted',
           })
           setSuccessful(true)
