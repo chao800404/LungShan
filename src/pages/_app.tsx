@@ -6,18 +6,7 @@ import { Noto_Sans_HK } from 'next/font/google'
 import dynamic from 'next/dynamic'
 import { useMediaQuery } from 'react-responsive'
 
-const DynamicHeader = dynamic(
-  () => import('@/components/mouse/MouseFollower'),
-  {
-    loading: () => null,
-    ssr: false,
-  }
-)
 
-const DynamicFloatBlock = dynamic(
-  () => import('@/components/floatBlock/FloatBlock'),
-  { ssr: false, loading: () => null }
-)
 
 const notoSans = Noto_Sans_HK({
   subsets: ['latin'],
@@ -27,9 +16,7 @@ const notoSans = Noto_Sans_HK({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
-  const screenLg = useMediaQuery({
-    query: '(max-width: 1024px)',
-  })
+ 
 
   return (
     // <main className={`${notoSans.variable} font-sans`}>
@@ -37,8 +24,6 @@ export default function App({ Component, pageProps }: AppProps) {
     //   <Component {...pageProps} />
     // </main>
     <>
-      {!screenLg && <DynamicFloatBlock />}
-      {!screenLg && <DynamicHeader />}
       <Component {...pageProps} />
     </>
   )

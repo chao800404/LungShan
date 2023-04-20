@@ -33,7 +33,7 @@ export default function ServiceOfferings() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none flex flex-col items-center">
+      <main className="max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none flex flex-col items">
         <Layout>
           <div className="h-14 mb-2 w-full max-sm:h-10" />
           <motion.div
@@ -45,7 +45,7 @@ export default function ServiceOfferings() {
             <motion.p
               animate={{ opacity: 1 }}
               initial={{ opacity: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
+              transition={{ duration: 0.6, delay: 1.5 }}
               className="text-center"
             >
               最新內容
@@ -53,13 +53,13 @@ export default function ServiceOfferings() {
             <motion.h1
               animate={{ y: 0, opacity: 1 }}
               initial={{ y: 100, opacity: 0 }}
-              transition={{ duration: 0.6, type: 'just' }}
+              transition={{ duration: 0.6, type: 'just', delay: 1 }}
               className="text-7xl font-bold text-center py-3 will-change-transform max-sm:text-4xl"
             >
               攏山服務項目
             </motion.h1>
             <motion.p
-              transition={{ duration: 0.6, type: 'just', delay: 0.3 }}
+              transition={{ duration: 0.6, type: 'just', delay: 1 }}
               animate={{ rotateX: 0, scale: 1, opacity: 1 }}
               initial={{ rotateX: 100, scale: 1.2, opacity: 0 }}
               className="text-center w-fit m-auto mt-14 border p-2 will-change-transform max-md:mx-5 max-sm:mt-3"

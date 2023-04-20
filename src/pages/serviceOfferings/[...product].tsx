@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Layout } from '@/components/layout'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import SERVICE_OFFERINGS_DATA from '@/data/service_offerings.json'
 import Image from 'next/image'
@@ -15,21 +15,26 @@ import { ProductBlock } from '@/components/productBlock'
 import PRODUCT_DATA from '@/data/product.json'
 import { useProductCardStore } from '@/store'
 import { ServiceGrouproupBlock, LinkBlock } from '@/components/servicesBlock'
-import { BsBriefcase } from 'react-icons/bs'
-import Link from 'next/link'
 import * as uuid from 'uuid'
 
 export default function Product() {
-  const route = useRouter()
+  const router = useRouter()
+  const [show, setShow] = useState(false)
 
   const data = SERVICE_OFFERINGS_DATA.filter(
-    (item) => item.slug === route.asPath
+    (item) => item.slug === router.asPath
   )?.[0]
 
   useEffect(() => {
     const setShowShow = useProductCardStore.getState().setShouldShow
     setShowShow(true)
-    return () => setShowShow(false)
+
+    const timeout = setTimeout(() => setShow(true), 1000)
+
+    return () => {
+      setShowShow(false)
+      clearTimeout(timeout)
+    }
   }, [])
 
   if (!data) return null
@@ -48,7 +53,7 @@ export default function Product() {
           <div className="h-12 mt-1 max-sm:h-5" />
           <div className="hidden fixed  max-md:flex h-12 top-0 bg-white text-2xl border-b z-50 w-full">
             <MdOutlineArrowBackIosNew
-              onClick={() => route.back()}
+              onClick={() => router.back()}
               className="my-auto w-12 border-r p-3 h-full"
             />
           </div>
@@ -56,6 +61,7 @@ export default function Product() {
           <LoopSwiper
             one={`${data.subtitle} ${data.description}`}
             two={`${data.subtitle} ${data.description}`}
+            show={show}
           />
 
           <section className="min-h-screen mx-10 max-lg:mx-0 max-lg:px-5 max-md:min-h-0 max-sm:sticky max-sm:top-0 max-sm:z-0">
@@ -67,12 +73,12 @@ export default function Product() {
             <div className="m-auto w-full flex justify-center gap-2 mb-5 max-w-4xl">
               <div className="text-gray-400 font-mono flex items-center flex-wrap justify-center">
                 {data.feature.map((item, i) => (
-                  <span key={uuid.v4()}>
+                  <div key={uuid.v4()}>
                     <span>{item} </span>
                     {data.feature.length - 1 !== i && (
                       <span className="px-2">/</span>
                     )}
-                  </span>
+                  </div>
                 ))}
               </div>
             </div>
@@ -182,12 +188,14 @@ export default function Product() {
                   </h3>
                   <ul className="px-5 py-10 flex flex-col items-center">
                     {data.content_3.list.map((item, index) => (
-                      <>
-                        <motion.li
+                      <motion.li
+                        key={uuid.v4()}
+                        className="flex flex-col items-center w-full"
+                      >
+                        <motion.div
                           whileInView={{ scale: 1.05 }}
                           initial={{ scale: 1 }}
                           className="w-[90%]"
-                          key={uuid.v4()}
                           viewport={{ margin: '-40%', amount: 'some' }}
                         >
                           <div className="rounded-md w-full border overflow-hidden drop-shadow-md text-center">
@@ -196,13 +204,13 @@ export default function Product() {
                             </h3>
                             <p className="bg-white p-2">{item.description}</p>
                           </div>
-                        </motion.li>
+                        </motion.div>
                         {index !== data.content_3.list.length - 1 && (
                           <motion.div className="text-2xl text-gray-300 py-5">
                             <BsFillArrowDownSquareFill />
                           </motion.div>
                         )}
-                      </>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>
@@ -231,7 +239,7 @@ export default function Product() {
                       {data.compare_table.body.map((item) => (
                         <div
                           className="grid grid-cols-[inherit] col-span-3 bg-slate-100  border-b-2 border-white text-base text-gray-500 max-sm:border-none"
-                          key={item.id}
+                          key={uuid.v4()}
                         >
                           <div className="px-5 py-3">{item.comp_1}</div>
                           <div className="bg-slate-200 h-full px-5 py-3">

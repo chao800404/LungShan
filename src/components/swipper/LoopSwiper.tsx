@@ -1,4 +1,5 @@
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import {
   motion,
   useScroll,
@@ -9,13 +10,15 @@ import {
   useAnimationFrame,
   wrap,
 } from 'framer-motion'
+import { useProductCardStore } from '@/store'
 
 interface ParallaxProps {
   children: string
   baseVelocity: number
+  show: boolean
 }
 
-function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
+function ParallaxText({ children, baseVelocity = 100, show }: ParallaxProps) {
   const baseX = useMotionValue(0)
   const { scrollY } = useScroll()
   const scrollVelocity = useVelocity(scrollY)
@@ -30,7 +33,9 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   const x = useTransform(baseX, (v) => `${wrap(0, -960, v)}%`)
 
   const directionFactor = useRef<number>(1)
+
   useAnimationFrame((t, delta) => {
+    if (!show) return
     let moveBy = directionFactor.current * baseVelocity * (delta / 2000)
 
     if (velocityFactor.get() < 0) {
@@ -57,11 +62,23 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   )
 }
 
-export function LoopSwiper({ one, two }: { one: string; two: string }) {
+export function LoopSwiper({
+  one,
+  two,
+  show,
+}: {
+  one: string
+  two: string
+  show: boolean
+}) {
   return (
     <section className="w-full overflow-hidden py-5 text-gray-300 hover:text-gray-800 duration-300">
-      <ParallaxText baseVelocity={-50}>{one}</ParallaxText>
-      <ParallaxText baseVelocity={50}>{two}</ParallaxText>
+      <ParallaxText show={show} baseVelocity={-50}>
+        {one}
+      </ParallaxText>
+      <ParallaxText show={show} baseVelocity={50}>
+        {two}
+      </ParallaxText>
     </section>
   )
 }
