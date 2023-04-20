@@ -96,28 +96,22 @@ const Contact = () => {
             userdescription,
           }),
         })
-        const isSuccess = res.ok
 
         if (res.status === 200) {
           ;(window as any).push({
             event: 'formSubmitted',
           })
-        } else {
-          console.log('Form submission failed.')
-        }
-
-        if (isSuccess) {
           setSuccessful(true)
         } else {
-          setTimeout(() => setSuccessful(true), 2000)
-          throw Error('客戶表單傳送失敗')
+          throw new Error()
         }
       } catch (error: any) {
         ;(window as any).dataLayer = (window as any).dataLayer || []
         ;(window as any).dataLayer.push({
           event: 'formError',
-          errorMessage: error.message,
+          errorMessage: '客戶表單傳送失敗',
         })
+        setSuccessful(true)
       }
       resetUserData()
     }
