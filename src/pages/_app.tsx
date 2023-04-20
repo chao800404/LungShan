@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      ReactGA.initialize(process.env.GA_TRACKING_ID as string)
+      ReactGA.initialize('G-1WDJ70DSYK')
       ReactGA.send({ hitType: 'pageview', page: '/my-path' })
       ReactGA.pageview(url)
     }
