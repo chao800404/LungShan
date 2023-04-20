@@ -2,6 +2,15 @@ import ReactGA, { EventArgs, TrackerNames } from 'react-ga'
 import React, { useEffect } from 'react'
 
 export const useGa = () => {
+  const initGA = () => {
+    ReactGA.initialize('G-1WDJ70DSYK')
+  }
+
+  const logPageView = () => {
+    ReactGA.set({ page: window.location.pathname })
+    ReactGA.pageview(window.location.pathname)
+  }
+
   const handleSubmitForm = () =>
     ReactGA.event({
       category: '表單提交',
@@ -43,5 +52,7 @@ export const useGa = () => {
     handleClickLineButton,
     handleTranferContactusPage,
     handleSubmitFormError,
+    logPageView,
+    initGA,
   }
 }

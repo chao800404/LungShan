@@ -14,21 +14,22 @@ const notoSans = Noto_Sans_HK({
   preload: true,
 })
 
+// ReactGA.initialize('G-1WDJ70DSYK')
+
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
-  useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      ReactGA.initialize('G-1WDJ70DSYK')
-      ReactGA.send({ hitType: 'pageview', page: '/my-path' })
-      ReactGA.pageview(url)
-    }
+  // useEffect(() => {
+  //   const handleRouteChange = (url: string) => {
+  //     ReactGA.send({ hitType: 'pageview', page: '/my-path' })
+  //     ReactGA.pageview(url)
+  //   }
 
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+  //   router.events.on('routeChangeComplete', handleRouteChange)
+  //   return () => {
+  //     router.events.off('routeChangeComplete', handleRouteChange)
+  //   }
+  // }, [router.events])
   return (
     // <main className={`${notoSans.variable} font-sans`}>
     //   <MouseFollower />

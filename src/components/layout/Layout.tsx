@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import { useMediaQuery } from 'react-responsive'
 import { useRouter } from 'next/router'
+import { useGa } from '@/utils'
 
 const DynamicMenu = dynamic(() => import('@/components/popup/MenuPopup'), {
   loading: () => null,
@@ -34,8 +35,17 @@ export const Layout = ({ children }: LayoutProps) => {
   const screenLg = useMediaQuery({
     query: '(max-width: 1024px)',
   })
+  const { initGA, logPageView } = useGa()
 
   const hide = () => setShowMenu(false)
+
+  useEffect(() => {
+    if (!(window as any).GA_INITIALIZED) {
+      initGA()
+      ;(window as any).GA_INITIALIZED = true
+    }
+    logPageView()
+  }, [])
 
   return (
     <>
