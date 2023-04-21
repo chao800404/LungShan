@@ -122,7 +122,9 @@ const MobileNavbar = ({ list, slug, setShowMenu, show }: MobileNavbarMb) => {
       </div>
       <div className="flex items-center max-sm:border-r">
         <a
-          onClick={handleClickPhoneButton}
+          onClick={() => {
+            handleClickPhoneButton()
+          }}
           href="tel:0800-777-992"
           className="h-full border-l w-14 text-3xl"
         >

@@ -18,12 +18,18 @@ export const useGa = () => {
       label: '客戶提交的個人資料表單',
     })
 
-  const handleClickPhoneButton = () =>
+  const handleClickPhoneButton = () => {
+    // @ts-ignore
+    gtag('event', '客戶點擊電話按鈕', {
+      event_category: '電話按鈕',
+      event_label: '客戶點擊撥打電話按鈕',
+    })
     ReactGA.event({
       category: '電話按鈕',
       action: '客戶點擊電話按鈕',
       label: '客戶點擊撥打電話按鈕',
     })
+  }
 
   const handleClickLineButton = () =>
     ReactGA.event({

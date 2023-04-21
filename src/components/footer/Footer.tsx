@@ -64,7 +64,12 @@ export const Footer = ({ list }: FooterProps) => {
             onMouseEnter={() => setPointerEvent('Focus')}
             onMouseLeave={() => setPointerEvent('Default')}
           >
-            <a onClick={handleClickPhoneButton} href="tel:0800-777-992">
+            <a
+              onClick={() => {
+                handleClickPhoneButton()
+              }}
+              href="tel:0800-777-992"
+            >
               0800-777-992
             </a>
           </h2>

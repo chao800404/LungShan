@@ -56,7 +56,9 @@ export const HomePageCover = () => {
             whileTap={{ scale: 0.98, y: 1 }}
             href="tel:0800-777-992"
             className="bg-primaryBlue pt-3 pb-3 pl-5 pr-5 rounded-md text-primary font-bold max-md:text-xl max-sm:text-lg"
-            onClick={handleClickPhoneButton}
+            onClick={() => {
+              handleClickPhoneButton()
+            }}
           >
             快速聯絡我們
           </motion.a>

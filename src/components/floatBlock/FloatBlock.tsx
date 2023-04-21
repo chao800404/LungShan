@@ -18,14 +18,18 @@ const FloatBlock = () => {
       <a
         href="tel:0800-777-992"
         className="p-1 border rounded-r-sm"
-        onClick={handleClickPhoneButton}
+        onClick={() => {
+          handleClickPhoneButton()
+        }}
       >
         <AiFillPhone />
       </a>
       <a
         href="https://line.me/R/ti/p/@798advyq"
         className="p-1 border rounded-r-sm flex"
-        onClick={handleClickLineButton}
+        onClick={() => {
+          handleClickLineButton()
+        }}
       >
         <Image
           alt="lineIcon"
