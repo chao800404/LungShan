@@ -11,12 +11,13 @@ export const useGa = () => {
   //   ReactGA.pageview(window.location.pathname)
   // }
 
-  const handleSubmitForm = () =>
-    ReactGA.event({
-      category: '表單提交',
-      action: '表單提交完成',
-      label: '客戶提交的個人資料表單',
+  const handleSubmitForm = () => {
+    // @ts-ignore
+    gtag('event', '客戶表單提交', {
+      event_category: '表單提交完成',
+      event_label: '客戶提交的個人資料表單',
     })
+  }
 
   const handleClickPhoneButton = () => {
     // @ts-ignore
@@ -24,33 +25,35 @@ export const useGa = () => {
       event_category: '電話按鈕',
       event_label: '客戶點擊撥打電話按鈕',
     })
-    ReactGA.event({
-      category: '電話按鈕',
-      action: '客戶點擊電話按鈕',
-      label: '客戶點擊撥打電話按鈕',
+    // // @ts-ignore
+    // dataLayer.push({
+    //   event: 'click_phone_button',
+    // })
+  }
+
+  const handleClickLineButton = () => {
+    // @ts-ignore
+    gtag('event', '客戶點擊LINE按鈕', {
+      event_category: 'LINE按鈕',
+      event_label: '客戶點擊LINE按鈕',
     })
   }
 
-  const handleClickLineButton = () =>
-    ReactGA.event({
-      category: 'Line按鈕',
-      action: '客戶點擊Line按鈕',
-      label: '客戶點擊Line按鈕',
+  const handleTranferContactusPage = () => {
+    // @ts-ignore
+    gtag('event', '客戶瀏覽表單頁面', {
+      event_category: '表單頁面',
+      event_label: '客戶點擊瀏覽表單頁面',
     })
+  }
 
-  const handleTranferContactusPage = () =>
-    ReactGA.event({
-      category: '瀏覽表單頁面',
-      action: '點擊瀏覽表單葉面',
-      label: '點擊瀏覽表單葉面',
+  const handleSubmitFormError = () => {
+    // @ts-ignore
+    gtag('event', '表單提交失敗', {
+      event_category: '表單提交失敗',
+      event_label: '表單提交失敗遇到問題',
     })
-
-  const handleSubmitFormError = () =>
-    ReactGA.event({
-      category: '提交失敗',
-      action: '表單提交失敗',
-      label: '表單提交失敗遇到問題',
-    })
+  }
 
   return {
     handleSubmitForm,
