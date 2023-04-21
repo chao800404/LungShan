@@ -47,8 +47,8 @@ const CasesDynamicPage = () => {
   return (
     <>
       <Head>
-        <title>{data[0].title}</title>
-        <meta name="description" content={data[0].description} />
+        <title>{data[0]?.title}</title>
+        <meta name="description" content={data?.[0].description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
