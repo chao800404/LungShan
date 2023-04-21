@@ -33,17 +33,17 @@ export const Layout = ({ children }: LayoutProps) => {
   const screenLg = useMediaQuery({
     query: '(max-width: 1024px)',
   })
-  const { initGA, logPageView } = useGa()
+  // const { initGA, logPageView } = useGa()
 
   const hide = () => setShowMenu(false)
 
-  useEffect(() => {
-    if (!(window as any).GA_INITIALIZED) {
-      initGA()
-      ;(window as any).GA_INITIALIZED = true
-    }
-    logPageView()
-  }, [])
+  // useEffect(() => {
+  //   if (!(window as any).GA_INITIALIZED) {
+  //     initGA()
+  //     ;(window as any).GA_INITIALIZED = true
+  //   }
+  //   logPageView()
+  // }, [])
 
   return (
     <>
