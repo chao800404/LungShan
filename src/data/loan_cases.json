@@ -4,6 +4,7 @@
     "id": 0,
     "imgUrl": "/images/lungshan_loan_9.jpg",
     "casePath": "/loancases/housing-loan",
+    "description": "不完整產權，未保存登記，無須冗長審核，快速方便，不看聯徵，不照會，房屋二胎借款最快當天撥款，利率0.45%起每10萬元478元起。",
     "cases": [
       {
         "id": "/loancases/housing-loan/0",
@@ -50,6 +51,7 @@
     "id": 1,
     "imgUrl": "/images/lungshan_loan_12.jpg",
     "casePath": "/loancases/land-loan",
+    "description": "借1億也可以最快當天撥款，無權狀可殯葬用地、原住民保護地、公共共有都能承做，農地持分、土地持分、偏鄉，郊區、山坡保護地、原民保護地、公同共有、千奇百怪都能做。",
     "cases": [
       {
         "id": "/loancases/land-loan/0",
@@ -82,6 +84,7 @@
     "casePath": "/loancases/CoSignert-loan",
     "id": 2,
     "imgUrl": "/images/lungshan_loan_1.jpeg",
+    "description": "一個月薪轉紀錄就可借，警示戶也可以做本利攤還 可代償降息，當天對保當天撥款，卡循過高、負債比過高、遲繳、負債比過高、信用瑕疵、票信異常、薪轉未滿六個月等銀行婉拒原因，代書借款工作滿一個月即可申請！",
     "cases": [
       {
         "id": "/loancases/CoSignert-loan/0",
@@ -122,6 +125,7 @@
     "id": 3,
     "imgUrl": "/images/lungshan_loan_14.jpg",
     "casePath": "/loancases/bankCredit-loan",
+    "description": "薪轉滿三個月即可辦理 !最高月收入22倍，銀行信用貸款是個人向銀行借款，按合約規定還款的一種貸款方式。媒合40家銀行，專業諮詢。",
     "cases": [
       {
         "id": "/loancases/bankCredit-loan/0",
@@ -154,6 +158,7 @@
     "id": 4,
     "imgUrl": "/images/lungshan_loan_11.jpg",
     "casePath": "/loancases/vehicle-loan",
+    "description": "機車最高45萬汽車最高車價2.2倍，有汽機車即可辦理，分期也可增貸",
     "cases": [
       {
         "id": "loancases/vehicle-loan/0",
@@ -194,6 +199,7 @@
     "id": 5,
     "imgUrl": "/images/lungshan_loan_24.jpg",
     "casePath": "/loancases/product-loan",
+    "description": "萬物皆可貸，適合目前無擔保品的您，單筆最高15萬元，電腦分期、筆電分期、手機分期、只要有工作即可辦理！",
     "cases": [
       {
         "id": "/loancases/product-loan/0",
