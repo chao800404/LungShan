@@ -1,24 +1,65 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { GetStaticProps } from 'next'
 import { Layout } from '@/components/layout'
 import Head from 'next/head'
 import { motion, AnimatePresence } from 'framer-motion'
-import { LoanCasesPreview } from '@/components/loancasesBlock'
+import {
+  LoanCasesPreview,
+  LoanCasesPreviewProps,
+} from '@/components/loancasesBlock'
 import LOAN_CASES_DATA from '@/data/loan_cases.json'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { useProductCardStore } from '@/store'
 import PRODUCT_DATA from '@/data/product.json'
-import { ProductBlock } from '@/components/productBlock'
+import { ProductBlock, ProductBlockProps } from '@/components/productBlock'
 import { useMediaQuery } from 'react-responsive'
+import { LoancaseCardProps } from '@/components/card/type'
 
-const CasesDynamicPage = () => {
-  const router = useRouter()
-  const { loanCase } = router.query
-  const [anEnd, setAnEnd] = useState(false)
+export async function getStaticPaths() {
+  const paths = LOAN_CASES_DATA.map((item) => item.casePath)
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const slug = (params as any).loanCase[0] as string
+
   const data = LOAN_CASES_DATA.filter((item) => {
     const splitSlug = item.casePath.split('/')
-    return splitSlug[splitSlug.length - 1] === loanCase?.[0]
+    return splitSlug[splitSlug.length - 1] === slug
   })
+
+  return {
+    props: {
+      title: data[0].title,
+      id: data[0].id,
+      imgUrl: data[0].imgUrl,
+      casePath: data[0].casePath,
+      description: data[0].description,
+      cases: data[0].cases,
+    },
+  }
+}
+
+const CasesDynamicPage = ({
+  title,
+  id,
+  imgUrl,
+  casePath,
+  description,
+  cases,
+}: LoancaseCardProps) => {
+  // const router = useRouter()
+  // const { loanCase } = router.query
+  const [anEnd, setAnEnd] = useState(false)
+  // const data = LOAN_CASES_DATA.filter((item) => {
+  //   const splitSlug = item.casePath.split('/')
+  //   return splitSlug[splitSlug.length - 1] === loanCase?.[0]
+  // })
 
   const ScreenTwoXl = useMediaQuery({
     query: '(max-width: 1679px)',
@@ -42,13 +83,11 @@ const CasesDynamicPage = () => {
     else return '43.5vw'
   }, [ScreenTwoXl, ScreenMd, ScreenMd])
 
-  if (!data) return null
-
   return (
     <>
       <Head>
-        <title>{data[0]?.title}</title>
-        <meta name="description" content={data?.[0].description} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -72,13 +111,13 @@ const CasesDynamicPage = () => {
                 className="relative overflow-hidden z-20"
                 onAnimationComplete={() => setAnEnd(true)}
               >
-                {data[0] && data[0].imgUrl && (
+                {imgUrl && (
                   <Image
-                    src={data[0].imgUrl}
+                    src={imgUrl}
                     fill
                     className="object-cover"
                     sizes="auto"
-                    alt={data[0].title}
+                    alt={title}
                     priority
                   />
                 )}
@@ -92,7 +131,18 @@ const CasesDynamicPage = () => {
                     transition={{ type: 'just', delay: 0.5 }}
                     className="flex-1 max-md:absolute max-md:z-20 max-md:w-[80vw] max-md:right-0 max-sm:w-[100vw] max-sm:pl-5 max-md:overflow-hidden"
                   >
-                    <LoanCasesPreview list={data} />
+                    <LoanCasesPreview
+                      list={[
+                        {
+                          title,
+                          id,
+                          imgUrl,
+                          casePath,
+                          description,
+                          cases,
+                        },
+                      ]}
+                    />
                   </motion.div>
                 </AnimatePresence>
               )}

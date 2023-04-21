@@ -8,7 +8,7 @@ import { LoanCasesBody } from './LoanCasesBody'
 import { LoancaseCardProps } from '../card/type'
 import { LoanCasesOverview } from './LoanCasesOverview'
 
-type LoanCasesPreviewProps = {
+export type LoanCasesPreviewProps = {
   list: LoancaseCardProps[]
 }
 

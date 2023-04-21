@@ -14,4 +14,5 @@ export type LoancaseCardProps = {
   casePath?: string
   cases: CasesType[]
   index?: number
+  description: string
 }

@@ -11,7 +11,7 @@ type MotionBlockProps = {
   index: number
 }
 
-type ProductBlockProps = {
+export type ProductBlockProps = {
   data: {
     title: string
     path: string
