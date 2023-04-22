@@ -15,12 +15,12 @@ export default async function handler(
   if (req.method === 'POST') {
     try {
       const userData = JSON.parse(req.body)
-      // await sendMessageToLineNotify(
-      //   process.env.LINE_NOTIFY_KEY as string,
-      //   transferUserData({ ...userData })
-      // )
+      await sendMessageToLineNotify(
+        process.env.LINE_NOTIFY_KEY as string,
+        transferUserData({ ...userData })
+      )
 
-      await SendMail({...userData})
+      await SendMail({ ...userData })
 
       res.status(200).json({
         success: true,
