@@ -1,4 +1,4 @@
-type UserData = Record<
+export type UserData = Record<
   | 'username'
   | 'userphone'
   | 'useremail'

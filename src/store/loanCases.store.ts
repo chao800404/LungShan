@@ -14,4 +14,5 @@ export const useLoanCasesStore = create<LoanCasesState>((set) => ({
   reset: () => set(() => ({ focusId: null })),
 }))
 
-useLoanCasesStore.subscribe(console.log)
+process.env.NODE_ENV === 'development' &&
+  useLoanCasesStore.subscribe(console.log)

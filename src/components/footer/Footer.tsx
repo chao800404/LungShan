@@ -130,8 +130,8 @@ export const Footer = ({ list }: FooterProps) => {
             onMouseLeave={() => setPointerEvent('Default')}
             className="hover:text-gray-800 duration-300 max-md:border-t max-md:w-full max-md:px-5 max-md:py-2"
           >
-            <a href="mailto: longshan352@gmail.com">
-              公司信箱:longshan352@gmail.com
+            <a href="mailto: lungshan_author@lungshan.tw">
+              公司信箱:lungshan_author@lungshan.tw
             </a>
           </li>
         </ul>

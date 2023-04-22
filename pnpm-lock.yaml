@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': 18.15.5
+  '@types/nodemailer': ^6.4.7
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   '@types/react-lottie': ^1.2.6
@@ -64,6 +65,7 @@ dependencies:
   zustand: 4.3.6_react@18.2.0
 
 devDependencies:
+  '@types/nodemailer': 6.4.7
   '@typescript-eslint/eslint-plugin': 5.59.0_ddyo36no6rexcancjjg475h3ye
   '@typescript-eslint/parser': 5.59.0_j4766f7ecgqbon3u7zlxn5zszu
   autoprefixer: 10.4.14_postcss@8.4.21
@@ -321,7 +323,12 @@ packages:
 
   /@types/node/18.15.5:
     resolution: {integrity: sha512-Ark2WDjjZO7GmvsyFFf81MXuGTA/d6oP38anyxWOL6EREyBKAxKoFHwBhaZxCfLRLpO8JgVXwqOwSwa7jRcjew==}
-    dev: false
+
+  /@types/nodemailer/6.4.7:
+    resolution: {integrity: sha512-f5qCBGAn/f0qtRcd4SEn88c8Fp3Swct1731X4ryPKqS61/A3LmmzN8zaEz7hneJvpjFbUUgY7lru/B/7ODTazg==}
+    dependencies:
+      '@types/node': 18.15.5
+    dev: true
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}

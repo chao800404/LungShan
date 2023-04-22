@@ -10,4 +10,5 @@ export const useProductCardStore = create<AboutusState>((set) => ({
   setShouldShow: (onLoad) => set(() => ({ shouldShow: onLoad })),
 }))
 
-useProductCardStore.subscribe(console.log)
+process.env.NODE_ENV === 'development' &&
+  useProductCardStore.subscribe(console.log)

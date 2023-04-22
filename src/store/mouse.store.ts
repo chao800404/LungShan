@@ -38,4 +38,4 @@ export const useMouseStore = create<MouseState>((set) => ({
     })),
 }))
 
-useMouseStore.subscribe(console.log)
+process.env.NODE_ENV === 'development' && useMouseStore.subscribe(console.log)

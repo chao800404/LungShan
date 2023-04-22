@@ -9,5 +9,3 @@ export const useWindowStore = create<StatusState>((set) => ({
   scrollYPosition: 0,
   setScrollYPosition: (y) => set(() => ({ scrollYPosition: y })),
 }))
-
-// useWindowStore.subscribe(console.log)
