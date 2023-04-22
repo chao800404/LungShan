@@ -12,6 +12,7 @@ const Privacypolicy = () => {
           name="description"
           content="感謝您使用我們的網站/應用程序/服務。我們非常重視您的隱私權，並致力於保護您的個人信息。在這份隱私政策中，我們將解釋我們如何收集、使用和保護您的個人信息。"
         />
+
         <meta name="author" content="Chao" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

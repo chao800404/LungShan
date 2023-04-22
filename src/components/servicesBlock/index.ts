@@ -1,2 +1,7 @@
 export * from './ServiceGrouproupBlock'
 export * from './LinkBlock'
+export * from './ServiceCoverBlock'
+export * from './ServiceSuitable'
+export * from './ServiceKnowledge'
+export * from './ServiceTable'
+export * from './ServiceProcess'

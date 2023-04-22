@@ -3,16 +3,12 @@ import { GetStaticProps } from 'next'
 import { Layout } from '@/components/layout'
 import Head from 'next/head'
 import { motion, AnimatePresence } from 'framer-motion'
-import {
-  LoanCasesPreview,
-  LoanCasesPreviewProps,
-} from '@/components/loancasesBlock'
+import { LoanCasesPreview } from '@/components/loancasesBlock'
 import LOAN_CASES_DATA from '@/data/loan_cases.json'
-import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { useProductCardStore } from '@/store'
 import PRODUCT_DATA from '@/data/product.json'
-import { ProductBlock, ProductBlockProps } from '@/components/productBlock'
+import { ProductBlock } from '@/components/productBlock'
 import { useMediaQuery } from 'react-responsive'
 import { LoancaseCardProps } from '@/components/card/type'
 
@@ -53,13 +49,7 @@ const CasesDynamicPage = ({
   description,
   cases,
 }: LoancaseCardProps) => {
-  // const router = useRouter()
-  // const { loanCase } = router.query
   const [anEnd, setAnEnd] = useState(false)
-  // const data = LOAN_CASES_DATA.filter((item) => {
-  //   const splitSlug = item.casePath.split('/')
-  //   return splitSlug[splitSlug.length - 1] === loanCase?.[0]
-  // })
 
   const ScreenTwoXl = useMediaQuery({
     query: '(max-width: 1679px)',
@@ -88,6 +78,10 @@ const CasesDynamicPage = ({
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta
+          name="keywords"
+          content="房屋借款,銀行信用貸款,土地借款,民間代書借款,汽車貸款,機車貸款,商品貸款,手機貸款,房屋買賣,持分買賣,收購特殊地目,急售不動產"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
