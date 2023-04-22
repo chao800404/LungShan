@@ -21,11 +21,15 @@ export const SendMail = async (props: UserData) => {
     html: EmailTemplate(props),
   }
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log('Email sent: ' + info.response)
-    }
+  await new Promise((resolve, reject) => {
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.error(error)
+        reject(error)
+      } else {
+        console.log(info)
+        resolve(info)
+      }
+    })
   })
 }
