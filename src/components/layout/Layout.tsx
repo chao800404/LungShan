@@ -33,17 +33,12 @@ export const Layout = ({ children }: LayoutProps) => {
   const screenLg = useMediaQuery({
     query: '(max-width: 1024px)',
   })
-  // const { initGA, logPageView } = useGa()
+
+  const screenSm = useMediaQuery({
+    query: '(max-width: 768px)',
+  })
 
   const hide = () => setShowMenu(false)
-
-  // useEffect(() => {
-  //   if (!(window as any).GA_INITIALIZED) {
-  //     initGA()
-  //     ;(window as any).GA_INITIALIZED = true
-  //   }
-  //   logPageView()
-  // }, [])
 
   return (
     <>
@@ -53,7 +48,7 @@ export const Layout = ({ children }: LayoutProps) => {
         show={showMenu}
       />
       <DynamicMenu list={NAVBAR_DATA} showMenu={showMenu} hide={hide} />
-      {!screenLg && <DynamicFloatBlock />}
+      {!screenSm && <DynamicFloatBlock />}
       {!screenLg && <DynamicHeader />}
       <div className="w-full">{children}</div>
       <Footer list={NAVBAR_DATA} />

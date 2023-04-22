@@ -14,7 +14,7 @@ const FloatBlock = () => {
   } = useGa()
 
   return (
-    <div className="fixed right-7  rounded-md p-3 bottom-6 z-50 border shadow-md flex gap-2 text-3xl bg-primary">
+    <div className="fixed right-7 rounded-md p-3 bottom-6 z-50 border shadow-md flex gap-2 text-3xl bg-primary">
       <a
         href="tel:0800-777-992"
         className="p-1 border rounded-r-sm"
