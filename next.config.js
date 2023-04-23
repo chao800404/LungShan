@@ -5,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: '/wp',
-        destination: process.env.LUNG_SHAN_WORDPRESS,
+        destination: 'https://nwz.aph.mybluehost.me/wp-admin/',
         permanent: true,
       },
     ]
