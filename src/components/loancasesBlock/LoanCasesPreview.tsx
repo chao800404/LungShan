@@ -7,6 +7,7 @@ import { shallow } from 'zustand/shallow'
 import { LoanCasesBody } from './LoanCasesBody'
 import { LoancaseCardProps } from '../card/type'
 import { LoanCasesOverview } from './LoanCasesOverview'
+import { CaseData } from '@/pages/loancases/type'
 
 export type LoanCasesPreviewProps = {
   list: LoancaseCardProps[]
@@ -21,7 +22,7 @@ const variants = {
   },
 }
 
-export const LoanCasesPreview = ({ list }: LoanCasesPreviewProps) => {
+export const LoanCasesPreview = (props: CaseData) => {
   const router = useRouter()
   const setPointerEvent = useMouseStore(
     (state) => state.setPointerEvent,
@@ -34,7 +35,9 @@ export const LoanCasesPreview = ({ list }: LoanCasesPreviewProps) => {
 
   const caseData = useMemo(() => {
     if (focusId) {
-      return list[0].cases.filter((item) => item.id === focusId)[0]
+      return props.connectedNode.node.allLoancase.nodes.filter(
+        (_, i) => `${i}` === `${focusId}`
+      )
     } else return null
   }, [focusId])
 
@@ -45,9 +48,9 @@ export const LoanCasesPreview = ({ list }: LoanCasesPreviewProps) => {
     router.back()
   }
 
-  if (!list) return null
-
   const isOverView = focusId && caseData
+
+  console.log(caseData)
 
   return (
     <motion.div
@@ -74,7 +77,7 @@ export const LoanCasesPreview = ({ list }: LoanCasesPreviewProps) => {
           </motion.div>
         </div>
         <motion.h2 className="font-bold max-sm:text-base max-sm:font-medium">
-          {isOverView ? list[0].title : '全部案例'}
+          {isOverView ? props.label : '全部案例'}
         </motion.h2>
       </div>
       <div className="w-full h-[calc(100%-2.5rem)]  relative max-md:border-l max-md:border-white">
@@ -82,7 +85,7 @@ export const LoanCasesPreview = ({ list }: LoanCasesPreviewProps) => {
           <LoanCasesBody
             titleSize="text-4xl max-sm:text-2xl"
             className="grid-cols-[repeat(1,minmax(0,_1fr))]"
-            list={list}
+            data={[props]}
           />
         </div>
         <AnimatePresence>
@@ -99,7 +102,7 @@ export const LoanCasesPreview = ({ list }: LoanCasesPreviewProps) => {
                 }}
                 className="w-full h-full bg-gray-50 shadow-md shadow-[rgba(0,0,0,0.3)] p-12 max-lg:p-5 max-sm:pt-[5vh]"
               >
-                <LoanCasesOverview {...caseData} />
+                <LoanCasesOverview {...caseData[0]} />
               </motion.div>
             </motion.div>
           )}

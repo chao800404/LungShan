@@ -10,6 +10,9 @@ const nextConfig = {
       },
     ]
   },
+  images: {
+    domains: ['nwz.aph.mybluehost.me'],
+  },
 }
 
 module.exports = nextConfig

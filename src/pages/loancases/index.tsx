@@ -4,8 +4,12 @@ import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { LoanCasesBody, LoanCasesCover } from '@/components/loancasesBlock'
 import LOAN_CASES_DATA from '@/data/loan_cases.json'
+import { GetStaticProps } from 'next'
+import { client } from '../../../client'
+import { CaseData } from './type'
+import { caseQuery } from '@/utils'
 
-export default function LoancasesPage() {
+export default function LoancasesPage({ data }: { data: CaseData[] }) {
   return (
     <>
       <Head>
@@ -22,15 +26,14 @@ export default function LoancasesPage() {
         <link rel="canonical" href="https://www.lungshan.tw/loancases" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none">
+      <main className="font-primary max-w-screen-2xl flex flex-col items-center mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none">
         <Layout>
           <motion.section className="overflow-hidden text-primary mb-20 max-lg:mb-0 max-sm:sticky max-sm:top-0 max-sm:z-0">
             <LoanCasesCover list={LOAN_CASES_DATA} />
           </motion.section>
           <section className="max-sm:relative z-10">
             <LoanCasesBody
-              list={LOAN_CASES_DATA}
-              length={LOAN_CASES_DATA.length}
+              data={data}
               className="max-w-screen-xxl m-auto pt-20 pb-20 grid-cols-[repeat(3,minmax(0,_1fr))] bg-[rgba(255,255,255,0.8)] backdrop-blur px-5 max-lg:grid-cols-[repeat(2,minmax(0,_1fr))] max-sm:grid-cols-[repeat(1,minmax(0,_1fr))]"
             />
           </section>
@@ -38,4 +41,18 @@ export default function LoancasesPage() {
       </main>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({
+    query: caseQuery,
+  })
+
+  const caseData = data.menu.menuItems.nodes
+
+  return {
+    props: {
+      data: caseData,
+    },
+  }
 }

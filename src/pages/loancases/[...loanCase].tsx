@@ -11,9 +11,20 @@ import PRODUCT_DATA from '@/data/product.json'
 import { ProductBlock } from '@/components/productBlock'
 import { useMediaQuery } from 'react-responsive'
 import { LoancaseCardProps } from '@/components/card/type'
+import { client } from '../../../client'
+import { CaseData } from './type'
+import { caseQuery, swtichCaseCoverImage } from '@/utils'
 
 export async function getStaticPaths() {
-  const paths = LOAN_CASES_DATA.map((item) => item.casePath)
+  const { data } = await client.query({
+    query: caseQuery,
+  })
+
+  const caseData = data.menu.menuItems.nodes as CaseData[]
+
+  const paths = caseData.map(
+    (item) => `/loancases/${item.connectedNode.node.slug}`
+  )
 
   return {
     paths,
@@ -24,31 +35,24 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = (params as any).loanCase[0] as string
 
-  const data = LOAN_CASES_DATA.filter((item) => {
-    const splitSlug = item.casePath.split('/')
-    return splitSlug[splitSlug.length - 1] === slug
+  console.log(slug)
+
+  const { data } = await client.query({
+    query: caseQuery,
   })
+
+  const caseData = data.menu.menuItems.nodes as CaseData[]
+
+  const c = caseData.filter((item) => item.connectedNode.node.slug === slug)
 
   return {
     props: {
-      title: data[0].title,
-      id: data[0].id,
-      imgUrl: data[0].imgUrl,
-      casePath: data[0].casePath,
-      description: data[0].description,
-      cases: data[0].cases,
+      ...c[0],
     },
   }
 }
 
-const CasesDynamicPage = ({
-  title,
-  id,
-  imgUrl,
-  casePath,
-  description,
-  cases,
-}: LoancaseCardProps) => {
+const CasesDynamicPage = (props: CaseData) => {
   const [anEnd, setAnEnd] = useState(false)
 
   const ScreenTwoXl = useMediaQuery({
@@ -73,11 +77,13 @@ const CasesDynamicPage = ({
     else return '43.5vw'
   }, [ScreenTwoXl, ScreenMd, ScreenMd])
 
+  const imageUrl = swtichCaseCoverImage(props.connectedNode.node.slug)
+
   return (
     <>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{props.label}</title>
+        <meta name="description" content="防詐騙專區，攏山提醒您小心受騙!" />
         <meta
           name="keywords"
           content="房屋借款,銀行信用貸款,土地借款,民間代書借款,汽車貸款,機車貸款,商品貸款,手機貸款,房屋買賣,持分買賣,收購特殊地目,急售不動產"
@@ -105,13 +111,13 @@ const CasesDynamicPage = ({
                 className="relative overflow-hidden z-20"
                 onAnimationComplete={() => setAnEnd(true)}
               >
-                {imgUrl && (
+                {imageUrl && (
                   <Image
-                    src={imgUrl}
+                    src={imageUrl}
                     fill
                     className="object-cover"
                     sizes="auto"
-                    alt={title}
+                    alt={props.label}
                     priority
                   />
                 )}
@@ -125,18 +131,7 @@ const CasesDynamicPage = ({
                     transition={{ type: 'just', delay: 0.5 }}
                     className="flex-1 max-md:absolute max-md:z-20 max-md:w-[80vw] max-md:right-0 max-sm:w-[100vw] max-sm:pl-5 max-md:overflow-hidden"
                   >
-                    <LoanCasesPreview
-                      list={[
-                        {
-                          title,
-                          id,
-                          imgUrl,
-                          casePath,
-                          description,
-                          cases,
-                        },
-                      ]}
-                    />
+                    <LoanCasesPreview {...props} />
                   </motion.div>
                 </AnimatePresence>
               )}
