@@ -42,7 +42,7 @@ export default function ServiceOfferings() {
         <link rel="canonical" href="https://www.lungshan.tw/serviceOfferings" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none flex flex-col items">
+      <main className="max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none flex flex-col items-center">
         <Layout>
           <div className="h-14 mb-2 w-full max-sm:h-10" />
           <motion.div
