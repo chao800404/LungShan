@@ -4,8 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { TimeLineBlockProps } from './type'
 import ABOUTUS_COVER_DATA from '@/data/about_us_cover.json'
 import { shallow } from 'zustand/shallow'
-import { useCalcWindowSize } from '@/utils'
+
 import { useProductCardStore } from '@/store'
+import { useCalcWindowSize } from '@/utils'
 
 const lineStyle =
   'after:w-[9.5rem] after:h-[1px] after:bg-primaryBlack after:absolute after:top-1/2 after:-translate-y-1/2 after:-z-10 after:left-1/2'
