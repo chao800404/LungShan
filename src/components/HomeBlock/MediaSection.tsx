@@ -37,7 +37,7 @@ export const MediaSection = () => {
       >
         <div className="rounded-3xl overflow-hidden flex items-center justify-center relative max-sm:rounded-none">
           <video
-            src="/medias/loan_media.mp4"
+            src="/medias/loan_media-1.mp4"
             width="100%"
             muted
             loop={true}
