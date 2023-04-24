@@ -33,8 +33,6 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = (params as any).loanCase[0] as string
 
-  console.log(slug)
-
   const { data } = await client.query({
     query: caseQuery,
   })

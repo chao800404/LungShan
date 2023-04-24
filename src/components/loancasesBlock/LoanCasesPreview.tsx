@@ -50,8 +50,6 @@ export const LoanCasesPreview = (props: CaseData) => {
 
   const isOverView = focusId && caseData
 
-  console.log(caseData)
-
   return (
     <motion.div
       className="h-screen w-full max-md:bg-[rgba(255,255,255,0.8)] max-md:backdrop-blur max-sm:border-t max-md:shadow-[0rem_0_1rem_5px_rgba(0,0,0,0.4)]"

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Navbar } from '../navbar'
 import { Footer } from '../footer'
 import NAVBAR_DATA from '@/data/navbar.json'
 import dynamic from 'next/dynamic'
 import { useMediaQuery } from 'react-responsive'
-import { useGa } from '@/utils'
 
 const DynamicMenu = dynamic(() => import('@/components/popup/MenuPopup'), {
   loading: () => null,

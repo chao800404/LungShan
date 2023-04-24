@@ -3,7 +3,6 @@ import { useLoanCasesStore, useMouseStore } from '@/store'
 import { shallow } from 'zustand/shallow'
 import { FiExternalLink } from 'react-icons/fi'
 import { useRouter } from 'next/router'
-import { LoancaseCardProps } from '../card/type'
 import { motion } from 'framer-motion'
 import { GoLinkExternal } from 'react-icons/go'
 import { CaseData } from '@/pages/loancases/type'
@@ -50,7 +49,6 @@ export const LoanCasesBody = ({
               {item.label}
             </h3>
             <div className="mt-3">
-           
               {item.connectedNode.node.allLoancase.nodes?.map(
                 (cases, index) => (
                   <motion.div

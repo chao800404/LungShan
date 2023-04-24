@@ -6,7 +6,7 @@ import { MediaAndImageBlock } from '@/components/specialBlock'
 import { Button } from '../button'
 import { register } from 'swiper/element/bundle'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Pagination } from 'swiper'
+import SwiperCore from 'swiper'
 import Link from 'next/link'
 
 register()
