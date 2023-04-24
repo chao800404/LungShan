@@ -45,8 +45,6 @@ export const BaseImageBlock = forwardRef<HTMLDivElement, BaseImageBlockProps>(
             objectPosition: `${50 + moveX}%`,
           }}
           priority
-          placeholder="blur"
-          blurDataURL={imgUrl}
         />
       </motion.div>
     )

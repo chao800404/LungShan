@@ -5,7 +5,6 @@ import * as LOAN_PHONE_AN_1 from '../../../public/lottieJson/loan_phone_an_1.jso
 import * as LOAN_PHONE_AN_3 from '../../../public/lottieJson/loan_phone_an_3.json'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { useCalcWindowSize } from '@/utils'
 
 type Data = {
   title: string
@@ -87,8 +86,6 @@ const ImageComponent = ({
         priority
         sizes="auto"
         draggable={false}
-        placeholder="blur"
-        blurDataURL={image}
       />
     </div>
   )
@@ -118,7 +115,6 @@ const AnimateBlock = ({
     }
   }
 
-  const { screenW } = useCalcWindowSize()
   // const isDesktop = screenW >= 1024
   const isEven = index % 2 === 0
 

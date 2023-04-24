@@ -89,7 +89,7 @@ const CasesDynamicPage = (props: CaseData) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none">
+      <main className="font-primary max-w-screen-2xl mr-auto ml-auto shadow-body min-h-screen max-md:shadow-none flex flex-col items-center">
         <Layout>
           <div className="h-12 max-sm:h-0 max-sm:mt-0" />
           <section>

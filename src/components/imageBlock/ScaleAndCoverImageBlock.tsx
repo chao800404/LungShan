@@ -110,8 +110,6 @@ export const ScaleAndCoverImageBlock: React.FC<
           alt="image"
           priority
           draggable={false}
-          placeholder="blur"
-          blurDataURL={imageUrl}
         />
       </motion.div>
     </motion.div>

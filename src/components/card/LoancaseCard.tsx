@@ -4,31 +4,11 @@ import { motion } from 'framer-motion'
 import { LoancaseCardProps } from './type'
 import { useMouseStore } from '@/store'
 import { shallow } from 'zustand/shallow'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
-
-const variants = {
-  show: (index: number) => {
-    return {
-      x: 0,
-      y: 0,
-      opacity: 1,
-    }
-  },
-  init: (index: number) => {
-    return {
-      x: (3 - index) * 300,
-      y: 120 + index * 10,
-      opacity: 0,
-    }
-  },
-}
 
 export const LoancaseCard = ({
   title,
   imgUrl,
-  cases,
-  id,
   index,
   casePath,
 }: LoancaseCardProps) => {
@@ -54,7 +34,6 @@ export const LoancaseCard = ({
 
   return (
     <motion.div
-      variants={variants}
       custom={index}
       transition={{
         delay: 0.2,
@@ -77,8 +56,6 @@ export const LoancaseCard = ({
         priority
         className="object-cover saturate-50 hover:saturate-150 duration-300 will-change-contents"
         draggable={false}
-        placeholder="blur"
-        blurDataURL={imgUrl}
       />
     </motion.div>
   )

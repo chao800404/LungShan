@@ -50,6 +50,10 @@ export const ScamPreventionPopup: React.FC<ScamPreventionPopupProps> = ({
     query: '(max-width: 767px)',
   })
 
+  const ScreenSM = useMediaQuery({
+    query: '(max-width: 640px)',
+  })
+
   const truncateSentenceAn = (sentence: string) => {
     return sentence.split('').map((word, i) => (
       <motion.span
@@ -105,7 +109,7 @@ export const ScamPreventionPopup: React.FC<ScamPreventionPopupProps> = ({
             <hr />
             <div className="p-8 max-h-96 overflow-scroll max-sm:p-5 max-sm:max-h-[60vh]">
               <p className="flex flex-wrap text-justify">
-                {truncateSentenceAn(caseContent)}
+                {ScreenSM ? caseContent : truncateSentenceAn(caseContent)}
               </p>
             </div>
           </motion.div>

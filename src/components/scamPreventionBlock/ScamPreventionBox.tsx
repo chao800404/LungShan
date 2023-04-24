@@ -6,14 +6,11 @@ import { useMediaQuery } from 'react-responsive'
 type BoxProps = Record<'title' | 'description', string> & {
   id: number
   onClick: () => void
-  onTop: boolean
 }
 
 export const ScamPreventionBox: React.FC<BoxProps> = ({
   title,
   description,
-  id,
-  onTop,
   onClick,
 }) => {
   const [onEnter, setOnEnter] = useState(false)
@@ -76,7 +73,9 @@ export const ScamPreventionBox: React.FC<BoxProps> = ({
       <h2 className="font-bold h-fit">{title}</h2>
       <motion.div className="my-2 h-full self-start flex items-start">
         <motion.p className="content-start h-fit flex flex-wrap mb-auto max-sm:text-sm">
-          {onEnter && !onTop && ScreenSm
+          {ScreenSm
+            ? truncateSentence(description)
+            : onEnter
             ? truncateSentenceAn(description)
             : truncateSentence(description)}
         </motion.p>

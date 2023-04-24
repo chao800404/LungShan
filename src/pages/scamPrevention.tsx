@@ -103,7 +103,6 @@ export default function ScamPrevention() {
                 <ScamPreventionBox
                   onClick={() => updatePopup({ show: true, index })}
                   key={`${item.id}_${item.title}`}
-                  onTop={onTop}
                   {...item}
                 />
               ))}

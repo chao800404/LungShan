@@ -25,8 +25,6 @@ export const LoanCasesOverview = (props: CaseType) => {
             alt={props.case_image.caseimage.altText}
             className="object-cover rounded border border-gray-900 max-md:border-gray-400"
             sizes="auto"
-            placeholder="blur"
-            blurDataURL={props.case_image.caseimage.sourceUrl}
           />
         </div>
         <div className="flex-1 border p-5 overflow-scroll rounded max-xl:flex-none max-xl:h-[15rem] max-lg:flex-1">

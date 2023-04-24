@@ -54,7 +54,7 @@ export const LoanCasesPreview = (props: CaseData) => {
 
   return (
     <motion.div
-      className="h-screen w-full max-md:bg-[rgba(255,255,255,0.8)] max-md:backdrop-blur max-md:shadow-[0rem_0_1rem_5px_rgba(0,0,0,0.4)]"
+      className="h-screen w-full max-md:bg-[rgba(255,255,255,0.8)] max-md:backdrop-blur max-sm:border-t max-md:shadow-[0rem_0_1rem_5px_rgba(0,0,0,0.4)]"
       animate={{ opacity: [0, 1] }}
       initial={{ opacity: 0 }}
       transition={{ delay: 0.3 }}
