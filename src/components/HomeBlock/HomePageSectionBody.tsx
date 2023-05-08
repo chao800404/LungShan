@@ -181,7 +181,7 @@ export const HomePageSectionBody = () => {
       ref={ref}
       className="text-primary relative z-20 overflow-hidden"
     >
-      <motion.div className="top-[5rem] grid gird grid-cols-[minmax(1rem,_10rem)_1fr_1fr_minmax(1rem,_10rem)] grid-rows-[5rem_12rem_repeat(2,_1.2fr)_1fr_5rem] bg-[rgba(31,31,31,0.98)] rounded-lg max-xxl:grid-cols-[1.4rem_1fr_1fr_1.4rem] max-xl:gap-3 max-lg:flex max-lg:flex-col max-lg:px-5 max-lg:py-10 max-lg:gap-10 max-sm:rounded-none max-sm:gap-5">
+      <motion.div className="top-[5rem] grid gird grid-cols-[minmax(1rem,_10rem)_1fr_1fr_minmax(1rem,_10rem)] grid-rows-[5rem_12rem_repeat(2,_1.2fr)_10rem] bg-[rgba(31,31,31,0.98)] rounded-lg max-xxl:grid-cols-[1.4rem_1fr_1fr_1.4rem] max-xl:gap-3 max-lg:flex max-lg:flex-col max-lg:px-5 max-lg:py-10 max-lg:gap-10 max-sm:rounded-none max-sm:gap-5">
         <motion.div className="col-start-1 col-span-5 row-start-2 row-span-1 justify-self-center">
           <motion.h2
             animate={{
@@ -268,9 +268,9 @@ export const HomePageSectionBody = () => {
         >
           <ImageContent url="/images/lungshan_loan_2.jpg" />
         </motion.div>
-        <div className="col-start-1 col-span-4 row-start-5 row-span-1 text-primary self-center justify-self-center max-w-screen-xxl px-5 w-full max-lg:order-6 max-lg:px-0">
+        {/* <div className="col-start-1 col-span-4 row-start-5 row-span-1 text-primary self-center justify-self-center max-w-screen-xxl px-5 w-full max-lg:order-6 max-lg:px-0">
           <BankLogoContent list={LUNGSHAN_BANK_LOGO} />
-        </div>
+        </div> */}
       </motion.div>
     </motion.div>
   )

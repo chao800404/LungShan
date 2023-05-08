@@ -91,14 +91,14 @@ const CasesDynamicPage = (props: CaseData) => {
         <Layout>
           <div className="h-12 max-sm:h-0 max-sm:mt-0" />
           <section>
-            <div className="flex max-sm:h-screen">
+            <div className="flex min-h-screen max-sm:h-screen">
               <motion.div
                 animate={
                   !ScreenMd
                     ? { width: ImageW(), opacity: 1 }
                     : { width: '100vw', opacity: [0, 1] }
                 }
-                initial={{ width: '100vw', height: '100vh' }}
+                initial={{ width: '100vw' }}
                 transition={
                   !ScreenMd
                     ? { delay: 1.2, type: 'tween' }
