@@ -18,6 +18,9 @@ const DynamicProductBlock = dynamic(
   { ssr: false }
 )
 
+
+
+
 export default function Home() {
   // useEffect(() => {
   //   window.history.scrollRestoration = 'manual'
@@ -33,7 +36,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="keywords"
-          content="房屋借款,銀行信用貸款,土地借款,民間代書借款,汽車貸款,機車貸款,商品貸款,手機貸款,房屋買賣,持分買賣,收購特殊地目,急售不動產"
+          content="土地貸款,土地二胎,持分貸款,土地借款,土地持分借款,房子持分借款,民間借款,房屋二胎,民間貸款,房屋借款,持分借款,持分,持分土地,房屋持分貸款,房子借款,房屋持分借款,房子貸款,房子持分貸款,"
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://www.lungshan.tw/" />
