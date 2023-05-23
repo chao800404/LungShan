@@ -125,7 +125,7 @@ const CasesDynamicPage = (props: CaseData) => {
                     initial={ScreenMd ? { x: '100%' } : { x: 0 }}
                     exit={ScreenMd ? { x: '100%' } : { x: 0 }}
                     transition={{ type: 'just', delay: 0.5 }}
-                    className="flex-1 max-md:absolute max-md:z-20 max-md:w-[80vw] max-md:right-0 max-sm:w-[100vw] max-sm:pl-5 max-md:overflow-hidden"
+                    className="flex-1 max-md:absolute max-md:z-20 max-md:w-[80vw] max-md:right-0 max-sm:w-screen max-sm:pl-5 max-md:overflow-hidden"
                   >
                     <LoanCasesPreview {...props} />
                   </motion.div>

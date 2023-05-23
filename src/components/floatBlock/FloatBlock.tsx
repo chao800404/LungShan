@@ -15,7 +15,7 @@ const FloatBlock = () => {
 
   return (
     <div className="fixed right-7 rounded-md p-3 bottom-6 z-50 border shadow-md flex gap-2 text-3xl bg-primary">
-      <a
+      <Link
         href="tel:0800-777-992"
         className="p-1 border rounded-r-sm"
         onClick={() => {
@@ -23,8 +23,8 @@ const FloatBlock = () => {
         }}
       >
         <AiFillPhone />
-      </a>
-      <a
+      </Link>
+      <Link
         href="https://line.me/R/ti/p/@798advyq"
         className="p-1 border rounded-r-sm flex"
         onClick={() => {
@@ -40,7 +40,7 @@ const FloatBlock = () => {
           height={30}
           priority={true}
         />
-      </a>
+      </Link>
       <Link
         href="/contact"
         className="p-1 px-2 border rounded-r-sm text-2xl flex"
@@ -48,9 +48,9 @@ const FloatBlock = () => {
       >
         <TfiWrite className="cursor-pointer m-auto" />
       </Link>
-      <a className="p-1 border rounded-r-sm" onClick={scrollToTop}>
+      <div className="p-1 border rounded-r-sm" onClick={scrollToTop}>
         <AiOutlineToTop className="cursor-pointer" />
-      </a>
+      </div>
     </div>
   )
 }

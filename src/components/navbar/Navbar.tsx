@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { NavbarData } from './type'
 import { useMediaQuery } from 'react-responsive'
 import { GrMenu } from 'react-icons/gr'
-import { AiFillPhone, AiOutlineClose } from 'react-icons/ai'
+import { AiOutlineClose } from 'react-icons/ai'
 import { TfiWrite } from 'react-icons/tfi'
 import { useGa } from '@/utils'
 
@@ -106,59 +106,71 @@ const MobileNavbar = ({ list, slug, setShowMenu, show }: MobileNavbarMb) => {
   } = useGa()
 
   return (
-    <motion.header className="hidden h-14  w-screen max-md:flex justify-between border-primaryBlack border-t fixed bottom-0 bg-white z-40 shadow-[0_-1px_0.5rem_rgba(0,0,0,0.05)] max-sm:px-5 max-sm:border-x">
-      <div className="h-full flex items-center max-sm:border-l">
+    <motion.header className="hidden w-[101%] max-md:flex justify-between fixed bottom-0 z-40">
+      <div className="h-14 flex mt-auto justify-between flex-1 bg-white border-t border-primaryBlack pl-3">
         {show ? (
           <AiOutlineClose
             onClick={setShowMenu}
-            className="m-auto w-16 border-r h-full p-2"
+            className="w-16 h-full p-2 border-x"
           />
         ) : (
-          <GrMenu
-            onClick={setShowMenu}
-            className="m-auto w-16 border-r h-full p-2"
-          />
+          <GrMenu onClick={setShowMenu} className="w-16 h-full p-2 border-x" />
         )}
+        <div className="flex">
+          <Link
+            onClick={handleTranferContactusPage}
+            href="/contact"
+            className="h-full border-l w-14 text-[1.5rem]"
+          >
+            <TfiWrite className="h-full m-auto" />
+          </Link>
+          <Link
+            href="https://line.me/R/ti/p/@798advyq"
+            className="h-full border-l w-16 flex"
+            onClick={handleClickLineButton}
+          >
+            <Image
+              alt="lineIcon"
+              className="block m-auto"
+              sizes="auto"
+              src="/images/decoration/line-logo.webp"
+              width={28}
+              height={28}
+              priority={true}
+            />
+          </Link>
+        </div>
       </div>
-      <div className="flex items-center max-sm:border-r">
-        <a
-          onClick={() => {
-            handleClickPhoneButton()
-          }}
-          href="tel:0800-777-992"
-          className="h-full border-l w-14 text-3xl"
-        >
-          <AiFillPhone className="h-full m-auto" />
-        </a>
-        <a
-          href="https://line.me/R/ti/p/@798advyq"
-          className="h-full border-l w-16 flex"
-          onClick={handleClickLineButton}
-        >
-          <Image
-            alt="lineIcon"
-            className="block m-auto"
-            sizes="auto"
-            src="/images/decoration/line-logo.svg"
-            width={28}
-            height={28}
-            priority={true}
-          />
-        </a>
-        <Link
-          onClick={handleTranferContactusPage}
-          href="/contact"
-          className="h-full border-l w-14 text-[1.5rem]"
-        >
-          <TfiWrite className="h-full m-auto" />
-        </Link>
-      </div>
+      <Link
+        onClick={handleClickPhoneButton}
+        href="tel:0800-777-992"
+        className="h-20 w-20 bg-primaryBlue flex flex-col justify-center items-center active:scale-[0.98] duration-150"
+      >
+        <Image
+          src="/images/decoration/callus_icon.webp"
+          alt="logo"
+          priority
+          sizes="auto"
+          width={20}
+          height={20}
+          className="h-9 w-9"
+          draggable={false}
+        />
+        <p className="text-xs mt-1 font-thin text-white">聯絡我們</p>
+      </Link>
     </motion.header>
   )
 }
 
 export const Navbar = ({ list, setShowMenu, show }: NavbarProps) => {
   const router = useRouter()
+  const screenXl = useMediaQuery({
+    query: '(max-width: 1279px)',
+  })
+
+  const screenMd = useMediaQuery({
+    query: '(max-width: 767px)',
+  })
 
   const [overHeader, setOverHeader] = useState(false)
   const [curRoute, setCurRoute] = useState({
@@ -168,6 +180,7 @@ export const Navbar = ({ list, setShowMenu, show }: NavbarProps) => {
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
+    if (screenMd) return
     if (latest > window.innerHeight) setOverHeader(true)
     else setOverHeader(false)
   })
@@ -179,10 +192,6 @@ export const Navbar = ({ list, setShowMenu, show }: NavbarProps) => {
   const setRoute = useCallback((slug: string) => {
     return setCurRoute({ slug })
   }, [])
-
-  const screenXl = useMediaQuery({
-    query: '(max-width: 1280px)',
-  })
 
   return (
     <>

@@ -80,7 +80,7 @@ export default function QuestionAndAnswerPage() {
               <motion.div
                 animate={{ x: 0, opacity: 1 }}
                 initial={{ x: -50, opacity: 0 }}
-                className="w-[45rem] min-h-[45rem] bg-gray-50 max-xxl:w-[50vw] max-xxl:mt-2.5 max-xxl:border-b max-xxl:border-l max-md:w-[100vw] z-10 max-md:relative"
+                className="w-[45rem] min-h-[45rem] bg-gray-50 max-xxl:w-[50vw] max-xxl:mt-2.5 max-xxl:border-b max-xxl:border-l max-md:w-screen z-10 max-md:relative"
               >
                 <TabContainer
                   updateLabelIndex={updateLabelIndex}

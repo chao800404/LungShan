@@ -34,7 +34,7 @@ export const Layout = ({ children }: LayoutProps) => {
   })
 
   const screenSm = useMediaQuery({
-    query: '(max-width: 768px)',
+    query: '(max-width: 767px)',
   })
 
   const hide = () => setShowMenu(false)

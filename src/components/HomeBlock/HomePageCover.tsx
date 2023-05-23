@@ -8,8 +8,8 @@ export const HomePageCover = () => {
   const { handleClickPhoneButton, handleTranferContactusPage } = useGa()
 
   return (
-    <section className="flex items-center justify-center snap-none">
-      <div className="max-w-screen-xxl py-20  flex flex-col w-full mt-28 px-5 max-mmd:h-fit max-sm:mt-2">
+    <section className="flex items-center justify-center">
+      <div className="max-w-screen-xxl py-20 flex flex-col w-full mt-28 px-5 max-mmd:h-fit max-sm:mt-2">
         <div className="relative w-[60rem] h-[13.5rem] max-lg:w-full max-md:h-fit">
           <h1 className="flex h-full text-primaryBlack max-md:flex-col max-sm:items-center">
             <span className="block mt-auto">
