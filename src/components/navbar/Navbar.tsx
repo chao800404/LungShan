@@ -143,7 +143,7 @@ const MobileNavbar = ({ list, slug, setShowMenu, show }: MobileNavbarMb) => {
       </div>
       <Link
         onClick={handleClickPhoneButton}
-        href="tel:0800-777-992"
+        href="tel:0903737927"
         className="h-20 w-20 bg-primaryBlue flex flex-col justify-center items-center active:scale-[0.98] duration-150"
       >
         <Image
