@@ -19,6 +19,10 @@ export default function Document() {
         ></script>
         <script
           async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11018581094"
+        ></script>
+        <script
+          async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
         ></script>
         <script
@@ -29,6 +33,16 @@ export default function Document() {
             gtag('js', new Date());
           
             gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}');
+            `,
+          }}
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-11018581094');
             `,
           }}
         ></script>
